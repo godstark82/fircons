@@ -6,23 +6,24 @@ const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const links = {
-        "/": "HOME",
-        "ABOUT": {
-            "UTB": 'UTB',
-            'Important Dates': 'Important Dates',
-            'Programme': 'Programme',
-            'Accomondation Options': 'Accomondation Options'
+        "/": "Home",
+        "About": {
+            "About SERF Conferences": 'About SERF Conferences',
+            'About University': 'About University',
+            'Keynote Speakers': 'Keynote Speakers',
+            'Scope & Benefits': 'Scope & Benefits',
         },
-        "COMMITTEES": {
-            "Conference Chair": "Conference Chair",
-            "Organizing Committee": "Organizing Committee",
-            "Review Committee": "Review Committee",
-            "Other Committees": "Other Committees",
+        "Conferences": {
+            "Upcoming Conferences": "Upcoming Conferences",
+            "Previous Conferences": "Previous Conferences",
         },
-        "REGISTRATION": "REGISTRATION",
-        "UPLOAD PAPER": "UPLOAD PAPER",
-        "DOWNLOADS": "DOWNLOADS",
-        "CONTACT US": "CONTACT US"
+        "Registration": {
+            "Conference Registration": "Conference Registration",
+            "Registration Guidelines": "Registration Guidelines",
+        },
+        "Speakers": "Speakers",
+        "SERF Brochure": "SERF Brochure",
+        "Contact Us": "Contact Us"
     }
 
     const renderLink = (key, value) => {
@@ -78,10 +79,15 @@ const Header = () => {
             <div className="container mx-auto px-4 py-4">
                 <nav className="flex justify-between items-center">
                     <div className="text-2xl font-bold text-black">
-                        <Link href="/">
-                            <img src="/images/utb.svg" alt="UTB Logo" className="h-12" />
+                        <Link href="/" className="flex items-center gap-2">
+                            <img src="/serf-logo.jpg" alt="SERF Logo" className="h-12" />
+                            <div className="flex flex-col text-center">
+                                <span className="text-2xl font-bold text-black tracking-[0.2em]">SERF</span>
+                                <span className="text-sm font-bold text-black">Conferences</span>
+                            </div>
                         </Link>
                     </div>
+
                     <div className="hidden md:flex space-x-6">
                         {Object.entries(links).map(([key, value]) => renderLink(key, value))}
                     </div>

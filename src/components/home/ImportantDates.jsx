@@ -2,12 +2,10 @@ import SectionHeader from "../common/SectionHeader";
 import SectionImageHeader from "../common/SectionImageHeader";
 
 const DATES = [
-    { day: "15", month: "July", desc: "Abstract Submission Deadline" },
-    { day: "15", month: "July", desc: "Last Day of Early Bird Registration" },
-    { day: "20", month: "August", desc: "Full Paper Submission Deadline" },
-    { day: "15", month: "September", desc: "Notification of Acceptance" },
-    { day: "14", month: "October", desc: "In-person Conference Day" },
-    { day: "15", month: "October", desc: "Online Conference Day" },
+    { day: "20", month: "September 2023", desc: "Abstract Submission" },
+    { day: "05", month: "August 2023", desc: "Abtract Submission" },
+    { day: "25", month: "October 2023", desc: "Registration Deadline" },
+    { day: "10", month: "October 2023", desc: "Last Date of Paper Submission" }
 ];
 
 export default function ImportantDates() {
@@ -16,8 +14,8 @@ export default function ImportantDates() {
             {/* Top background image with overlay and header */}
             <SectionImageHeader title="Important Dates" image="/images/imp-dates.jpg" />
             {/* Dates Grid */}
-            <div className="container mx-auto px-4 py-8 md:py-12">
-                <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 md:gap-8">
+            <div className="container mx-auto px-4 py-8 md:py-12 justify-items-center">
+                <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
                     {DATES.map((date, idx) => (
                         <div key={idx} className="flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
                             <div className="bg-primary text-white rounded-t-md rounded-b-none px-4 py-4 text-center relative w-full max-w-[200px]">

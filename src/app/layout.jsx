@@ -6,7 +6,7 @@ import Layout from '../components/layout/Layout';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'SIMDTE 2025',
+  title: 'SERF Conference',
   description: 'International Conference on Simulation, Modeling and Optimization',
 };
 
