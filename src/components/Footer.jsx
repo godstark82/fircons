@@ -1,122 +1,72 @@
-import Link from 'next/link';
-import { FaFacebookF, FaTwitter, FaLinkedin, FaInstagram, FaYoutube, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+'use client'
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 
-const Footer = () => {
-    return (
-        <footer className="bg-black text-gray-400">
-            <div className="container mx-auto px-4 py-8">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div className="space-y-4">
-                        <h3 className="text-xl font-bold text-white">Address</h3>
-                        <ul className="space-y-3 text-light/80">
-                            <li className='flex items-center gap-2'>
-                                <FaMapMarkerAlt className="text-primary size-7" />
-                                <p>University of Technology Bahrain, Building 829, Road 1213, Block 712, Salmabad, Kingdom of Bahrain</p>
-                            </li>
-                            <li className="flex items-center gap-2">
-                                <FaPhone className="text-primary" />
-                                <a href="https://wa.me/97333926076"><span>+973 33926076</span></a>
-                            </li>
-                            <li className="flex items-center gap-2">
-                                <FaEnvelope className="text-primary" />
-                                <span><a href="mailto:simdte@utb.edu.bh">simdte@utb.edu.bh</a></span>
-                            </li>
-                            <div className="flex space-x-4 pt-2">
-                                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-light/80 hover:text-primary transition-colors">
-                                    <FaFacebookF size={20} />
-                                </a>
-                                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-light/80 hover:text-primary transition-colors">
-                                    <FaTwitter size={20} />
-                                </a>
-                                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-light/80 hover:text-primary transition-colors">
-                                    <FaLinkedin size={20} />
-                                </a>
-                                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-light/80 hover:text-primary transition-colors">
-                                    <FaInstagram size={20} />
-                                </a>
-                                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-light/80 hover:text-primary transition-colors">
-                                    <FaYoutube size={20} />
-                                </a>
-                            </div>
-                        </ul>
-                    </div>
-                    <div className="space-y-4">
-                        <h3 className="text-xl font-bold text-white">About</h3>
-                        <ul className="space-y-3">
-                            <li>
-                                <Link href="/utb" className="text-light/80 hover:text-primary transition-colors block">
-                                    University of Technology Bahrain (UTB)
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/important-dates" className="text-light/80 hover:text-primary transition-colors block">
-                                    Important Dates
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/programme" className="text-light/80 hover:text-primary transition-colors block">
-                                    Programme
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/accommodation" className="text-light/80 hover:text-primary transition-colors block">
-                                    Accommodation Options
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="space-y-4">
-                        <h3 className="text-xl font-bold text-white">Quick Links</h3>
-                        <ul className="space-y-3">
-                            <li>
-                                <Link href="/upload-paper" className="text-light/80 hover:text-primary transition-colors block">
-                                    Upload Paper
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/registration" className="text-light/80 hover:text-primary transition-colors block">
-                                    Registration
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/downloads" className="text-light/80 hover:text-primary transition-colors block">
-                                    Downloads
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/contact" className="text-light/80 hover:text-primary transition-colors block">
-                                    Contact Us
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/admin" className="text-light/80 hover:text-primary transition-colors block">
-                                    Administrator
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="space-y-4">
-                        <h3 className="text-xl font-bold text-white">Conference Venue</h3>
-                        <div className="aspect-w-16 aspect-h-9 w-full">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3578.8211172197557!2d50.57360839999999!3d26.235001299999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49a58a8576d17d%3A0x6d01fa2c1f7633e6!2sInterContinental%20Bahrain%2C%20an%20IHG%20Hotel!5e0!3m2!1sen!2sin!4v1748862133696!5m2!1sen!2sin"
-                                width="100%"
-                                height="200"
-                                style={{ border: 0 }}
-                                allowFullScreen=""
-                                loading="lazy"
-                                referrerPolicy="no-referrer-when-downgrade"
-                                className="rounded-lg shadow-lg"
-                            ></iframe>
-                        </div>
-                    </div>
-                </div>
-                <div className="border-t border-light/20 mt-8 pt-8 text-center text-light/80">
-                    <p className="text-sm">SIMDTE &copy; {new Date().getFullYear()} All rights reserved.</p>
-                </div>
+const Footer = () => (
+  <footer className="bg-[#181818] text-gray-200 pt-12 pb-0">
+    <div className="max-w-7xl mx-auto px-4">
+      <div className="flex flex-wrap gap-8 justify-center md:justify-between">
+        {/* Logo & About */}
+        <div className="w-full md:w-1/4 min-w-[250px] bg-[#222] rounded-md p-8 flex flex-col items-start mb-8 md:mb-0">
+          <div className="mb-4">
+            <div className="bg-[#e53935] px-6 py-2 rounded text-white text-2xl font-bold tracking-widest mb-1">SERF</div>
+            <div className="text-white text-sm font-medium tracking-wide">Conferences</div>
+          </div>
+          <p className="text-gray-300 text-sm mb-6">
+            About Conference The objective of SERF Conferences are to present the latest research and results of scientists (preferred students, post graduate Students, Research Scholars and post-doc scientists) related to interdisciplinary research.
+          </p>
+          <div>
+            <div className="text-white text-lg font-semibold mb-2">Follow us</div>
+            <div className="flex gap-4">
+              <a href="#" className="bg-[#333] hover:bg-[#e53935] transition-colors rounded-full p-3 text-xl"><FaTwitter /></a>
+              <a href="#" className="bg-[#333] hover:bg-[#e53935] transition-colors rounded-full p-3 text-xl"><FaFacebookF /></a>
+              <a href="#" className="bg-[#333] hover:bg-[#e53935] transition-colors rounded-full p-3 text-xl"><FaInstagram /></a>
+              <a href="#" className="bg-[#333] hover:bg-[#e53935] transition-colors rounded-full p-3 text-xl"><FaLinkedin /></a>
             </div>
-        </footer>
-    );
-};
+          </div>
+        </div>
+        {/* Helpful Links */}
+        <div className="flex-1 min-w-[180px] mb-8 md:mb-0">
+          <div className="text-white text-xl font-bold mb-1">Helpful Links</div>
+          <div className="w-24 h-1 bg-[#e53935] mb-4"></div>
+          <ul className="space-y-2">
+            <li><a href="#" className="hover:text-[#e53935] transition">Home</a></li>
+            <li><a href="#" className="hover:text-[#e53935] transition">Conference Registration</a></li>
+            <li><a href="#" className="hover:text-[#e53935] transition">Registration Guidelines</a></li>
+            <li><a href="#" className="hover:text-[#e53935] transition">Speakers</a></li>
+            <li><a href="#" className="hover:text-[#e53935] transition">Committee</a></li>
+            <li><a href="#" className="hover:text-[#e53935] transition">Contact Us</a></li>
+          </ul>
+        </div>
+        {/* Other Links */}
+        <div className="flex-1 min-w-[180px] mb-8 md:mb-0">
+          <div className="text-white text-xl font-bold mb-1">Other Links</div>
+          <div className="w-24 h-1 bg-[#e53935] mb-4"></div>
+          <ul className="space-y-2">
+            <li><a href="#" className="hover:text-[#e53935] transition">About SERF Conferences</a></li>
+            <li><a href="#" className="hover:text-[#e53935] transition">About University</a></li>
+            <li><a href="#" className="hover:text-[#e53935] transition">About SERF Conferences</a></li>
+            <li><a href="#" className="hover:text-[#e53935] transition">Keynote Speakers</a></li>
+            <li><a href="#" className="hover:text-[#e53935] transition">Scope & Benefit</a></li>
+          </ul>
+        </div>
+        {/* Contact Us */}
+        <div className="flex-1 min-w-[220px]">
+          <div className="text-white text-xl font-bold mb-1">Contact Us</div>
+          <div className="w-24 h-1 bg-[#e53935] mb-4"></div>
+          <div className="space-y-2 text-sm">
+            <div><span className="font-bold text-white">Name:</span> Prof. (Dr.) Narendra Kumar</div>
+            <div><span className="font-bold text-white">Phone:</span> +91-8854005488</div>
+            <div><span className="font-bold text-white">Phone:</span> +91-8854005488</div>
+            <div><span className="font-bold text-white">Email:</span> firconsindia@gmail.com</div>
+          </div>
+        </div>
+      </div>
+      {/* Copyright */}
+      <div className="border-t border-[#333] mt-10 py-4 text-center text-gray-400 text-sm">
+        Copyright © 2021, All Right Reserved ICAIR. Website Designed & Developed By : <span className="font-bold text-white">ReDevs</span>
+      </div>
+    </div>
+  </footer>
+);
 
 export default Footer;

@@ -25,6 +25,103 @@ const SPEAKERS = [
         country: "India",
         img: "/images/speakers/prof-narendra.jpeg",
     },
+    {
+        name: "Prof. (Dr.) Leszek Ziora",
+        affiliation: "Czestochowa University of Technology",
+        country: "Poland",
+        img: "/images/speakers/prof-leszek.jpeg",
+    },
+    {
+        name: "Prof. Aanya Chaudhary",
+        affiliation: "Manipal University Jaipur",
+        country: "India",
+        img: "/images/speakers/prof-aanya.jpeg",
+    },
+    {
+        name: "Prof. Vijay Gupta",
+        affiliation: "NSIT, New Delhi",
+        country: "India",
+        img: "/images/speakers/prof-vijay.jpeg",
+    },
+    {
+        name: "Prof. (Dr.) Astha Bhanot",
+        affiliation: "PNBA University, Riyadh, KSA",
+        country: "India",
+        img: "/images/speakers/prof-astha.jpeg",
+    },
+    {
+        name: "Prof. Paula Bajdor",
+        affiliation: "Czestochowa University of Technology",
+        country: "Poland",
+        img: "/images/speakers/prof-leszek.jpeg",
+    },
+    {
+        name: "Prof. (Dr.) Illona Pawloszek",
+        affiliation: "Czestochowa University of Technology",
+        country: "Poland",
+        img: "/images/speakers/prof-illona.jpeg",
+    },
+    {
+        name: "Prof. (Dr.) Sanjeev Kumar",
+        affiliation: "Dr. B.R. Ambedkar University, Agra",
+        country: "India",
+        img: "/images/speakers/prof-sanjeev.jpeg",
+    },
+    {
+        name: "Prof. (Dr.) Gulsun Kurubacak",
+        affiliation: "Anadolu University",
+        country: "Turkey",
+        img: "/images/speakers/prof-gulsun.jpeg",
+    },
+    {
+        name: "Prof. Akhtem A. Dzhelilov",
+        affiliation: "R.A.M. University",
+        country: "Kazakhstan",
+        img: "/images/speakers/prof-akhtem.jpeg",
+    },
+    {
+        name: "Prof. (Dr.) Dalia Younis",
+        affiliation: "AASTMT, Egypt",
+        country: "Egypt",
+        img: "/images/speakers/prof-dalia.jpeg",
+    },
+    {
+        name: "Prof. (Dr.) Alex khang",
+        affiliation: "Data Scientist",
+        country: "Vietnam",
+        img: "/images/speakers/prof-alex.jpeg",
+    },
+    {
+        name: "Prof. (Dr.) Munish Sabharwal",
+        affiliation: "IILM University,Gr Noida",
+        country: "India",
+        img: "/images/speakers/prof-munish.jpeg",
+    },
+    {
+        name: "Prof. (Dr.) Honorata Howaniec",
+        affiliation: "Anadolu University",
+        country: "Turkey",
+        img: "/images/speakers/prof-gulsun.jpeg",
+    },
+    {
+        name: "Prof. (Dr.) Gulsun Kurubacak",
+        affiliation: "Anadolu University",
+        country: "Turkey",
+        img: "/images/speakers/prof-gulsun.jpeg",
+    },
+    {
+        name: "Prof. (Dr.) Gulsun Kurubacak",
+        affiliation: "Anadolu University",
+        country: "Turkey",
+        img: "/images/speakers/prof-gulsun.jpeg",
+    },
+    {
+        name: "Prof. (Dr.) Gulsun Kurubacak",
+        affiliation: "Anadolu University",
+        country: "Turkey",
+        img: "/images/speakers/prof-gulsun.jpeg",
+    },
+    
 ];
 
 function SpeakerCard({ speaker }) {
@@ -54,7 +151,7 @@ export default function KeynoteSpeakers() {
             <div className="container mx-auto px-4 py-8 md:py-12">
                 <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 justify-items-center">
                     {SPEAKERS.map((speaker, idx) => (
-                        <SpeakerCard key={speaker.name} speaker={speaker} />
+                        <SpeakerCard key={idx} speaker={speaker} />
                     ))}
                 </div>
             </div>

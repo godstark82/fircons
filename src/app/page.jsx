@@ -4,6 +4,8 @@ import KeynoteSpeakers from "../components/home/KeynoteSpeakers";
 import Overview from "../components/home/Overview";
 import Tracks from "../components/home/Tracks";
 import ImportantDates from "../components/home/ImportantDates";
+import Scope from "../components/home/Scope";
+import Objective from "../components/home/Objective";
 
 const Home = () => {
     return (
@@ -13,7 +15,9 @@ const Home = () => {
             <Tracks />
             <ImportantDates />
             <KeynoteSpeakers />
-            <Highlights />
+            <Scope />
+            {/* <Highlights /> */}
+            <Objective />
         </>
     )
 }
