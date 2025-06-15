@@ -17,10 +17,10 @@ const Header = () => {
             "Upcoming Conferences": "Upcoming Conferences",
             "Previous Conferences": "Previous Conferences",
         },
-        "Registration": {
-            "Conference Registration": "Conference Registration",
-            "Registration Guidelines": "Registration Guidelines",
-        },
+        // "Registration": {
+        //     "Conference Registration": "Conference Registration",
+        //     "Registration Guidelines": "Registration Guidelines",
+        // },
         "Speakers": "Speakers",
         "SERF Brochure": "SERF Brochure",
         "Contact Us": "Contact Us"
