@@ -1,27 +1,14 @@
 import SectionHeader from "../common/SectionHeader";
 
 const TRACKS = [
-    "Artificial Intelligence and Soft Computing",
-    "Analytics using Machine Learning",
-    "Data Analytics",
-    "Expert Systems",
-    "Fuzzy Systems",
-    "Computer Vision",
-    "IoT Based Automation",
-    "Robotics",
-    "Industrial Automation",
-    "AI in Healthcare",
-    "Algorithms",
-    "Mathematics",
-    "Physics",
-    "Chemistry",
-    "Human Resource Management",
-    "Stragic Management",
-    "Marketing Management",
-    "Operations and Supply Chain Management",
-    "Pharmacology",
-    "Biomedical Science",
-    "Agricultural Biotechnology"
+    "Materials Science & Sustainability",
+    "Energy & Environmental Engineering",
+    "Sustainable Engineering",
+    "Electronics, AI & Computing in Material",
+    "Interdisciplinary & Policy Topics",
+    "Sustainability in Digital Engineering",
+    "Mathematical Modelling and weather forecasting",
+    "Forensic Science"
 ];
 
 export default function Tracks() {

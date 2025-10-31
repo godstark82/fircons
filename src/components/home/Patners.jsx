@@ -11,7 +11,7 @@ const partners = [
 
 const Patners = () => {
   return (
-    <section className="py-16 bg-gradient-to-b from-primary/10 to-white">
+    <section className="py-16 bg-linear-to-b from-primary/10 to-white">
       <div className="max-w-4xl mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-12 text-primary">
           Our Partners

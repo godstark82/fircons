@@ -10,7 +10,7 @@ const TopBar = () => {
     });
 
     return (
-        <div className="hidden sm:block bg-[#E5E5E5] text-light py-2 w-full">
+        <div className="hidden sm:block bg-bg-gray text-light py-2 w-full">
             <div className="container mx-auto px-4">
                 <div className="flex justify-between items-center">
                     <div className="text-sm flex items-center">

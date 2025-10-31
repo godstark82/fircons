@@ -11,7 +11,7 @@ const Header = () => {
             "About College": 'About College',
             'Important Dates': 'Important Dates',
             'Programme': 'Programme',
-            // 'Accommodation Options': 'Accommodation Options'
+            'Accommodation Options': 'Accommodation Options'
         },
         "COMMITTEES": {
             "Conference Chairs": "Conference Chairs",

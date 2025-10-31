@@ -21,13 +21,13 @@ export default function Overview() {
                 <SectionHeader title="Conference Overview" />
                 <div className="text-black text-lg text-justify space-y-4">
                     <p>
-                        The second edition of the International Conference on Research and Innovation in Science, Engineering and Management (IC-RISEM 2025), organised by Arya College of Engineering & I.T., will focus on advancing creative thinking in management and informatics within the context of digital business transformation. Anchored in the goals of sustainable development and technological progress, the conference seeks to address contemporary business and technological challenges through rigorous academic dialogue and research-driven inquiry.
+                        The International Conference on Advanced Materials & Engineering for Sustainable Future is a premier academic and industry-focused gathering dedicated to exploring the latest advancements in materials science, engineering innovations, and sustainable technologies. The conference aims to serve as a global platform where researchers, academicians, industry experts, policymakers, and young innovators come together to exchange knowledge, foster collaborations, and address the pressing challenges of sustainability.
                     </p>
                     <p>
-                        Bringing together scholars, practitioners, and industry leaders, the conference will serve as a platform for the exchange of knowledge, presentation of innovative ideas, and exploration of forward-thinking solutions through engaging panel and keynote discussions.
+                        In an era where resource efficiency, environmental responsibility, and technological innovation are paramount, advanced materials and engineering solutions play a vital role in shaping a sustainable future. This conference will highlight cutting-edge research in areas such as nanomaterials, composites, biomaterials, smart and functional materials, renewable energy technologies, green manufacturing, and sustainable engineering practices.
                     </p>
                     <p>
-                        This dynamic gathering aims to spark intellectual curiosity, drive impactful research, and cultivate meaningful collaborations that contribute to sustainable progress in science, engineering, management, and technology.
+                        Participants will gain the opportunity to engage in thought-provoking keynote lectures, and technical paper presentations led by renowned experts from across the domains. By bridging the gap between scientific discovery and practical application, the conference seeks to inspire innovative solutions that contribute to environmental preservation, economic growth, and societal well-being.
                     </p>
                 </div>
             </div>

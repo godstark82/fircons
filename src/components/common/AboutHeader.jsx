@@ -2,7 +2,7 @@ import React from "react";
 
 export default function AboutHeader({
     title = 'University Profile',
-    date = '5 - 7 September',
+    date = '7 - 8 November',
     overlayColor = '#d0224a',
     bgImage = '/images/utb-images/gallery/gallery-2.jpg',
     dividerColor = 'white'
@@ -33,8 +33,8 @@ export default function AboutHeader({
                 <div className="w-full px-4 md:px-12 flex flex-col md:flex-row items-center text-white gap-4 md:gap-0">
                     {/* Beautiful IC-RISEM 2025 text instead of image */}
                     <div className="hidden md:flex flex-col items-center justify-center mr-6">
-                        <span className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-widest text-white drop-shadow-lg bg-gradient-to-r from-[#fff] via-[#ffe0ec] to-[#d0224a] bg-clip-text animate-pulse">
-                            IC-RISEM
+                        <span className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-widest text-white drop-shadow-lg bg-linear-to-r from-white via-[#ffe0ec] to-[#d0224a] bg-clip-text animate-pulse">
+                            IC-AMESF
                         </span>
                         <span className="text-lg md:text-xl lg:text-2xl font-semibold tracking-widest text-[#ffe0ec] mt-1 drop-shadow">
                             2025

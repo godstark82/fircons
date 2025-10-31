@@ -11,7 +11,7 @@ const Home = () => {
     return (
         <>
             <Hero />
-            <MinisterSection />
+            {/* <MinisterSection /> */}
             <Overview />
             <Tracks />
             <ImportantDates />
