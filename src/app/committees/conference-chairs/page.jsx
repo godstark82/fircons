@@ -20,11 +20,14 @@ const conferenceChair = [
 
 const conveners = [
     {
+        name: "Prof. A.K. Jain",
+        role:"Convener",
+    },
+    {
         name: "Prof. Narendra Kumar",
         role: "Co Convener",
         affiliation: ""
     },
-    // Existing conveners from your original code can optionally remain here if needed
 ];
 
 const organizingSecretaries = [
