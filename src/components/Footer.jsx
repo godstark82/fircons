@@ -11,31 +11,30 @@ const Footer = () => {
                         <ul className="space-y-3 text-light/80">
                             <li className='flex items-center gap-2'>
                                 <FaMapMarkerAlt className="text-primary size-7" />
-                                <p>(Arya 1st Old Campus, Estd Yr 2000)
-                                SP-42, RIICO Industrial Area, Kukas,Delhi Road, Near Hotel Le-Meridian, Jaipur, Rajasthan - 302028</p>
+                                <p>Plot No.18, Iilm College Of Engineering & Technology, 16, Knowledge Park II, Greater Noida, Uttar Pradesh 201310</p>
                             </li>
                             <li className="flex items-center gap-2">
                                 <FaPhone className="text-primary" />
-                                <a href="https://wa.me/8209346745" target="_blank" rel="noopener noreferrer"><span>+91 8209346745</span></a>
+                                <a href="https://wa.me/+918588895415" target="_blank" rel="noopener noreferrer"><span>+918588895415</span></a>
                             </li>
                             <li className="flex items-center gap-2">
                                 <FaEnvelope className="text-primary" />
                                 <span><a href="mailto: submit@icostem.com "> submit@icostem.com</a></span>
                             </li>
                             <div className="flex space-x-4 pt-2">
-                                <a href="https://www.facebook.com/aryacollegein/" target="_blank" rel="noopener noreferrer" className="text-light/80 hover:text-primary transition-colors">
+                                <a href="#" target="_blank" rel="noopener noreferrer" className="text-light/80 hover:text-primary transition-colors">
                                     <FaFacebookF size={20} />
                                 </a>
-                                <a href="https://x.com/aryacolleges" target="_blank" rel="noopener noreferrer" className="text-light/80 hover:text-primary transition-colors">
+                                <a href="#" target="_blank" rel="noopener noreferrer" className="text-light/80 hover:text-primary transition-colors">
                                     <FaTwitter size={20} />
                                 </a>
-                                <a href="https://in.linkedin.com/school/aryacollege/" target="_blank" rel="noopener noreferrer" className="text-light/80 hover:text-primary transition-colors">
+                                <a href="#" target="_blank" rel="noopener noreferrer" className="text-light/80 hover:text-primary transition-colors">
                                     <FaLinkedin size={20} />
                                 </a>
-                                <a href="https://www.instagram.com/aryacollege/" target="_blank" rel="noopener noreferrer" className="text-light/80 hover:text-primary transition-colors">
+                                <a href="#" target="_blank" rel="noopener noreferrer" className="text-light/80 hover:text-primary transition-colors">
                                     <FaInstagram size={20} />
                                 </a>
-                                <a href="https://www.youtube.com/user/AryaColleges" target="_blank" rel="noopener noreferrer" className="text-light/80 hover:text-primary transition-colors">
+                                <a href="#" target="_blank" rel="noopener noreferrer" className="text-light/80 hover:text-primary transition-colors">
                                     <FaYoutube size={20} />
                                 </a>
                             </div>
@@ -46,7 +45,7 @@ const Footer = () => {
                         <ul className="space-y-3">
                             <li>
                                 <Link href="/about/utb" className="text-light/80 hover:text-primary transition-colors block">
-                                    Arya College, Jaipur
+                                    IILM University, Greater Noida
                                 </Link>
                             </li>
                             <li>
@@ -71,12 +70,7 @@ const Footer = () => {
                         <ul className="space-y-3">
                             <li>
                                 <Link href="/upload-paper" className="text-light/80 hover:text-primary transition-colors block">
-                                    Upload Paper
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/registration" className="text-light/80 hover:text-primary transition-colors block">
-                                    Registration
+                                    Upload Paper/Registeration
                                 </Link>
                             </li>
                             <li>
@@ -100,15 +94,16 @@ const Footer = () => {
                         <h3 className="text-xl font-bold text-white">Conference Venue</h3>
                         <div className="aspect-w-16 aspect-h-9 w-full">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d56864.16959199051!2d75.893566!3d27.029831!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396daf9e6f4d2f3b%3A0x5b28af6fe5c60627!2sArya%20College%20of%20Engineering%20%26%20IT!5e0!3m2!1sen!2sin!4v1752660851935!5m2!1sen!2sin"
-                                width="100%"
-                                height="200"
-                                style={{ border: 0 }}
-                                allowFullScreen=""
-                                loading="lazy"
-                                referrerPolicy="no-referrer-when-downgrade"
-                                className="rounded-lg shadow-lg"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.6370219293717!2d77.4887393758811!3d28.460356391877994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cc1e13dcbf0eb%3A0xfcf1c4d9749a78b4!2sIILM%20University%2C%20Greater%20Noida!5e0!3m2!1sen!2sin!4v1761980394948!5m2!1sen!2sin"
+                            width="100%" 
+                            height="200" 
+                            style={{ border: 0 }} 
+                            allowFullScreen="" 
+                            loading="lazy" 
+                            referrerPolicy="no-referrer-when-downgrade"
+                            className="rounded-lg shadow-lg"
                             ></iframe>
+
                         </div>
                     </div>
                 </div>

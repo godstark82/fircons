@@ -15,11 +15,6 @@ export default function Hero() {
                         </span>
                     </div>
                     <br />
-                    <div className="mt-1">
-                        <span className="text-base md:text-lg lg:text-2xl text-primary font-semibold tracking-wide text-center block">
-                            (Special session on Sciences)
-                        </span>
-                    </div>
                 </div>
                 <div className="flex flex-col md:flex-row justify-between items-center gap-4 mt-6">
                     <div className="text-center text-white w-full md:w-auto">

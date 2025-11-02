@@ -8,19 +8,21 @@ const Header = () => {
     const links = {
         "/": "HOME",
         "ABOUT": {
-            "About College": 'About College',
+            "About College": 'About University',
+            "About School": 'About School',
             'Important Dates': 'Important Dates',
             'Programme': 'Programme',
             'Accommodation Options': 'Accommodation Options'
         },
         "COMMITTEES": {
             "Conference Chairs": "Conference Chairs",
-            "Organising Committee": "Organising Committee",
-            "Technical Board": "Technical Advisory Board",
+            // "Organising Committee": "Organising Committee",
+            "Technical Board": "Advisory Board",
+            "Other Committees": "Other Committees"
             // "Other Committees": "Other Committees",
         },
-        "REGISTRATION": "REGISTRATION/PAYMENT",
-        "UPLOAD PAPER": "UPLOAD PAPER",
+        // "REGISTRATION": "REGISTRATION/PAYMENT",
+        "UPLOAD PAPER": "REGISTRATION",
         "DOWNLOADS": "DOWNLOADS",
         "CONTACT US": "CONTACT US"
     }
@@ -79,7 +81,7 @@ const Header = () => {
                 <nav className="flex justify-between items-center">
                     <div className="text-2xl font-bold text-black">
                         <Link href="/">
-                            <img src="/images/Logo.svg" alt="Arya Logo" className="h-12" />
+                            <p>IC-AMESF 2025</p>
                         </Link>
                     </div>
                     <div className="hidden md:flex space-x-6">

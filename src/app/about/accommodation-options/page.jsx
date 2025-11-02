@@ -1,97 +1,102 @@
 import React from "react";
+import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card"; // shadcn card
+import { Button } from "@/components/ui/button"; // shadcn button for links
 import AboutHeader from "../../../components/common/AboutHeader";
 
 const hotels = [
-    {
-        name: "Hotel Raddison Blu, Greater Noida",
-        image: "/images/hotels/intercontinental.jpg",
-        link: "https://www.ihg.com/intercontinental/hotels/gb/en/manama/bahha/hoteldetail",
-        note: "*Select <b>University of Technology Bahra*</b> as Rate Reference.",
-    },
-    {
-        name: "Hotel Ginger, Greater Noida",
-        image: "/images/hotels/downtown.jpg",
-        link: "https://eur06.safelinks.protection.outlook.com/?url=http%3A%2F%2Froho.it%2Fbgmg&data=05%7C02%7Ccrbansolay%40utb.edu.bh%7Ccfa6045b6ccb425e426e08ddabdfcfc4%7Cc599d08d7ffd46c98e6ccc8b13dbba77%7C0%7C0%7C638855699924365403%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=qiBIKXnECK6lFPOIUs5Uap3y7%2BmHuA%2FUiRO1tn3Xm4Y%3D&reserved=0",
-        note: "*Use <b>ROSIDT</b> as the Booking Code"
-    },
-    {
-        name: "Hotel La Seasons, Greater Noida",
-        image: "/images/hotels/ibis.jpg",
-        link: "https://all.accor.com/hotel/6702/index.en.shtml",
-        note: "*Prior to booking, email <b><a href='mailto:Vanessa.vaquilar@accor.com'>Vanessa.vaquilar@accor.com</a></b> or <b><a href='https://wa.me/97335358850'>WhatsApp +973 35358850</a></b>",
-    },
-    {
-        name: "Udman Hotel, Greater Noida",
-        image: null,
-        link: "http://www.westincitycentrebahrain.com/",
-        note: ""
-    },
-    {
-        name: "Expo Inn, Greater Noida",
-        image: null,
-        link: "http://www.lemeridienbahraincitycentre.com/",
-        note: "",
-    },
-    {
-        name: "IIT Roorkee Guest House, Greater Noida",
-        image: null,
-        link: "http://www.lemeridienbahraincitycentre.com/",
-        note: "",
-    },
+  {
+    name: "Hotel Raddison Blu, Greater Noida",
+    link: "https://www.ihg.com/intercontinental/hotels/gb/en/manama/bahha/hoteldetail",
+    note: "*Select <b>University of Technology Bahra*</b> as Rate Reference.",
+  },
+  {
+    name: "Hotel Ginger, Greater Noida",
+    link: "https://eur06.safelinks.protection.outlook.com/?url=http%3A%2F%2Froho.it%2Fbgmg&data=05%7C02%7Ccrbansolay%40utb.edu.bh%7Ccfa6045b6ccb425e426e08ddabdfcfc4%7Cc599d08d7ffd46c98e6ccc8b13dbba77%7C0%7C0%7C638855699924365403%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=qiBIKXnECK6lFPOIUs5Uap3y7%2BmHuA%2FUiRO1tn3Xm4Y%3D&reserved=0",
+    note: "*Use <b>ROSIDT</b> as the Booking Code",
+  },
+  {
+    name: "Hotel La Seasons, Greater Noida",
+    link: "https://all.accor.com/hotel/6702/index.en.shtml",
+    note: "*Prior to booking, email <b><a href='mailto:Vanessa.vaquilar@accor.com'>Vanessa.vaquilar@accor.com</a></b> or <b><a href='https://wa.me/97335358850'>WhatsApp +973 35358850</a></b>",
+  },
+  {
+    name: "Udman Hotel, Greater Noida",
+    link: "http://www.westincitycentrebahrain.com/",
+    note: "",
+  },
+  {
+    name: "Expo Inn, Greater Noida",
+    link: "http://www.lemeridienbahraincitycentre.com/",
+    note: "",
+  },
+  {
+    name: "IIT Roorkee Guest House, Greater Noida",
+    link: "http://www.lemeridienbahraincitycentre.com/",
+    note: "",
+  },
 ];
 
 export default function AccommodationOptionsPage() {
-    return (
-        <div className="min-h-screen bg-white">
-            <AboutHeader
-                title="Accommodation Options"
-                date="November 6-7, 2025"
-                image="/images/simdte-white-lg.png"
-                overlayColor="#1a1a2e"
-                bgImage="/images/utb-images/gallery/gallery-2.jpg"
-                dividerColor="primary"
-            />
-            <div className="max-w-6xl mx-auto px-4 py-12">
-                <div className="mb-8 text-lg text-gray-900">
-                    <p className="mb-4">
-                        We are pleased to offer our accommodation options for delegates attending <b>INTERNATIONAL CONFERENCE ON ADVANCED MATERIALS & ENGINEERING FOR SUSTAINABLE FUTURE (IC-AMESF 2025)</b>
-                    </p>
-                    <p className="mb-4">
-                        To ensure a comfortable and convenient stay, IILM University, Greater Noida has partnered with some hotels located within close proximity to the conference venue and IILM University, Greater Noida. These hotels offer a range of amenities and price points to suit various preferences and budgets.
-                    </p>
-                    <ul className="list-disc font-bold ml-8 mb-4">
-                        <li>Hotels with exclusive rates for IC-AMESF 2025 participants</li>
-                        <li>Walking distance or short drive to the conference venue</li>
-                        <li>Options ranging from budget to premium accommodation</li>
-                    </ul>
-                    <p>
-                        For booking links, rates, and more information, please see the list below.
-                    </p>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                    {hotels.map((hotel, idx) => (
-                        <div key={idx} className="flex flex-col items-start bg-white p-4">
-                            {/* <img src={hotel.image} alt={hotel.name} className="w-full h-48 object-cover rounded mb-4" /> */}
-                            <a
-                                href={hotel.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="bg-primary text-white px-4 py-2 rounded font-semibold text-lg mb-2 flex items-center gap-2 hover:bg-primary-dark transition"
-                            >
-                                {hotel.name} <span aria-hidden>🔗</span>
-                            </a>
-                            {/* {hotel.note && (
-                                <div className="text-xs text-gray-700 mt-2" dangerouslySetInnerHTML={{ __html: hotel.note }} />
-                            )} */}
-                        </div>
-                    ))}
-                </div>
-                <p>
-                    <b>Transportation Detail: </b>
-                    IILM University, Greater Noida is well connected to Delhi, Ghaziabad, Meerut, Agra by highways. You can reach to us by metro (Knowledge Park 02 Metro Station, Aqua Line), bus, cab etc.
-
-                </p>
-            </div>
+  return (
+    <div className="min-h-screen bg-white">
+      <AboutHeader
+        title="Accommodation Options"
+        date="November 6-7, 2025"
+        image="/images/simdte-white-lg.png"
+        overlayColor="#1a1a2e"
+        bgImage="/images/utb-images/gallery/gallery-2.jpg"
+        dividerColor="primary"
+      />
+      <div className="max-w-6xl mx-auto px-4 py-12">
+        <div className="mb-8 text-lg text-gray-900">
+          <p className="mb-4">
+            We are pleased to offer our accommodation options for delegates attending <b>INTERNATIONAL CONFERENCE ON ADVANCED MATERIALS & ENGINEERING FOR SUSTAINABLE FUTURE (IC-AMESF 2025)</b>
+          </p>
+          <p className="mb-4">
+            To ensure a comfortable and convenient stay, IILM University, Greater Noida has partnered with some hotels located within close proximity to the conference venue and IILM University, Greater Noida. These hotels offer a range of amenities and price points to suit various preferences and budgets.
+          </p>
+          <ul className="list-disc font-semibold ml-8 mb-4">
+            <li>Hotels with exclusive rates for IC-AMESF 2025 participants</li>
+            <li>Walking distance or short drive to the conference venue</li>
+            <li>Options ranging from budget to premium accommodation</li>
+          </ul>
+          <p>
+            For booking links, rates, and more information, please see the list below.
+          </p>
         </div>
-    );
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+          {hotels.map((hotel, idx) => (
+            <Card key={idx} className="flex flex-col justify-between h-full">
+              <CardContent>
+                <CardTitle className="text-lg font-bold">{hotel.name}</CardTitle>
+                {hotel.note && (
+                  <CardDescription
+                    className="mt-2 text-sm text-gray-700"
+                    dangerouslySetInnerHTML={{ __html: hotel.note }}
+                  />
+                )}
+              </CardContent>
+              <div className="p-4 pt-0">
+                <Button
+                  as="a"
+                  href={hotel.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="primary"
+                  className="w-full"
+                >
+                  View Booking Link
+                </Button>
+              </div>
+            </Card>
+          ))}
+        </div>
+
+        <p className="text-gray-800">
+          <b>Transportation Detail:</b> IILM University, Greater Noida is well connected to Delhi, Ghaziabad, Meerut, Agra by highways. You can reach us by metro (Knowledge Park 02 Metro Station, Aqua Line), bus, cab etc.
+        </p>
+      </div>
+    </div>
+  );
 }

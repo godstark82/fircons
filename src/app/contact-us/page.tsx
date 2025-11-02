@@ -1,6 +1,7 @@
 'use client'
 import React from "react";
 import AboutHeader from "../../components/common/AboutHeader";
+import { COLLAGE_ADDRESS, CONFERENCE_FULL_TITLE, SUPPORT_EMAIL, SUPPORT_PHONE } from "@/lib/constants";
 
 export default function ContactUsPage() {
     return (
@@ -8,7 +9,7 @@ export default function ContactUsPage() {
             <AboutHeader
                 title="Contact Us"
                 date="5 - 7 September"
-                image="/images/simdte-white-lg.png"
+                // bgImage={"/images/simdte-white-lg.png"}
                 overlayColor="#1a1a2e"
                 bgImage="/images/utb-images/gallery/gallery-2.jpg"
                 dividerColor="primary"
@@ -18,17 +19,16 @@ export default function ContactUsPage() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                     <div className="bg-gray-100 rounded-lg p-6 shadow flex flex-col gap-2">
                         <div className="font-bold text-lg flex items-center gap-2">📍 Address</div>
-                        <div>(Arya 1st Old Campus, Estd Yr 2000)
-                        SP-42, RIICO Industrial Area, Kukas,Delhi Road, Near Hotel Le-Meridian, Jaipur, Rajasthan - 302028</div>
-                        <div>Conference Venue:<br />Arya College, Jaipur</div>
+                        <div>{COLLAGE_ADDRESS}</div>
+                        {/* <div>Conference Venue:<br />Arya College, Jaipur</div> */}
                     </div>
                     <div className="bg-gray-100 rounded-lg p-6 shadow flex flex-col gap-2">
                         <div className="font-bold text-lg flex items-center gap-2">💬 WhatsApp</div>
-                        <div><a href="https://wa.me/8209346745" target="_blank" rel="noopener noreferrer">+91 8209346745</a></div>
+                        <div><a href={`https://wa.me/${SUPPORT_PHONE}`} target="_blank" rel="noopener noreferrer">{SUPPORT_PHONE}</a></div>
                     </div>
                     <div className="bg-gray-100 rounded-lg p-6 shadow flex flex-col gap-2">
                         <div className="font-bold text-lg flex items-center gap-2">✉️ Email</div>
-                        <div><a href="mailto: submit@icostem.com "> submit@icostem.com </a></div>
+                        <div><a href={`mailto:${SUPPORT_EMAIL}`}> {SUPPORT_EMAIL} </a></div>
                     </div>
                 </div>
                 {/* Contact Form and Map */}
@@ -47,15 +47,14 @@ export default function ContactUsPage() {
                     {/* Google Map */}
                     <div className="flex-1 min-h-[300px]">
                         <iframe
-                            title="UTB Location"
-                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d56864.16959199051!2d75.893566!3d27.029831!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396daf9e6f4d2f3b%3A0x5b28af6fe5c60627!2sArya%20College%20of%20Engineering%20%26%20IT!5e0!3m2!1sen!2sin!4v1752660851935!5m2!1sen!2sin"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.6370219293717!2d77.4887393758811!3d28.460356391877994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cc1e13dcbf0eb%3A0xfcf1c4d9749a78b4!2sIILM%20University%2C%20Greater%20Noida!5e0!3m2!1sen!2sin!4v1761980394948!5m2!1sen!2sin"
                             width="100%"
                             height="350"
                             style={{ border: 0 }}
-                            allowFullScreen=""
+                            allowFullScreen={false}
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"
-                            className="rounded-lg w-full"
+                            className="rounded-lg shadow-lg"
                         ></iframe>
                     </div>
                 </div>

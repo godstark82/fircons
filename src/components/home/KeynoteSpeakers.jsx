@@ -1,142 +1,105 @@
 import SectionImageHeader from "../common/SectionImageHeader";
 
+const KEYNOTE_SPEAKERS = [
+    {
+        name: "Dr. L.P. Singh",
+        affiliation: "DG - NCCBM, Govt of India",
+        country: "India",
+        img: "", // No image provided for keynote speaker
+    },
+];
+
 const SPEAKERS = [
     {
-        name: "Dr. Jaya Sinha",
-        affiliation: "Engineering College, Greater Noida",
+        name: "Dr. Imran Ali",
+        affiliation: "Professor & Head, JMI New Delhi",
         country: "India",
-        img: "/images/speakers/jaya-sinha.webp",
+        img: "",
     },
     {
-        name: "Prof. Rakesh M Patel",
-        affiliation: "Gujrat college of arts and science, Ahmedabad",
-        country: "India",
-        img: "/images/speakers/rakesh-m-patel.jpg",
+        name: "Dr. Liliana Guran",
+        affiliation: "Babes-Bolyai University, Cluj-Napoca, Romania",
+        country: "Romania",
+        img: "/images/speakers/liliana.jpg",
     },
     {
-        name: "Prof Anna Dunay",
-        affiliation: "John Von Neumann University",
-        country: "Hungary",
-        img: "/images/speakers/prof-anna-dunay.jpeg",
-    },
-    {
-        name: "Prof Dorota Jelonek",
-        affiliation: "Czestochowa University of Technology",
+        name: "Dr. Dorota Jelonek",
+        affiliation: "Czestochowa University of Technology, Poland",
         country: "Poland",
         img: "/images/speakers/prof-dorota2.jpeg",
     },
     {
-        name: "Prof Magdalena Rzemieniak",
-        affiliation: "Lublin University of Technology",
-        country: "Poland",
-        img: "/images/speakers/prof-magdelena.jpeg",
-    },
-    {
-        name: "Dr. Andi Asrifan",
-        affiliation: "Assistant Professor Institution, Universitas Negeri Makassar",
-        country: "Indonesia",
-        img: "/images/speakers/andi.jpg",
-    },
-    {
-        name: "Prof. (Dr.) Prakash Kumar Jha",
-        affiliation: "Mississippi State University USA",
-        country: "India",
-        img: "/images/speakers/prakash-kumar-jha.jpg",
-    },
-    {
-        name: "Dr. Budesh Kanwer",
-        affiliation: "Professor & Head , Dept AI & DS Poornima Institute of Engineering & Technology",
-        country: "India",
-        img: "/images/speakers/budesh-kanwer.jpg",
-    },
-    {
-        name: "Abdul Wafi",
-        affiliation: "State Islamic University of Madura",
-        country: "Indonesia",
-        img: "/images/speakers/abdul-wafi.jpg",
-    },
-    {
-        name: "Dr. Indu sharma",
-        affiliation: "NIET, NIMS University, Jaipur",
-        country: "India",
-        img: "/images/speakers/dr-indu-sharma.jpg",
-    },
-    {
-        name: "Prof. (Dr.) Anirudh Gupta",
-        affiliation: "NIET, NIMS University, Jaipur",
-        country: "India",
-        img: "images/speakers/anirudh-gupta.webp",
-    },
-    // {
-    //     name: "Dr. Chetali Agrawal",
-    //     affiliation: "Mewar University, Chittorgarh",
-    //     country: "India",
-    //     img: "https://picsum.photos/200",
-    // },
-    {
-        name: "Prof. (Dr.) A. K. Saini",
-        affiliation: "ICFAI University Jaipur",
-        country: "India",
-        img: "images/speakers/ak-saini.jpg",
-    },
-    {
-        name: "Prof. (Dr.) Leszek Ziora",
-        affiliation: "Scientist at Czestochowa Technical University",
-        country: "Poland",
-        img: "images/speakers/prof-leszek-ziora.jpeg",
-    },
-    {
-        name: "Prof. (Dr.) Tomasz Turek",
-        affiliation: "Czestochowa University of Technology",
-        country: "Poland",
-        img: "/images/speakers/dr-tomasz-turek.jpg",
-    },
-    {
-        name: "Prof. (Dr.) Sonalika Singh",
-        affiliation: "NIMS University, Jaipur",
-        country: "India",
-        img: "/images/speakers/sonalika_singh.jpg",
-    },
-    {
-        name: "Prof. (Dr.) Monika Bota Felicia",
-        affiliation: "Babes-Bolyai University, Cluj-Napoca",
-        country: "Europe",
+        name: "Dr. Monika Bota",
+        affiliation: "Babes-Bolyai University, Cluj-Napoca, Romania",
+        country: "Romania",
         img: "/images/speakers/monalika_bota.jpg",
     },
     {
-        name: "Prof. (Dr.) Liliana Guran",
-        affiliation: " Babeș-Bolyai University, Cluj-Napoca",
-        country: "Europe",
-        img: "/images/speakers/liliana.jpg",
-    },
-    {
-        name: "Prof. (Dr.) Dalia Younis",
-        affiliation: "College of International Transport and Logistics Arab Academy",
-        country: "Egypt",
-        img: "/images/speakers/dalia.jpg",
-    },
-    {
-        name: "Dr Alok Bhargava",
-        affiliation: "Manipal University Jaipur, Rajasthan",
+        name: "Dr. Sameer Sapra",
+        affiliation: "IIT Delhi",
         country: "India",
-        img: "/images/speakers/alok.jpg",
+        img: "",
+    },
+    {
+        name: "Dr. Adarsh Kumar",
+        affiliation: "Director, Forensic Science Laboratory, Lucknow",
+        country: "India",
+        img: "",
+    },
+    {
+        name: "Dr. Millie Pant",
+        affiliation: "Professor & Head, Department of Applied Mathematics and Scientific Computing, IIT Roorkee",
+        country: "India",
+        img: "",
+    },
+    {
+        name: "Dr. S. Mahapatra",
+        affiliation: "Professor, GGSIP University, New Delhi",
+        country: "India",
+        img: "",
+    },
+    {
+        name: "Dr. Tokeer Ahmed",
+        affiliation: "Professor of Nano/Energy/Physical Chemistry, JMI, New Delhi",
+        country: "India",
+        img: "",
+    },
+    {
+        name: "Prof. Dinesh Mohan",
+        affiliation: "JNU, New Delhi",
+        country: "India",
+        img: "",
+    },
+    {
+        name: "Dr. Antony George",
+        affiliation: "Adjunct Professor, Friedrich Schiller University, Jena, Germany",
+        country: "Germany",
+        img: "",
+    },
+    {
+        name: "Dr. M.V.R Reddy",
+        affiliation: "Senior Researcher, Hydro-Québec, Canada",
+        country: "Canada",
+        img: "",
     },
 ];
 
 function SpeakerCard({ speaker }) {
     return (
-        <div className="bg-[#232335] rounded-md overflow-hidden shadow-md flex flex-col w-full max-w-[275px]">
-            <div className="h-[300px] overflow-hidden">
-                <img
-                    src={speaker.img}
-                    alt={speaker.name}
-                    className="w-full h-full object-cover "
-                />
-            </div>
-            <div className="bg-[#232335] text-white p-3">
+        <div className="bg-[#232335] rounded-md overflow-hidden shadow-md flex flex-col w-full max-w-[275px] p-4 text-white">
+            {/* {speaker.img ? (
+                <div className="h-[200px] overflow-hidden mb-4 rounded-md">
+                    <img
+                        src={speaker.img}
+                        alt={speaker.name}
+                        className="w-full h-full object-cover rounded-md"
+                    />
+                </div>
+            ) : null} */}
+            <div>
                 <div className="h-1.5 w-12 bg-primary my-1.5"></div>
                 <div className="font-semibold text-sm md:text-base leading-tight mb-1">{speaker.name}</div>
-                <div className="text-xs opacity-90 leading-tight whitespace-normal">{speaker.affiliation}</div>
+                <div className="text-xs opacity-90 leading-tight whitespace-normal mb-1">{speaker.affiliation}</div>
                 <div className="text-xs opacity-70 leading-tight whitespace-normal">{speaker.country}</div>
             </div>
         </div>
@@ -148,8 +111,16 @@ export default function KeynoteSpeakers() {
         <section className="bg-white">
             <SectionImageHeader title="Keynote Speakers" image="/images/speakers-bg.jpg" />
             <div className="container mx-auto px-4 py-8 md:py-12">
+                <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center text-[#232335]">Keynote Speakers</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 md:gap-8 justify-items-center mb-12">
+                    {KEYNOTE_SPEAKERS.map((speaker) => (
+                        <SpeakerCard key={speaker.name} speaker={speaker} />
+                    ))}
+                </div>
+
+                <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center text-[#232335]">Speakers</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 md:gap-8 justify-items-center">
-                    {SPEAKERS.map((speaker, idx) => (
+                    {SPEAKERS.map((speaker) => (
                         <SpeakerCard key={speaker.name} speaker={speaker} />
                     ))}
                 </div>

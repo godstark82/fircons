@@ -4,61 +4,82 @@ import CommitteeMemberGrid from "../../../components/common/CommitteeMemberGrid"
 
 const chiefPatron = [
     {
-        name: "Er. Anurag Agarwal",
+        name: "Vice Chancellor",
         role: "Chief Patron",
-        affiliation: "Chairman, Arya College of Engg. & I.T., Jaipur"
+        affiliation: "", // You can add actual Vice Chancellor name & details if available
     }
 ];
 
-const chairman = [
+const conferenceChair = [
     {
-        name: "Dr. Akhil Pandey",
-        role: "Chairman",
-        affiliation: "Director, AIC, Arya College of Engg. & I.T., Jaipur"
-    }
-];
-
-const advisors = [
-    {
-        name: "Dr. Arun Kumar Arya",
-        role: "Advisor",
-        affiliation: "Principal, Arya College of Engg. & I.T., Jaipur"
-    },
-    {
-        name: "Dr. Akhil Pandey",
-        role: "Chairman",
-        affiliation: "Director, AIC, Arya College of Engg. & I.T., Jaipur"
+        name: "Prof. Munish Sabharwal",
+        role: "Conference Chair",
+        affiliation: ""
     }
 ];
 
 const conveners = [
     {
-        name: "Dr. Krishan Kant Lavania",
-        role: "Convener",
-        affiliation: "Professor, Arya College of Engg. & I.T., Jaipur"
+        name: "Prof. Narendra Kumar",
+        role: "Co Convener",
+        affiliation: ""
     },
-    {
-        name: "Dr. Vishal Shrivastava",
-        role: "Co-Convener",
-        affiliation: "Arya College of Engg. & I.T., Jaipur"
-    },
-    {
-        name: "Mr. Rahul Sharma",
-        role: "Co-Convener",
-        affiliation: "Arya College of Engg. & I.T., Jaipur"
-    },
-    {
-        name: "Dr. Ashok Kumar Kajla",
-        role: "Advisor",
-        affiliation: "Professor, Arya College of Engg. & I.T., Jaipur"
-    },
+    // Existing conveners from your original code can optionally remain here if needed
 ];
 
-const organizingSecretary = [
+const organizingSecretaries = [
     {
-        name: "Dr. Vibhakar Pathak",
-        role: "Organizing Secretary",
-        affiliation: "Professor, Arya College of Engg. & I.T., Jaipur"
+        name: "Dr. Nidhi Puri",
+        role: "Organising Secretary",
+        affiliation: ""
+    },
+    {
+        name: "Dr. Arpit Varshney",
+        role: "Organising Secretary",
+        affiliation: ""
+    },
+    {
+        name: "Dr. KM Bala",
+        role: "Organising Secretary",
+        affiliation: ""
+    }
+];
+
+const organizingCommittee = [
+    {
+        name: "Dr. Rajeev Kumar",
+        role: "Organising Committee",
+        affiliation: ""
+    },
+    {
+        name: "Dr. Priyanka Bhatnagar",
+        role: "Organising Committee",
+        affiliation: ""
+    },
+    {
+        name: "Dr. Vanya",
+        role: "Organising Committee",
+        affiliation: ""
+    },
+    {
+        name: "Dr. Bharti",
+        role: "Organising Committee",
+        affiliation: ""
+    },
+    {
+        name: "Dr. Pankaj",
+        role: "Organising Committee",
+        affiliation: ""
+    },
+    {
+        name: "Dr. Lalit",
+        role: "Organising Committee",
+        affiliation: ""
+    },
+    {
+        name: "Dr. Arpit Varshney",
+        role: "Organising Committee",
+        affiliation: ""
     }
 ];
 
@@ -66,7 +87,7 @@ export default function ConferenceChairPage() {
     return (
         <div className="min-h-screen bg-white">
             <AboutHeader
-                title="Conference Chairs"
+                title="Conference Chairs & Committee"
                 date="5 - 7 September"
                 image="/images/simdte-white-lg.png"
                 overlayColor="#1a1a2e"
@@ -74,20 +95,15 @@ export default function ConferenceChairPage() {
                 dividerColor="primary"
             />
             <section className="max-w-6xl mx-auto px-4 py-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-8">Chief Patron</h2>
+
+                <h2 className="text-3xl md:text-4xl font-bold mb-8">Chief Patrons</h2>
                 <CommitteeMemberGrid members={chiefPatron.map(m => ({
                     name: m.name,
                     role: `${m.role}${m.affiliation ? `, ${m.affiliation}` : ""}`
                 }))} />
 
-                {/* <h2 className="text-3xl md:text-4xl font-bold mb-8 mt-16">Chairman</h2>
-                <CommitteeMemberGrid members={chairman.map(m => ({
-                    name: m.name,
-                    role: `${m.role}${m.affiliation ? `, ${m.affiliation}` : ""}`
-                }))} /> */}
-
-                <h2 className="text-3xl md:text-4xl font-bold mb-8 mt-16">Advisors</h2>
-                <CommitteeMemberGrid members={advisors.map(m => ({
+                <h2 className="text-3xl md:text-4xl font-bold mb-8 mt-16">Conference Chair</h2>
+                <CommitteeMemberGrid members={conferenceChair.map(m => ({
                     name: m.name,
                     role: `${m.role}${m.affiliation ? `, ${m.affiliation}` : ""}`
                 }))} />
@@ -98,11 +114,18 @@ export default function ConferenceChairPage() {
                     role: `${m.role}${m.affiliation ? `, ${m.affiliation}` : ""}`
                 }))} />
 
-                <h2 className="text-3xl md:text-4xl font-bold mb-8 mt-16">Organizing Secretary</h2>
-                <CommitteeMemberGrid members={organizingSecretary.map(m => ({
+                <h2 className="text-3xl md:text-4xl font-bold mb-8 mt-16">Organising Secretaries</h2>
+                <CommitteeMemberGrid members={organizingSecretaries.map(m => ({
                     name: m.name,
                     role: `${m.role}${m.affiliation ? `, ${m.affiliation}` : ""}`
                 }))} />
+
+                <h2 className="text-3xl md:text-4xl font-bold mb-8 mt-16">Organising Committee</h2>
+                <CommitteeMemberGrid members={organizingCommittee.map(m => ({
+                    name: m.name,
+                    role: `${m.role}${m.affiliation ? `, ${m.affiliation}` : ""}`
+                }))} />
+
             </section>
         </div>
     );

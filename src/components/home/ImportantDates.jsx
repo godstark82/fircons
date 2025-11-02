@@ -2,10 +2,11 @@ import SectionHeader from "../common/SectionHeader";
 import SectionImageHeader from "../common/SectionImageHeader";
 
 const DATES = [
-    { day: "2", month: "September", desc: "Paper Submission Deadline" },
-    { day: "4", month: "September", desc: "Notification of Acceptance" },
-    { day: "5", month: "September", desc: "Registration Deadline" },
-    { day: "6-7", month: "September", desc: "Conference Dates" },
+    { day: "15", month: "December", desc: "Paper Submission Deadline" },
+    { day: "20", month: "December", desc: "Notification of Acceptance" },
+    { day: "31", month: "December", desc: "Registration Deadline" },
+    { day: "11", month: "January", desc: "Submission of full Paper" },
+    // { day: "6-7", month: "September", desc: "Conference Dates" },
 ];
 
 export default function ImportantDates() {
@@ -25,7 +26,7 @@ export default function ImportantDates() {
                                     <div className="absolute left-0 bottom-0 w-full h-1 bg-white" style={{ transform: 'translateY(50%)' }}></div>
                                 </div>
                                 <div className="h-2 w-full max-w-[200px] bg-primary"></div>
-                                <div className="bg-white w-full max-w-[200px] text-center px-2 pt-6 pb-2 text-black font-medium min-h-[56px] shadow-md">
+                                <div className="bg-white w-full max-w-[200px] text-center px-2 pt-6 pb-2 text-black font-medium min-h-14 shadow-md">
                                     <p className="text-sm md:text-base">{date.desc}</p>
                                 </div>
                             </div>

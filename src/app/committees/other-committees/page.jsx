@@ -12,32 +12,140 @@ const CommitteeMemberGrid = ({ members }) => (
     </div>
 );
 
-const registrationCommittee = [
-    { name: "Ms Mariam Alsalman", role: "CAFS, UTB" },
-    { name: "Ms Esra Abdulaziz Ahmed", role: "CAFS, UTB" },
-    { name: "Ms Mona Mansoor Ahmed Hammad", role: "CAFS, UTB" },
-    { name: "Dr Muhammad Saad", role: "CAFS, UTB" },
-    { name: "Ms Noor Abdulla Alawadhi", role: "CAFS, UTB" },
+const scientificCommittee = [
+    { name: "Dr. Pankaj", role: "IILM University" },
+    { name: "Dr. A.K. Jain", role: "IILM University" },
+    { name: "Dr. Chhavi Pahawa", role: "IILM University" },
+    { name: "Dr. Pawan Soni", role: "IILM University" },
+    { name: "Dr. Rajeev Kumar", role: "IILM University" },
+    { name: "Dr. Anupama Srivastava", role: "IILM University" },
+    { name: "Dr. Avdhesh Gupta", role: "IILM University" },
+    { name: "Dr. K.M. Bala", role: "IILM University" },
+    { name: "Dr. Umesh Sharma", role: "GLA University, Mathura" },
+    { name: "Dr. Sansar Singh", role: "GL Bajaj, Gr. Noida" },
+    { name: "Dr. Risha Jashmin Nathan", role: "ARU, UK" },
+    { name: "Dr. Tokeer Ahmed", role: "JMI, New Delhi" },
+    { name: "Dr. Kapil Dev", role: "JD, FSL, Ghaziabad" },
+    { name: "Dr. Antony George", role: "Friedrich Schiller University, Jena, Germany" },
+    { name: "Dr. Ali Raza", role: "BOWIE University, USA" },
+    { name: "Dr. Manoj Kumar", role: "IILM University" },
+    { name: "Dr. Vinti Dhaka", role: "IILM University" },
+    { name: "Dr. Sanjoy", role: "IILM University" },
+    { name: "Dr. Shikha", role: "IILM University" },
+    { name: "Dr. Aastha", role: "IILM University" },
+    { name: "Dr. Sanjeev Verma", role: "IILM University" },
+    { name: "Dr. Vipul Kumar", role: "IILM University" },
+    { name: "Dr. Manish Kumar", role: "ARSD College, DU" },
+    { name: "Prof. (Dr.) Shubham Tiwari", role: "ABES, Ghaziabad" },
+    { name: "Prof. (Dr.) Kedar Singh", role: "JNU" },
+    { name: "Prof. (Dr.) OP Thakur", role: "NSUT, Delhi" },
+    { name: "Prof. (Dr.) Geeta Singh", role: "DTU" },
+    { name: "Dr. Nupur Mathur", role: "Teri" },
+    { name: "Dr. Khushboo Gupta", role: "IILM University" },
+    { name: "Dr. Mukesh Kumar", role: "IILM University" },
+    { name: "Dr. Ashutosh Kumar", role: "TIET" },
+    { name: "Dr. Pragya Ranjan Rout", role: "NIT Jalandhar" },
+    { name: "Dr. Bikash Koli Dey", role: "SRMU, Chennai" },
+    { name: "Dr. Kuldeep Malik", role: "IILM University" },
+    { name: "Dr. Selva Bharti", role: "SRMU, Chennai" },
+    { name: "Dr. Roopam Singh", role: "VIT, Chennai" },
+    { name: "Dr. Roma Chandra", role: "IILM University" },
+    { name: "Dr. Garima Gupta", role: "IILM University" },
+    { name: "Dr. Muneeb Malik", role: "IILM University" },
+    { name: "Dr. Veena", role: "IILM University" },
+    { name: "Dr. Monu", role: "IILM University" },
+    { name: "Dr. Pankaj Verma", role: "IILM University" },
 ];
 
-const prMarketingCommittee = [
-    { name: "Mr Amer Bittar", role: "MarCom, UTB" },
-    { name: "Dr Caren Bansolay", role: "CGE, UTB" },
-    { name: "Dr Stephen Guansi", role: "CAFS, UTB" },
-    { name: "Dr Saubhagyalaxmi Misra", role: "CAFS, UTB" },
-    { name: "Mr Husain Mohamed Al Karrani", role: "CAFS, UTB" },
-    { name: "Dr Redha Shaker", role: "ACDC, UTB" },
+const technicalSessionCommittee = [
+    { name: "Dr. Rajeev Kumar", role: "IILM University" },
+    { name: "Dr. Vanya Arun", role: "IILM University" },
+    { name: "Dr. Himanshu Sharma", role: "IILM University" },
+    { name: "Dr. Pankaj", role: "IILM University" },
+    { name: "Dr. Chavi Pahwa", role: "IILM University" },
+    { name: "Dr. Bharti Choudhary", role: "IILM University" },
+    { name: "Prof. (Dr.) Avdhesh Kr. Gupta", role: "IILM University" },
+    { name: "Dr. Ankita Awasthi", role: "IILM University" },
+    { name: "Dr. Meenu", role: "IILM University" },
+    { name: "Dr. Umesh Chandra", role: "IILM University" },
 ];
 
-const itSupportCommittee = [
-    { name: "Mr Rutherford Antipolo", role: "ITC, UTB" },
-    { name: "Mr Husain Jaffar", role: "ITC, UTB" },
+const foodCommittee = [
+    { name: "Dr. Priyanka Bhatnagar", role: "IILM University" },
+    { name: "Dr. Shivani Saini", role: "IILM University" },
+    { name: "Dr. Nidhi Singh", role: "IILM University" },
+    { name: "Dr. Bisma", role: "IILM University" },
+    { name: "Dr. Duraivadivel", role: "IILM University" },
 ];
 
-const financialSupportCommittee = [
-    { name: "Mr Elson Samuel", role: "Accounts, UTB" },
-    { name: "Mr Aditya Paresh Kothari", role: "Accounts, UTB" },
-    { name: "Ms Rosemarie Rosales", role: "Procurement, UTB" }
+const sponsorshipCommittee = [
+    { name: "Dr. Kshama Pandey", role: "IILM University" },
+    { name: "Dr. Arpit Varshney", role: "IILM University" },
+    { name: "Dr. Rakhi Trivedi", role: "IILM University" },
+    { name: "Dr. Dimpy Chauhan", role: "IILM University" },
+    { name: "Dr. Garima", role: "IILM University" },
+    { name: "Dr. Sameer", role: "IILM University" },
+    { name: "Dr. Pankaj Sharma", role: "IILM University" },
+];
+
+const hospitalityCommittee = [
+    { name: "Dr. Vibhav Narayan Singh", role: "IILM University" },
+    { name: "Dr. Arpit Varshney", role: "IILM University" },
+    { name: "Mr. Satish Jha", role: "IILM University" },
+    { name: "Mr. Mayank", role: "IILM University" },
+];
+
+const registrationHelpDeskCommittee = [
+    { name: "Dr. Ashlesha Bhardwaj", role: "IILM University" },
+    { name: "Dr. Sunil Bhardwaj", role: "IILM University" },
+    { name: "Dr. Geetika", role: "IILM University" },
+    { name: "Dr. Shradha Sharma", role: "IILM University" },
+    { name: "Dr. Rakhi Dwivedi", role: "IILM University" },
+    { name: "Dr. Manoj Kumar", role: "IILM University" },
+    { name: "Dr. Nidhi Rai", role: "IILM University" },
+    { name: "Dr. Kushal Mazumder", role: "IILM University" },
+    { name: "Dr. Rahul Singh", role: "IILM University" },
+    { name: "Dr. Saurabh", role: "IILM University" },
+    { name: "Dr. Kuldeep Malik", role: "IILM University" },
+    { name: "Dr. Aruna", role: "IILM University" },
+    { name: "Dr. Roma Pandey", role: "IILM University" },
+];
+
+const printingDesigningCommittee = [
+    { name: "Mr. Aditya Saini", role: "IILM University" },
+    { name: "Dr. Kriti Nagarkoti", role: "IILM University" },
+    { name: "Dr. Naseem", role: "IILM University" },
+    { name: "Dr. K.M. Bala", role: "IILM University" },
+    { name: "Dr. Gaurav Upadhyay", role: "IILM University" },
+    { name: "Dr. Priti", role: "IILM University" },
+    { name: "Dr. Jayanta Biswas", role: "IILM University" },
+    { name: "Dr. Monu", role: "IILM University" },
+];
+
+const publicitySocialMediaCommittee = [
+    { name: "Dr. Vinti Dhaka", role: "IILM University" },
+    { name: "Dr. Kuldeep Malik", role: "IILM University" },
+    { name: "Dr. Prince Solanki", role: "IILM University" },
+    { name: "Dr. Heena Khera", role: "IILM University" },
+    { name: "Dr. Rahul Singh", role: "IILM University" },
+    { name: "Dr. Aastha", role: "IILM University" },
+    { name: "Dr. Saurabh", role: "IILM University" },
+    { name: "Dr. Neha", role: "IILM University" },
+    { name: "Ms. Smriti Sethi", role: "IILM University" },
+];
+
+const culturalCommittee = [
+    { name: "Dr. Khushboo Gupta", role: "IILM University" },
+    { name: "Dr. Pawan Soni", role: "IILM University" },
+    { name: "Dr. Mukesh", role: "IILM University" },
+    { name: "Dr. Surbhi Rani", role: "IILM University" },
+    { name: "Dr. Akansha", role: "IILM University" },
+    { name: "Ms. Priyanka Singh", role: "IILM University" },
+];
+
+const publicationCommittee = [
+    { name: "Prof. Narendra Kumar", role: "" },
+    { name: "Dr. Rajeev Kumar", role: "" },
 ];
 
 const Section = ({ title, members }) => (
@@ -60,10 +168,16 @@ export default function OtherCommitteesPage() {
                 dividerColor="primary"
             />
             <div className="max-w-7xl mx-auto px-4 py-12">
-                <Section title="Registration Committee" members={registrationCommittee} />
-                <Section title="PR & Marketing Committee" members={prMarketingCommittee} />
-                <Section title="IT Support Committee" members={itSupportCommittee} />
-                <Section title="Financial Support & Logistics Committee" members={financialSupportCommittee} />
+                <Section title="Scientific Committee" members={scientificCommittee} />
+                <Section title="Technical Session Committee" members={technicalSessionCommittee} />
+                <Section title="Food Committee" members={foodCommittee} />
+                <Section title="Sponsorship Committee" members={sponsorshipCommittee} />
+                <Section title="Transportation, Accommodation & Hospitality Committee" members={hospitalityCommittee} />
+                <Section title="Registration Committee & Help Desk" members={registrationHelpDeskCommittee} />
+                <Section title="Printing and Designing Committee" members={printingDesigningCommittee} />
+                <Section title="Publicity & Social Media Promotion" members={publicitySocialMediaCommittee} />
+                <Section title="Cultural Committee" members={culturalCommittee} />
+                <Section title="Publication Committee" members={publicationCommittee} />
             </div>
         </div>
     );

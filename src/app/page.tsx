@@ -6,6 +6,7 @@ import Tracks from "../components/home/Tracks";
 import ImportantDates from "../components/home/ImportantDates";
 import MinisterSection from "../components/home/MinisterSection";
 import Patners from "../components/home/Patners";
+import Faq from "@/components/home/Faq";
 
 const Home = () => {
     return (
@@ -16,8 +17,10 @@ const Home = () => {
             <Tracks />
             <ImportantDates />
             <KeynoteSpeakers />
-            <Patners />
+            {/* <Patners /> */}
             <Highlights />
+            <Faq />
+
         </>
     )
 }
