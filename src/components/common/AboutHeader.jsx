@@ -3,6 +3,7 @@ import React from "react";
 
 export default function AboutHeader({
     title = 'University Profile',
+    date = "",
     overlayColor = '#d0224a',
     bgImage = '/images/utb-images/gallery/gallery-2.jpg',
     dividerColor = 'white'
