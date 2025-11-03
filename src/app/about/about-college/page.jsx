@@ -9,7 +9,7 @@ export default function AboutUniversityPage() {
                 <SectionHeader title="IILM University Greater, Noida" />
                 <div className="flex flex-col md:flex-row gap-12 items-start">
                     {/* Left: Text Content */}
-                    <div className="md:w-2/3 text-gray-900 space-y-6 text-lg">
+                    <div className="md:w-2/3 text-gray-900 space-y-6 text-lg text-justify">
                         <p>
                             IILM University, Greater Noida, established under the Uttar Pradesh Private University (Amendment) Act 2022, is a young and dynamic institution dedicated to fostering academic excellence, innovation, and holistic development. Nestled in the vibrant educational hub of Greater Noida, the university is strategically located to provide students with access to a global learning environment and opportunities for industry exposure. With its foundation rooted in the principles of inclusivity, integrity, and quality, IILM University is committed to creating a transformative educational experience for all its stakeholders.<br /><br />
 

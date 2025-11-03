@@ -6,12 +6,13 @@ const chiefPatron = [
     {
         name: "Vice Chancellor",
         role: "Chief Patron",
-        affiliation: "", // You can add actual Vice Chancellor name & details if available
+        affiliation: "",
     }
 ];
 
 const conferenceChair = [
     {
+        image: "https://iilm.ac.in/uploads/all/700/conversions/Munish-Sabharwal-full.webp",
         name: "Prof. Munish Sabharwal",
         role: "Conference Chair",
         affiliation: ""
@@ -20,6 +21,7 @@ const conferenceChair = [
 
 const conveners = [
     {
+        image: "https://iilm.ac.in/uploads/all/422/conversions/AK-JAIN-350x240-full.webp",
         name: "Prof. A.K. Jain",
         role:"Convener",
     },
@@ -102,19 +104,22 @@ export default function ConferenceChairPage() {
                 <h2 className="text-3xl md:text-4xl font-bold mb-8">Chief Patrons</h2>
                 <CommitteeMemberGrid members={chiefPatron.map(m => ({
                     name: m.name,
-                    role: `${m.role}${m.affiliation ? `, ${m.affiliation}` : ""}`
+                    role: `${m.role}${m.affiliation ? `, ${m.affiliation}` : ""}`,
+                    image: m.image
                 }))} />
 
                 <h2 className="text-3xl md:text-4xl font-bold mb-8 mt-16">Conference Chair</h2>
                 <CommitteeMemberGrid members={conferenceChair.map(m => ({
                     name: m.name,
-                    role: `${m.role}${m.affiliation ? `, ${m.affiliation}` : ""}`
+                    role: `${m.role}${m.affiliation ? `, ${m.affiliation}` : ""}`,
+                    image: m.image
                 }))} />
 
                 <h2 className="text-3xl md:text-4xl font-bold mb-8 mt-16">Conveners & Co-Conveners</h2>
                 <CommitteeMemberGrid members={conveners.map(m => ({
                     name: m.name,
-                    role: `${m.role}${m.affiliation ? `, ${m.affiliation}` : ""}`
+                    role: `${m.role}${m.affiliation ? `, ${m.affiliation}` : ""}`,
+                    image: m.image
                 }))} />
 
                 <h2 className="text-3xl md:text-4xl font-bold mb-8 mt-16">Organising Secretaries</h2>
