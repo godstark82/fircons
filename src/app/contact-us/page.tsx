@@ -1,7 +1,7 @@
 'use client'
 import React from "react";
 import AboutHeader from "../../components/common/AboutHeader";
-import { COLLAGE_ADDRESS, CONFERENCE_FULL_TITLE, SUPPORT_EMAIL, SUPPORT_PHONE } from "@/lib/constants";
+import { CONSTANTS } from "@/lib/constants";
 
 export default function ContactUsPage() {
     return (
@@ -19,15 +19,16 @@ export default function ContactUsPage() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                     <div className="bg-gray-100 rounded-lg p-6 shadow flex flex-col gap-2">
                         <div className="font-bold text-lg flex items-center gap-2">📍 Address</div>
-                        <div>{COLLAGE_ADDRESS}</div>
+                        <div>{CONSTANTS.COLLAGE_ADDRESS}</div>
                     </div>
                     <div className="bg-gray-100 rounded-lg p-6 shadow flex flex-col gap-2">
                         <div className="font-bold text-lg flex items-center gap-2">💬 WhatsApp</div>
-                        <div><a href={`https://wa.me/${SUPPORT_PHONE}`} target="_blank" rel="noopener noreferrer">{SUPPORT_PHONE}</a></div>
+                        <div><a href={`https://wa.me/${CONSTANTS.SUPPORT_PHONE_1}`} target="_blank" rel="noopener noreferrer">{CONSTANTS.SUPPORT_PHONE_1}</a></div>
+                        <div><a href={`https://wa.me/${CONSTANTS.SUPPORT_PHONE_2}`} target="_blank" rel="noopener noreferrer">{CONSTANTS.SUPPORT_PHONE_2}</a></div>
                     </div>
                     <div className="bg-gray-100 rounded-lg p-6 shadow flex flex-col gap-2">
                         <div className="font-bold text-lg flex items-center gap-2">✉️ Email</div>
-                        <div><a href={`mailto:${SUPPORT_EMAIL}`}> {SUPPORT_EMAIL} </a></div>
+                        <div><a href={`mailto:${CONSTANTS.SUPPORT_EMAIL}`}> {CONSTANTS.SUPPORT_EMAIL} </a></div>
                     </div>
                 </div>
                 {/* Contact Form and Map */}

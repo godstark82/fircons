@@ -1,8 +1,8 @@
+import { CONSTANTS } from "@/lib/constants";
 import React from "react";
 
 export default function AboutHeader({
     title = 'University Profile',
-    date = '7 - 8 November',
     overlayColor = '#d0224a',
     bgImage = '/images/utb-images/gallery/gallery-2.jpg',
     dividerColor = 'white'
@@ -34,10 +34,10 @@ export default function AboutHeader({
                     {/* Beautiful IC-RISEM 2025 text instead of image */}
                     <div className="hidden md:flex flex-col items-center justify-center mr-6">
                         <span className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-widest text-white drop-shadow-lg bg-linear-to-r from-white via-[#ffe0ec] to-[#d0224a] bg-clip-text animate-pulse">
-                            IC-AMESF
+                            {CONSTANTS.ABBR_SHORT}
                         </span>
                         <span className="text-lg md:text-xl lg:text-2xl font-semibold tracking-widest text-[#ffe0ec] mt-1 drop-shadow">
-                            2025
+                            {CONSTANTS.YEAR}
                         </span>
                         <div className="w-12 h-1 bg-white rounded-full mt-2 mb-1 opacity-70"></div>
                     </div>
@@ -51,7 +51,7 @@ export default function AboutHeader({
                         ></div>
                     </div>
                     <div className="outline-white outline bg-white px-3 py-1 text-xl md:text-2xl lg:text-3xl font-bold text-primary">
-                        6-7 September
+                        {CONSTANTS.CONFERENCE_DATES}
                     </div>
                 </div>
             </div>

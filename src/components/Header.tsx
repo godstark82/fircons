@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -27,13 +28,13 @@ const Header = () => {
         "CONTACT US": "CONTACT US"
     }
 
-    const renderLink = (key, value) => {
+    const renderLink = (key, value, isMobile = false) => {
         if (typeof value === 'string') {
             return (
                 <Link
                     key={key}
                     href={`/${key.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="text-black hover:text-secondary transition-colors font-bold block py-2"
+                    className={`${isMobile ? 'text-black' : 'text-white'} hover:text-primary transition-colors font-bold block py-2`}
                     onClick={() => setIsMobileMenuOpen(false)}
                 >
                     {value}
@@ -42,7 +43,7 @@ const Header = () => {
         } else {
             return (
                 <div key={key} className="relative group">
-                    <button className="text-black hover:text-secondary transition-colors font-bold flex items-center gap-1 w-full py-2">
+                    <button className={`${isMobile ? 'text-black' : 'text-white'} hover:text-primary transition-colors font-bold flex items-center gap-1 w-full py-2`}>
                         {key}
                         <svg
                             className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
@@ -66,7 +67,7 @@ const Header = () => {
                                 className="block px-4 py-2 text-sm text-gray-700 font-bold hover:bg-gray-100"
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
-                                {subValue}
+                                {subValue as any}
                             </Link>
                         ))}
                     </div>
@@ -76,15 +77,15 @@ const Header = () => {
     };
 
     return (
-        <header className="bg-light shadow-md">
+        <header className="bg-secondary shadow-md">
             <div className="container mx-auto px-4 py-4">
                 <nav className="flex justify-between items-center">
                     <div className="text-2xl font-bold text-black">
                         <Link href="/">
-                            <p>IC-AMESF 2025</p>
+                            <Image src={'/images/iilm/iilm_logo.png'} alt='IILM_LOGO' width={200} height={100} />
                         </Link>
                     </div>
-                    <div className="hidden md:flex space-x-6">
+                    <div className="hidden md:flex space-x-6 ">
                         {Object.entries(links).map(([key, value]) => renderLink(key, value))}
                     </div>
                     <button
@@ -99,7 +100,7 @@ const Header = () => {
             </div>
 
             {/* Mobile Menu */}
-            <div className={`md:hidden fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 ${isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+            <div className={`md:hidden fixed inset-0 bg-black/75 z-40 transition-opacity duration-300 ${isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
                 <div className={`fixed right-0 top-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
                     <div className="p-4">
                         <button
@@ -111,7 +112,7 @@ const Header = () => {
                             </svg>
                         </button>
                         <div className="mt-8 space-y-4">
-                            {Object.entries(links).map(([key, value]) => renderLink(key, value))}
+                            {Object.entries(links).map(([key, value]) => renderLink(key, value, true))}
                         </div>
                     </div>
                 </div>

@@ -16,7 +16,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { CheckCircle2, Upload, Mail } from "lucide-react";
-import { COLLAGE_NAME, CONFERENCE_ABBR, SUPPORT_EMAIL } from "@/lib/constants";
+import { CONSTANTS } from "@/lib/constants";
 
 const categoryTable = [
   ["Student (Poster Presentation) IILM Only", "₹500/-"],
@@ -390,10 +390,10 @@ export default function UploadPaperPage() {
                   face any issues during submission, please email your paper
                   directly to{" "}
                   <a
-                    href={`mailto:${SUPPORT_EMAIL}`}
+                    href={`mailto:${CONSTANTS.SUPPORT_EMAIL}`}
                     className="text-primary hover:underline font-medium"
                   >
-                    {SUPPORT_EMAIL}
+                    {CONSTANTS.SUPPORT_EMAIL}
                   </a>
                 </p>
               </div>
@@ -444,8 +444,8 @@ export default function UploadPaperPage() {
           <div className="space-y-4 py-4">
             <p className="text-center text-muted-foreground">
               {form.presentingPaper
-                ? `Your paper has been successfully submitted to ${CONFERENCE_ABBR}, hosted by ${COLLAGE_NAME}`
-                : `Your registration has been received for ${CONFERENCE_ABBR}, hosted by ${COLLAGE_NAME}`}
+                ? `Your paper has been successfully submitted to ${CONSTANTS.CONFERENCE_ABBR}, hosted by ${CONSTANTS.COLLAGE_NAME}`
+                : `Your registration has been received for ${CONSTANTS.CONFERENCE_ABBR}, hosted by ${CONSTANTS.COLLAGE_NAME}`}
             </p>
 
             <div className="bg-muted/50 p-4 rounded-lg space-y-2">

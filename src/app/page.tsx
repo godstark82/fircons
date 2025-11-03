@@ -18,7 +18,7 @@ const Home = () => {
             <ImportantDates />
             <KeynoteSpeakers />
             {/* <Patners /> */}
-            <Highlights />
+            {/* <Highlights /> */}
             <Faq />
 
         </>

@@ -1,7 +1,13 @@
-export const SUPPORT_EMAIL = 'submit@fircons.com'
-export const SUPPORT_PHONE = "+911111111111"
-export const CONFERENCE_ABBR = "IC-AMESF 2025"
-export const CONFERENCE_FULL_TITLE = "International Conference on Advanced Materials & Engineering for Sustainable Future"
-export const CONFERENCE_DATES = "November 7-8, 2025"
-export const COLLAGE_NAME = "IILM University, Greater Noida"
-export const COLLAGE_ADDRESS  = 'Plot No.18, Iilm College Of Engineering & Technology, 16, Knowledge Park II, Greater Noida, Uttar Pradesh 201310';
+
+export const CONSTANTS = {
+    SUPPORT_EMAIL: 'amesf2026.gn@iilm.edu',
+    SUPPORT_PHONE_1: "+919084749084",
+    SUPPORT_PHONE_2: "+919411923188",
+    CONFERENCE_ABBR: "IC-AMESF 2026",
+    ABBR_SHORT: "IC-AMESF",
+    YEAR: "2026",
+    CONFERENCE_FULL_TITLE: "International Conference on Advanced Materials & Engineering for Sustainable Future",
+    CONFERENCE_DATES: "February 26-27, 2026",
+    COLLAGE_NAME: "IILM University, Greater Noida",
+    COLLAGE_ADDRESS: 'IILM University, 16-18, Knowledge Park II, Greater Noida, Uttar Pradesh 201310',
+}

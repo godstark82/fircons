@@ -1,4 +1,4 @@
-import { COLLAGE_ADDRESS, COLLAGE_NAME, CONFERENCE_ABBR, SUPPORT_EMAIL, SUPPORT_PHONE } from '@/lib/constants';
+import { CONSTANTS } from '@/lib/constants';
 import Link from 'next/link';
 import { FaFacebookF, FaTwitter, FaLinkedin, FaInstagram, FaYoutube, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
@@ -12,15 +12,19 @@ const Footer = () => {
                         <ul className="space-y-3 text-light/80">
                             <li className='flex items-center gap-2'>
                                 <FaMapMarkerAlt className="text-primary size-7" />
-                                <p>{COLLAGE_ADDRESS}</p>
+                                <p>{CONSTANTS.COLLAGE_ADDRESS}</p>
                             </li>
                             <li className="flex items-center gap-2">
                                 <FaPhone className="text-primary" />
-                                <a href={`https://wa.me/${SUPPORT_PHONE}`} target="_blank" rel="noopener noreferrer"><span>{SUPPORT_PHONE}</span></a>
+                                <a href={`https://wa.me/${CONSTANTS.SUPPORT_PHONE_1}`} target="_blank" rel="noopener noreferrer"><span>{CONSTANTS.SUPPORT_PHONE_1}</span></a>
+                            </li>
+                            <li className="flex items-center gap-2">
+                                <FaPhone className="text-primary" />
+                                <a href={`https://wa.me/${CONSTANTS.SUPPORT_PHONE_2}`} target="_blank" rel="noopener noreferrer"><span>{CONSTANTS.SUPPORT_PHONE_2}</span></a>
                             </li>
                             <li className="flex items-center gap-2">
                                 <FaEnvelope className="text-primary" />
-                                <span><a href={`mailto:${SUPPORT_EMAIL}`}> {SUPPORT_EMAIL}</a></span>
+                                <span><a href={`mailto:${CONSTANTS.SUPPORT_EMAIL}`}> {CONSTANTS.SUPPORT_EMAIL}</a></span>
                             </li>
                             <div className="flex space-x-4 pt-2">
                                 <a href="#" target="_blank" rel="noopener noreferrer" className="text-light/80 hover:text-primary transition-colors">
@@ -46,7 +50,7 @@ const Footer = () => {
                         <ul className="space-y-3">
                             <li>
                                 <Link href="/about/utb" className="text-light/80 hover:text-primary transition-colors block">
-                                    {COLLAGE_NAME}
+                                    {CONSTANTS.COLLAGE_NAME}
                                 </Link>
                             </li>
                             <li>
@@ -99,7 +103,7 @@ const Footer = () => {
                                 width="100%"
                                 height="200"
                                 style={{ border: 0 }}
-                                allowFullScreen=""
+                                allowFullScreen={false}
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
                                 className="rounded-lg shadow-lg"
@@ -109,7 +113,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="border-t border-light/20 mt-8 pt-8 text-center text-light/80">
-                    <p className="text-sm">{CONFERENCE_ABBR} &copy; {new Date().getFullYear()} All rights reserved.</p>
+                    <p className="text-sm">{CONSTANTS.CONFERENCE_ABBR} &copy; {new Date().getFullYear()} All rights reserved.</p>
                 </div>
             </div>
         </footer>

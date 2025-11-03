@@ -1,4 +1,7 @@
 'use client'
+
+import { CONSTANTS } from "@/lib/constants"
+
 export default function Hero() {
     return (
         <div className="bg-secondary pb-8">
@@ -6,12 +9,12 @@ export default function Hero() {
                 <div className="flex flex-col items-center justify-center py-8 md:py-12">
                     <div className="flex flex-col items-center gap-2 md:gap-4">
                         <span className="text-5xl md:text-3xl font-bold text-[#E13A59] tracking-tight leading-none" style={{ letterSpacing: '-0.04em' }}>
-                            IC-AMESF <span className="text-2xl md:text-3xl font-bold text-white">2025</span>
+                            IC-AMESF <span className="text-2xl md:text-3xl font-bold text-white">2026</span>
                         </span>
                     </div>
                     <div className="mt-2 md:mt-4 max-w-5xl">
                         <span className="text-lg md:text-2xl lg:text-5xl text-white font-medium tracking-wide text-center block">
-                            International Conference on Advanced Materials & Engineering for Sustainable Future
+                            {CONSTANTS.CONFERENCE_FULL_TITLE}
                         </span>
                     </div>
                     <br />
@@ -26,7 +29,7 @@ export default function Hero() {
                         </button>
                     </div>
                     <div className="text-center text-white bg-primary p-2 w-full md:w-auto rounded">
-                        <p className="text-white text-lg md:text-xl font-semibold">November 7-8, 2025</p>
+                        <p className="text-white text-lg md:text-xl font-semibold">{CONSTANTS.CONFERENCE_DATES}</p>
                     </div>
                     <div className="text-center text-white w-full md:w-auto">
                         <img

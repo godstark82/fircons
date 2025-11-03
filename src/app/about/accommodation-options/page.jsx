@@ -1,44 +1,57 @@
 import React from "react";
-import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card"; // shadcn card
-import { Button } from "@/components/ui/button"; // shadcn button for links
+import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import AboutHeader from "../../../components/common/AboutHeader";
+import { MapPin, Star, ExternalLink } from "lucide-react"; // Optional icons
+import { CONSTANTS } from "@/lib/constants";
 
 const hotels = [
   {
-    name: "Hotel Raddison Blu, Greater Noida",
+    name: "Hotel Radisson Blu",
+    location: "Greater Noida",
+    image: "https://lh3.googleusercontent.com/p/AF1QipNBkJ5Y6iPXJMmLrymAqc8hb9clzumEHiTC9iDn=w324-h312-n-k-no",
     link: "https://www.ihg.com/intercontinental/hotels/gb/en/manama/bahha/hoteldetail",
-    note: "*Select <b>University of Technology Bahra*</b> as Rate Reference.",
+    note: `Select <b>${CONSTANTS.COLLAGE_NAME}</b> as Rate Reference.`,
+    rating: "4.5",
   },
   {
-    name: "Hotel Ginger, Greater Noida",
+    name: "Hotel Ginger",
+    location: "Greater Noida",
+    image: "https://lh3.googleusercontent.com/p/AF1QipN02V4-FCCD20kKmm8je-z8BiwW5Iw78VfYHqMW=w324-h312-n-k-no",
     link: "https://eur06.safelinks.protection.outlook.com/?url=http%3A%2F%2Froho.it%2Fbgmg&data=05%7C02%7Ccrbansolay%40utb.edu.bh%7Ccfa6045b6ccb425e426e08ddabdfcfc4%7Cc599d08d7ffd46c98e6ccc8b13dbba77%7C0%7C0%7C638855699924365403%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=qiBIKXnECK6lFPOIUs5Uap3y7%2BmHuA%2FUiRO1tn3Xm4Y%3D&reserved=0",
-    note: "*Use <b>ROSIDT</b> as the Booking Code",
+    note: `Select <b>${CONSTANTS.COLLAGE_NAME}</b> as Rate Reference.`,
+    rating: "4.0",
   },
   {
-    name: "Hotel La Seasons, Greater Noida",
+    name: "Hotel La Seasons",
+    location: "Greater Noida",
+    image: "https://lh3.googleusercontent.com/p/AF1QipMx7DApLHbpnzItzR30XVC2cKjDDtBmO8PUGIAg=w324-h312-n-k-no",
     link: "https://all.accor.com/hotel/6702/index.en.shtml",
-    note: "*Prior to booking, email <b><a href='mailto:Vanessa.vaquilar@accor.com'>Vanessa.vaquilar@accor.com</a></b> or <b><a href='https://wa.me/97335358850'>WhatsApp +973 35358850</a></b>",
+    note: `Select <b>${CONSTANTS.COLLAGE_NAME}</b> as Rate Reference.`,
+
+    rating: "4.2",
   },
   {
-    name: "Udman Hotel, Greater Noida",
+    name: "Udman Hotel",
+    location: "Greater Noida",
+    image: "https://lh3.googleusercontent.com/p/AF1QipO8DXeH8d0DDfNn3_JE5u2hv_okHP4kkwnQ369P=w324-h312-n-k-no",
     link: "http://www.westincitycentrebahrain.com/",
-    note: "",
+    note: `Select <b>${CONSTANTS.COLLAGE_NAME}</b> as Rate Reference.`,
+    rating: "4.3",
   },
   {
-    name: "Expo Inn, Greater Noida",
+    name: "Expo Inn",
+    location: "Greater Noida",
+    image: "https://lh3.googleusercontent.com/p/AF1QipP5F7YTbB8vK7W4E5DLZ86E0my6WeWuhv75NbB2=s680-w680-h510-rw",
     link: "http://www.lemeridienbahraincitycentre.com/",
-    note: "",
-  },
-  {
-    name: "IIT Roorkee Guest House, Greater Noida",
-    link: "http://www.lemeridienbahraincitycentre.com/",
-    note: "",
+    note: `Select <b>${CONSTANTS.COLLAGE_NAME}</b> as Rate Reference.`,
+    rating: "3.8",
   },
 ];
 
 export default function AccommodationOptionsPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <AboutHeader
         title="Accommodation Options"
         date="November 6-7, 2025"
@@ -47,55 +60,152 @@ export default function AccommodationOptionsPage() {
         bgImage="/images/utb-images/gallery/gallery-2.jpg"
         dividerColor="primary"
       />
-      <div className="max-w-6xl mx-auto px-4 py-12">
-        <div className="mb-8 text-lg text-gray-900">
-          <p className="mb-4">
-            We are pleased to offer our accommodation options for delegates attending <b>INTERNATIONAL CONFERENCE ON ADVANCED MATERIALS & ENGINEERING FOR SUSTAINABLE FUTURE (IC-AMESF 2025)</b>
-          </p>
-          <p className="mb-4">
-            To ensure a comfortable and convenient stay, IILM University, Greater Noida has partnered with some hotels located within close proximity to the conference venue and IILM University, Greater Noida. These hotels offer a range of amenities and price points to suit various preferences and budgets.
-          </p>
-          <ul className="list-disc font-semibold ml-8 mb-4">
-            <li>Hotels with exclusive rates for IC-AMESF 2025 participants</li>
-            <li>Walking distance or short drive to the conference venue</li>
-            <li>Options ranging from budget to premium accommodation</li>
-          </ul>
-          <p>
-            For booking links, rates, and more information, please see the list below.
-          </p>
-        </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Introduction Section */}
+        <div className="max-w-4xl mx-auto mb-16">
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+              Welcome to IC-AMESF 2025
+            </h2>
+            <div className="space-y-4 text-base md:text-lg text-gray-700 leading-relaxed">
+              <p>
+                We are pleased to offer accommodation options for delegates attending the{" "}
+                <span className="font-semibold text-gray-900">
+                  International Conference on Advanced Materials & Engineering for Sustainable Future (IC-AMESF 2025)
+                </span>.
+              </p>
+              <p>
+                To ensure a comfortable and convenient stay, IILM University, Greater Noida has partnered 
+                with premium hotels located within close proximity to the conference venue.
+              </p>
+            </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-          {hotels.map((hotel, idx) => (
-            <Card key={idx} className="flex flex-col justify-between h-full">
-              <CardContent>
-                <CardTitle className="text-lg font-bold">{hotel.name}</CardTitle>
-                {hotel.note && (
-                  <CardDescription
-                    className="mt-2 text-sm text-gray-700"
-                    dangerouslySetInnerHTML={{ __html: hotel.note }}
-                  />
-                )}
-              </CardContent>
-              <div className="p-4 pt-0">
-                <Button
-                  as="a"
-                  href={hotel.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  variant="primary"
-                  className="w-full"
-                >
-                  View Booking Link
-                </Button>
+            {/* Features Grid */}
+            <div className="grid md:grid-cols-3 gap-6 mt-8">
+              <div className="flex items-start space-x-3">
+                <div className="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900 mb-1">Exclusive Rates</h3>
+                  <p className="text-sm text-gray-600">Special pricing for conference participants</p>
+                </div>
               </div>
-            </Card>
-          ))}
+              
+              <div className="flex items-start space-x-3">
+                <div className="flex-shrink-0 w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                  <MapPin className="w-5 h-5 text-green-600" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900 mb-1">Prime Location</h3>
+                  <p className="text-sm text-gray-600">Walking distance or short drive to venue</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start space-x-3">
+                <div className="flex-shrink-0 w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+                  <Star className="w-5 h-5 text-purple-600" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900 mb-1">Quality Options</h3>
+                  <p className="text-sm text-gray-600">Budget to premium accommodation</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <p className="text-gray-800">
-          <b>Transportation Detail:</b> IILM University, Greater Noida is well connected to Delhi, Ghaziabad, Meerut, Agra by highways. You can reach us by metro (Knowledge Park 02 Metro Station, Aqua Line), bus, cab etc.
-        </p>
+        {/* Hotels Section */}
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">
+            Partner Hotels
+          </h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            Choose from our carefully selected accommodation partners offering comfort and convenience
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {hotels.map((hotel, idx) => (
+              <Card 
+                key={idx} 
+                className="group overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 border-0 shadow-lg rounded-2xl"
+              >
+                {/* Image Container */}
+                <div className="relative overflow-hidden h-56 bg-gray-200">
+                  <img
+                    src={hotel.image}
+                    alt={`${hotel.name}`}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                 
+                </div>
+
+                <CardContent className="p-6">
+                  {/* Hotel Name and Location */}
+                  <div className="mb-4">
+                    <CardTitle className="text-xl font-bold text-gray-900 mb-2 line-clamp-2">
+                      {hotel.name}
+                    </CardTitle>
+                    <div className="flex items-center text-sm text-gray-600">
+                      <MapPin className="w-4 h-4 mr-1.5 flex-shrink-0" />
+                      <span>{hotel.location}</span>
+                    </div>
+                  </div>
+
+                  {/* Note/Instructions */}
+                  {hotel.note && (
+                    <CardDescription
+                      className="text-sm text-gray-700 leading-relaxed mb-6 bg-blue-50 p-4 rounded-lg border border-blue-100"
+                      dangerouslySetInnerHTML={{ __html: hotel.note }}
+                    />
+                  )}
+
+                  {/* Button */}
+                  <Button
+                    asChild
+                    className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-medium py-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-xl"
+                  >
+                    <a
+                      href={hotel.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center space-x-2"
+                    >
+                      <span>View Booking Details</span>
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Transportation Section */}
+        <div className="max-w-4xl mx-auto mt-16">
+          <div className="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-2xl shadow-sm border border-indigo-100 p-8 md:p-10">
+            <div className="flex items-start space-x-4">
+              <div className="flex-shrink-0 w-12 h-12 bg-indigo-600 rounded-xl flex items-center justify-center">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <div className="flex-1">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  Transportation Details
+                </h3>
+                <p className="text-gray-700 leading-relaxed">
+                  IILM University, Greater Noida is well connected to Delhi, Ghaziabad, Meerut, and Agra 
+                  by highways. You can reach us by <span className="font-semibold">metro</span> (Knowledge Park 02 Metro Station, 
+                  Aqua Line), <span className="font-semibold">bus</span>, <span className="font-semibold">cab</span>, or other public transport options.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

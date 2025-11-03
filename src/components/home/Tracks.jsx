@@ -67,7 +67,7 @@ export default function Tracks() {
           {TRACKS.map((track) => (
             <AccordionItem key={track.name} value={track.name}>
               <Card className="bg-secondary text-white rounded-xl shadow-lg transition hover:scale-[1.03] border-none">
-                <AccordionTrigger className="px-7 py-6 text-lg font-semibold text-left rounded-t-xl border-none hover:underline-none focus:underline-none focus:ring-2 focus:ring-secondary">
+                <AccordionTrigger className="px-7 py-6 text-lg font-semibold text-left rounded-t-xl border-none focus:ring-2 focus:ring-secondary">
                   {track.name}
                 </AccordionTrigger>
                 <AccordionContent>
