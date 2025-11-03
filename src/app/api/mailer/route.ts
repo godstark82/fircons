@@ -1,3 +1,4 @@
+import { CONFERENCE_ABBR } from '@/lib/constants';
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
@@ -28,7 +29,7 @@ export async function POST(req: Request) {
     const textWithAttribution = `${text}${attribution}`;
 
     const mailOptions = {
-      from: `ICOSTEM <${process.env.EMAIL_USER}>`,
+      from: `${CONFERENCE_ABBR} <${process.env.EMAIL_USER}>`,
       to,
       subject,
       text: textWithAttribution

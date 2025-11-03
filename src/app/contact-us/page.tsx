@@ -20,7 +20,6 @@ export default function ContactUsPage() {
                     <div className="bg-gray-100 rounded-lg p-6 shadow flex flex-col gap-2">
                         <div className="font-bold text-lg flex items-center gap-2">📍 Address</div>
                         <div>{COLLAGE_ADDRESS}</div>
-                        {/* <div>Conference Venue:<br />Arya College, Jaipur</div> */}
                     </div>
                     <div className="bg-gray-100 rounded-lg p-6 shadow flex flex-col gap-2">
                         <div className="font-bold text-lg flex items-center gap-2">💬 WhatsApp</div>

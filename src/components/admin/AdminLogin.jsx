@@ -1,6 +1,7 @@
 "use client"
 import { useState } from 'react';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { CONFERENCE_ABBR } from '@/lib/constants';
 
 export default function AdminLogin({ onLogin }) {
     const [email, setEmail] = useState('');
@@ -33,7 +34,7 @@ export default function AdminLogin({ onLogin }) {
                         Admin Login
                     </h2>
                     <p className="mt-2 text-center text-sm text-gray-600">
-                        ICOSTEM 2025 Administration Panel
+                        {CONFERENCE_ABBR} 2025 Administration Panel
                     </p>
                 </div>
                 <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
