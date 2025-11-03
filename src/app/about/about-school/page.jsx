@@ -6,7 +6,7 @@ export default function AboutUniversityPage() {
         <div className="bg-white">
             <AboutHeader title="School Profile" date="5 - 7 September" image='/images/simdte-white-lg.png' overlayColor='#d0224a' bgImage='/images/utb-images/gallery/gallery-1.jpg' />
             <div className="container mx-auto px-4 py-16">
-                <SectionHeader title="About School" />
+                <SectionHeader title="School of Engineering" />
                 <div className="flex flex-col md:flex-row gap-12 items-start">
                     <div className="md:w-2/3 text-gray-900 space-y-6 text-lg">
                         <p>
@@ -22,9 +22,9 @@ export default function AboutUniversityPage() {
                     </div>
                     <div className="md:w-1/3 w-full flex justify-center md:justify-end">
                         <img
-                            src="/images/arya-images/gallery-1.webp"
+                            src="https://iilm.ac.in/uploads/all/40/conversions/Group-20050-(1)-full.webp"
                             alt="Arya College, Jaipur"
-                            className="shadow-lg w-full max-w-md object-cover"
+                            className="shadow-lg w-full max-w-md object-contain"
                         />
                     </div>
                 </div>
