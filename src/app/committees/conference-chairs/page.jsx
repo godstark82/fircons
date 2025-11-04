@@ -58,43 +58,36 @@ const organizingSecretaries = [
 
 const organizingCommittee = [
     {
-        image: "https://iilm.ac.in/uploads/all/1247/conversions/Dr.-Rajeev-Kumar-full.webp",
         name: "Dr. Rajeev Kumar",
         role: "Organising Committee",
         affiliation: ""
     },
     {
-        image: "https://iilm.ac.in/uploads/all/462/conversions/Priyanka-Bhatnagar-350x240-full.webp",
         name: "Dr. Priyanka Bhatnagar",
         role: "Organising Committee",
         affiliation: ""
     },
     {
-        image: "/images/user.jpg",
         name: "Dr. Vanya",
         role: "Organising Committee",
         affiliation: ""
     },
     {
-        image: "/images/user.jpg",
         name: "Dr. Bharti",
         role: "Organising Committee",
         affiliation: ""
     },
     {
-        image: "https://iilm.ac.in/uploads/all/460/conversions/Pankaj-350x240-full.webp",
         name: "Dr. Pankaj",
         role: "Organising Committee",
         affiliation: ""
     },
     {
-        image: "/images/user.jpg",
         name: "Dr. Lalit",
         role: "Organising Committee",
         affiliation: ""
     },
     {
-        image: "/images/user.jpg",
         name: "Dr. Arpit Varshney",
         role: "Organising Committee",
         affiliation: ""
