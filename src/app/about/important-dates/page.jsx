@@ -4,7 +4,7 @@ const importantDates = [
     {
         event: "Conference Date",
         date: "26 - 27 February, 2025",
-        rowClass: "bg-white"
+        rowClass: "bg-gray-50"
     },
     {
         event: "Registration and Abstract Submission Starts",
@@ -14,22 +14,22 @@ const importantDates = [
     {
         event: "Last Date of Registration without late payment",
         date: "15 February, 2026",
-        rowClass: "bg-white"
+        rowClass: "bg-gray-50"
     },
     {
         event: "Abstract submission Deadline",
         date: "15 December, 2025",
-        rowClass: "bg-grey-50"
+        rowClass: "bg-gray-50"
     },
     {
         event: "Abstract Acceptance Notification",
         date: "20 December, 2025",
-        rowClass: "bg-grey-50"
+        rowClass: "bg-gray-50"
     },
     {
         event: "Full length paper submission Deadline",
         date: "11 January, 2026",
-        rowClass: "bg-grey-50"
+        rowClass: "bg-gray-50"
     }
 ];
 

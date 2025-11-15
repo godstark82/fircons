@@ -9,7 +9,7 @@ const hotels = [
   {
     name: "Hotel Radisson Blu",
     location: "Greater Noida",
-    image: "https://lh3.googleusercontent.com/p/AF1QipNBkJ5Y6iPXJMmLrymAqc8hb9clzumEHiTC9iDn=w324-h312-n-k-no",
+    image: "https://r1imghtlak.mmtcdn.com/a918a09c291e11e5b5850022195573b9.jfif",
     link: "https://www.ihg.com/intercontinental/hotels/gb/en/manama/bahha/hoteldetail",
     note: `Select <b>${CONSTANTS.COLLAGE_NAME}</b> as Rate Reference.`,
     rating: "4.5",
@@ -17,15 +17,15 @@ const hotels = [
   {
     name: "Hotel Ginger",
     location: "Greater Noida",
-    image: "https://lh3.googleusercontent.com/p/AF1QipN02V4-FCCD20kKmm8je-z8BiwW5Iw78VfYHqMW=w324-h312-n-k-no",
+    image: "https://r2imghtlak.ibcdn.com/r2-mmt-htl-image/htl-imgs/202001082231075367-1c06e132496c11ea9ffc0242ac110003.jpg",
     link: "https://eur06.safelinks.protection.outlook.com/?url=http%3A%2F%2Froho.it%2Fbgmg&data=05%7C02%7Ccrbansolay%40utb.edu.bh%7Ccfa6045b6ccb425e426e08ddabdfcfc4%7Cc599d08d7ffd46c98e6ccc8b13dbba77%7C0%7C0%7C638855699924365403%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=qiBIKXnECK6lFPOIUs5Uap3y7%2BmHuA%2FUiRO1tn3Xm4Y%3D&reserved=0",
     note: `Select <b>${CONSTANTS.COLLAGE_NAME}</b> as Rate Reference.`,
     rating: "4.0",
   },
   {
-    name: "Hotel La Seasons",
+    name: "Hotel Le Seasons",
     location: "Greater Noida",
-    image: "https://lh3.googleusercontent.com/p/AF1QipMx7DApLHbpnzItzR30XVC2cKjDDtBmO8PUGIAg=w324-h312-n-k-no",
+    image: "https://cf.bstatic.com/xdata/images/hotel/square600/471016173.webp?k=068237c2898ed4513c0aa63f585408283f96efeef2f83e335af7260893344e5e&o=",
     link: "https://all.accor.com/hotel/6702/index.en.shtml",
     note: `Select <b>${CONSTANTS.COLLAGE_NAME}</b> as Rate Reference.`,
 
@@ -34,7 +34,7 @@ const hotels = [
   {
     name: "Udman Hotel",
     location: "Greater Noida",
-    image: "https://lh3.googleusercontent.com/p/AF1QipO8DXeH8d0DDfNn3_JE5u2hv_okHP4kkwnQ369P=w324-h312-n-k-no",
+    image: "https://cf.bstatic.com/xdata/images/hotel/square600/311346165.webp?k=80a9ccd691d491837af7a481f1f600ea1cddb123b36e0d73a57be132d8ac9f8a&o=",
     link: "http://www.westincitycentrebahrain.com/",
     note: `Select <b>${CONSTANTS.COLLAGE_NAME}</b> as Rate Reference.`,
     rating: "4.3",
