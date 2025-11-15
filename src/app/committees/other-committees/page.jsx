@@ -68,6 +68,16 @@ const technicalSessionCommittee = [
     { name: "Dr. Ankita Awasthi", role: "IILM University" },
     { name: "Dr. Meenu", role: "IILM University" },
     { name: "Dr. Umesh Chandra", role: "IILM University" },
+    { name: "Dr. Sanjoy", role: "IILM University" },
+    { name: "Dr. Manoj Kumar", role: "IILM University" },
+    { name: "Dr. Aastha", role: "IILM University" },
+    { name: "Dr. Sanjeev Verma", role: "IILM University" },
+    { name: "Dr. Khushboo Gupta", role: "IILM University" },
+    { name: "Dr. Mukesh Kumar", role: "IILM University" },
+    { name: "Dr. Kuldeep Malik", role: "IILM University" },
+    { name: "Dr. Veena", role: "IILM University" },
+    { name: "Dr. Pankja Verma", role: "IILM University" },
+
 ];
 
 const foodCommittee = [
@@ -89,18 +99,17 @@ const sponsorshipCommittee = [
 ];
 
 const hospitalityCommittee = [
+    { name: "Dr. Naseem Ahmed", role: "IILM University" },
     { name: "Dr. Vibhav Narayan Singh", role: "IILM University" },
-    { name: "Dr. Arpit Varshney", role: "IILM University" },
     { name: "Mr. Satish Jha", role: "IILM University" },
     { name: "Mr. Mayank", role: "IILM University" },
 ];
 
 const registrationHelpDeskCommittee = [
+    { name: "Dr. Shradha Sharma", role: "IILM University" },
     { name: "Dr. Ashlesha Bhardwaj", role: "IILM University" },
     { name: "Dr. Sunil Bhardwaj", role: "IILM University" },
     { name: "Dr. Geetika", role: "IILM University" },
-    { name: "Dr. Shradha Sharma", role: "IILM University" },
-    { name: "Dr. Rakhi Dwivedi", role: "IILM University" },
     { name: "Dr. Manoj Kumar", role: "IILM University" },
     { name: "Dr. Nidhi Rai", role: "IILM University" },
     { name: "Dr. Kushal Mazumder", role: "IILM University" },
@@ -114,7 +123,6 @@ const registrationHelpDeskCommittee = [
 const printingDesigningCommittee = [
     { name: "Mr. Aditya Saini", role: "IILM University" },
     { name: "Dr. Kriti Nagarkoti", role: "IILM University" },
-    { name: "Dr. Naseem", role: "IILM University" },
     { name: "Dr. K.M. Bala", role: "IILM University" },
     { name: "Dr. Gaurav Upadhyay", role: "IILM University" },
     { name: "Dr. Priti", role: "IILM University" },
@@ -144,8 +152,13 @@ const culturalCommittee = [
 ];
 
 const publicationCommittee = [
-    { name: "Prof. Narendra Kumar", role: "" },
-    { name: "Dr. Rajeev Kumar", role: "" },
+    { name: "Prof. Narendra Kumar", role: "IILM University" },
+    { name: "Dr. Rajeev Kumar", role: "IILM University" },
+    { name: "Dr. Pranav Srivastava", role: "IILM University" },
+    { name: "Dr. Jaswinder Singh", role: "IILM University" },
+    { name: "Dr. Gaurav Upadhyay", role: "IILM University" },
+    { name: "Dr. K.K. Mishra", role: "IILM University" },
+    { name: "Dr. Swati", role: "IILM University" },
 ];
 
 const Section = ({ title, members }) => (
@@ -175,7 +188,7 @@ export default function OtherCommitteesPage() {
                 <Section title="Transportation, Accommodation & Hospitality Committee" members={hospitalityCommittee} />
                 <Section title="Registration Committee & Help Desk" members={registrationHelpDeskCommittee} />
                 <Section title="Printing and Designing Committee" members={printingDesigningCommittee} />
-                <Section title="Publicity & Social Media Promotion" members={publicitySocialMediaCommittee} />
+                <Section title="Publicity & Social Media Committee" members={publicitySocialMediaCommittee} />
                 <Section title="Cultural Committee" members={culturalCommittee} />
                 <Section title="Publication Committee" members={publicationCommittee} />
             </div>
