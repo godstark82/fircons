@@ -55,6 +55,19 @@ const TRACKS = [
     subtopics: [
       "Crime Scene Analysis", "Forensic Toxicology", "Biometrics"
     ]
+  },
+  {
+    name: "Food Technology",
+    subtopics: [
+      "Nutrition and Dietetics", "Food Quality & Safety", "Packaging Technology", "Food Fortification", "Nutrigenomics"
+    ]
+  },
+  {
+    name: "Biological Sciences",
+    subtopics: [
+      "Fermentation Technology", "Virology", "Biofuels", "Biofuels", "Environmental Biotechnology",
+      "Bioinformatics"
+    ]
   }
 ];
 

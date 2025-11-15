@@ -2,10 +2,10 @@ import SectionHeader from "../common/SectionHeader";
 import SectionImageHeader from "../common/SectionImageHeader";
 
 const DATES = [
-    { day: "15", month: "December", desc: "Paper Submission Deadline" },
-    { day: "20", month: "December", desc: "Notification of Acceptance" },
-    { day: "31", month: "December", desc: "Registration Deadline" },
-    { day: "11", month: "January", desc: "Submission of full Paper" },
+    { day: "15", month: "December", desc: "Abstract Submission Deadline" },
+    { day: "20", month: "December", desc: "Abstract Acceptance Notification" },
+    { day: "15", month: "February", desc: "Registration Deadline" },
+    { day: "15", month: "November", desc: "Submission of full Paper starts" },
     // { day: "6-7", month: "September", desc: "Conference Dates" },
 ];
 
