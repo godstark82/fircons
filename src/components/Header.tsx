@@ -77,7 +77,7 @@ const Header = () => {
     };
 
     return (
-        <header className="bg-secondary shadow-md">
+        <header className="bg-secondary shadow-md sticky top-0 z-50">
             <div className="container mx-auto px-4 py-4">
                 <nav className="flex justify-between items-center">
                     <div className="text-2xl font-bold text-black">
