@@ -7,6 +7,8 @@ import ImportantDates from "../components/home/ImportantDates";
 import MinisterSection from "../components/home/MinisterSection";
 import Patners from "../components/home/Patners";
 import Faq from "@/components/home/Faq";
+import Aim from "@/components/home/Aim";
+import Objective from "@/components/home/Objective";
 
 const Home = () => {
     return (
@@ -14,6 +16,8 @@ const Home = () => {
             <Hero />
             {/* <MinisterSection /> */}
             <Overview />
+            <Aim />
+            <Objective />
             <Tracks />
             <ImportantDates />
             <KeynoteSpeakers />
