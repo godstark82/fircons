@@ -28,7 +28,7 @@ const conveners = [
         affiliation: "IILM University, Greater Noida",
     },
     {
-        image: "/images/user.jpg",
+        image: "/images/speakers/dr-narendra.jpeg",
         name: "Prof. Narendra Kumar",
         role: "Co Convener",
         affiliation: "IILM University, Greater Noida",
