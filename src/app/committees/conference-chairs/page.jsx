@@ -33,6 +33,12 @@ const conveners = [
         role: "Co Convener",
         affiliation: "IILM University, Greater Noida",
     },
+    {
+        image: "/images/speakers/nazarov-fayzullo.jpeg",
+        name: "Dr. Nazarov Fayzullo",
+        role: "Co Convener",
+        affiliation: "Uzbekistan",
+    },
 ];
 
 const organizingSecretaries = [

@@ -8,7 +8,7 @@ const importantDates = [
     },
     {
         event: "Registration and Abstract Submission Starts",
-        date: "15 November, 2025",
+        date: "15 December, 2025",
         rowClass: "bg-gray-50"
     },
     {
@@ -18,17 +18,17 @@ const importantDates = [
     },
     {
         event: "Abstract submission Deadline",
-        date: "15 December, 2025",
+        date: "25 December, 2025",
         rowClass: "bg-gray-50"
     },
     {
         event: "Abstract Acceptance Notification",
-        date: "20 December, 2025",
+        date: "30 December, 2025",
         rowClass: "bg-gray-50"
     },
     {
         event: "Full length paper submission Deadline",
-        date: "11 January, 2026",
+        date: "20 January, 2026",
         rowClass: "bg-gray-50"
     }
 ];
