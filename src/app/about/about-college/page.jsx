@@ -11,9 +11,26 @@ export default function AboutUniversityPage() {
                     {/* Left: Text Content */}
                     <div className="md:w-2/3 text-gray-900 space-y-6 text-lg text-justify">
                         <p>
-                            IILM University, Greater Noida, established under the Uttar Pradesh Private University (Amendment) Act 2022, is a young and dynamic institution dedicated to fostering academic excellence, innovation, and holistic development. Nestled in the vibrant educational hub of Greater Noida, the university is strategically located to provide students with access to a global learning environment and opportunities for industry exposure. With its foundation rooted in the principles of inclusivity, integrity, and quality, IILM University is committed to creating a transformative educational experience for all its stakeholders.<br /><br />
+                            <b>IILM University, Greater Noida</b>, established under the Uttar Pradesh Private University
+                            (Amendment) Act 2022, is a young and progressive institution focused on academic
+                            excellence, innovation, and holistic student development. Located in the educational hub
+                            of Greater Noida, it provides a vibrant and globally oriented learning environment with
+                            strong industry exposure. The university is built on the principles of inclusivity, integrity,
+                            and quality, aiming to offer a transformative educational experience.
+                            <br></br>
+                            It offers diverse undergraduate, postgraduate, and doctoral programs across Management,
+                            Law, Engineering, Sciences, Liberal Arts, and Social Sciences. The curriculum blends
+                            academic rigor with real-world relevance to prepare students for modern professional
+                            challenges. Beyond academics, the university emphasizes critical thinking, creativity,
+                            leadership, and overall personality development.
+                            <br /><br />
+                            <b>Samarkand State University, Uzbekistan</b>, officially founded in 1927 but rooted in the 600-
+                            year legacy of the Mirzo Ulughbek Madrasa, is one of Uzbekistan’s oldest and most
+                            renowned institutions. It has evolved through several historical stages and now comprises
+                            7 faculties, 4 institutes, and 59 departments offering 72 programs. The university serves
+                            nearly 17,000 undergraduate and 700 graduate students, supported by around 900 faculty
+                            members and extensive research opportunities.
 
-                            The university offers a wide range of undergraduate, postgraduate, and doctoral programs across various disciplines, including Management, Law, Engineering, Sciences, Liberal Arts, and Social Sciences. Its curriculum is designed to integrate academic rigor with practical relevance, ensuring that students are well-equipped to meet the demands of an ever-evolving world. At IILM, the emphasis is not only on academic learning but also on nurturing critical thinking, creativity, and leadership skills.<br /><br />
                         </p>
                     </div>
                     {/* Right: Image */}
