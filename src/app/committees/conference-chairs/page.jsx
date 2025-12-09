@@ -11,6 +11,15 @@ const chiefPatron = [
     }
 ];
 
+const CoPatron = [
+    {
+        image: "https://iilm.ac.in/uploads/all/1067/conversions/Taruna-Ma'am-full.webp",
+        name: "Dr. Sandeep Chattarjee",
+        role: "Pro VC",
+        affiliation: "IILM University, Greater Noida",
+    }
+];
+
 const conferenceChair = [
     {
         image: "https://iilm.ac.in/uploads/all/700/conversions/Munish-Sabharwal-full.webp",
@@ -113,8 +122,15 @@ export default function ConferenceChairPage() {
             />
             <section className="max-w-6xl mx-auto px-4 py-12">
 
-                <h2 className="text-3xl md:text-4xl font-bold mb-8">Chief Patrons</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-8">Chief Patron</h2>
                 <CommitteeMemberGrid members={chiefPatron.map(m => ({
+                    name: m.name,
+                    role: `${m.role}${m.affiliation ? `, ${m.affiliation}` : ""}`,
+                    image: m.image
+                }))} />
+
+                <h2 className="text-3xl md:text-4xl font-bold mb-8">Co-Patron</h2>
+                <CommitteeMemberGrid members={CoPatron.map(m => ({
                     name: m.name,
                     role: `${m.role}${m.affiliation ? `, ${m.affiliation}` : ""}`,
                     image: m.image
