@@ -3,7 +3,7 @@ import AboutHeader from '../../../components/common/AboutHeader';
 const importantDates = [
     {
         event: "Conference Date",
-        date: "26 - 27 February, 2025",
+        date: "25 - 26 February, 2025",
         rowClass: "bg-gray-50"
     },
     {

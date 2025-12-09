@@ -7,7 +7,7 @@ export const CONSTANTS = {
     ABBR_SHORT: "IC-AMESF",
     YEAR: "2026",
     CONFERENCE_FULL_TITLE: "International Conference on Advanced Materials & Engineering for Sustainable Future",
-    CONFERENCE_DATES: "February 26-27, 2026",
+    CONFERENCE_DATES: "February 25-26, 2026",
     COLLAGE_NAME: "IILM University, Greater Noida",
     COLLAGE_ADDRESS: 'IILM University, 16-18, Knowledge Park II, Greater Noida, Uttar Pradesh 201310',
 }

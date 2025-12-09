@@ -8,32 +8,32 @@ const internationalAdvisoryBoard = [
     role: "John C. Fan Family Distinguished Chair Professor of Materials Science, North Caroline State University",
   },
   {
-    name: "Dr. Pankay Attri",
+    name: "Dr. Pankaj Attri",
     role: "National University Corporation Kyushu University, Japan",
   },
   {
     name: "Prof. Imran Ali",
-    role: "[Jamia Milia Islamia (Central University), India]"
+    role: "Jamia Milia Islamia (Central University), India"
   },
   {
     name: "Prof. (Retd.) Anil Kumar",
-    role: "[IIT Roorkee]"
+    role: "IIT Roorkee"
   },
   {
     name: "Prof. Dinesh Mohan",
-    role: "[JNU, India]"
+    role: "JNU, India"
   },
   {
     name: "Prof. Sameer Sapra",
-    role: "[IIT Delhi, India]"
+    role: "IIT Delhi, India"
   },
   {
     name: "Prof. L.P. Singh",
-    role: "[Director General, National Council for NCCBM, India]"
+    role: "Director General, National Council for NCCBM, India"
   },
   {
     name: "Dr. Soo Choi",
-    role: "[Nexmos, South Korea]"
+    role: "Nexmos, South Korea"
   },
   {
     name: "Dr. Millie Pant",
@@ -41,7 +41,7 @@ const internationalAdvisoryBoard = [
   },
   {
     name: "Dr. Joydeep Dutta",
-    role: "[KTH Royal Institute of Technology, Sweden]"
+    role: "KTH Royal Institute of Technology, Sweden"
   },
   {
     name: "Dr. Neelam Bharti",
@@ -100,20 +100,171 @@ const internationalAdvisoryBoard = [
     role: "University of Missouri, USA"
   },
   {
+    name: "Dr. Neera Tiwari",
+    role: "Michigan State University"
+  },
+  {
+    name: "Prof. (Dr.) Prashant Kumar Kalita",
+    role: "University of Illinois, USA"
+  },
+  {
+    name: "Prof. (Dr.) Asgar Ali",
+    role: "Director, CPHB, Malaysia"
+  },
+  {
+    name: "Prof. (Dr.) Priyanka Sharma",
+    role: "MD Anderson Cancer Centre, USA"
+  },
+  {
+    name: "Dr. A.K. Tyagi",
+    role: "Dean, HBNI, Mumbai"
+  },
+  {
+    name: "Dr. Sandeep Nigam",
+    role: "BARC, Mumbai"
+  },
+  {
+    name: "Prof. Mrinal R. Pai",
+    role: "BARC, Mumbai"
+  },
+  {
+    name: "Prof. Vinita G. Gupta",
+    role: "BARC, Mumbai"
+  },
+  {
+    name: "Prof. P. A. Hassan",
+    role: "BARC, Mumbai"
+  },
+  {
+    name: "Anubhav Saxena",
+    role: "Chief R&D Officer, Pidilite Industries Limited"
+  },
+  {
+    name: "Prof. (Dr.) Balamurgan Balusamy",
+    role: "Manipal Academy of Higher Education, Dubai"
+  },
+  {
+    name: "Prof. (Dr.) Tabrez Ahmad",
+    role: "Founding Dean, MANUU, Hyderabad"
+  },
+  {
+    name: "Prof. (Dr.) Haitham Al Qahtani",
+    role: "University of Technology, Bahrain"
+  }
+];
+
+const nationalAdvisoryBoard = [
+  {
+    name: "Dr. A.K Jaiswal",
+    role: "AIIMS, New Delhi"
+  },
+  {
+    name: "Dr. Amardeep Singh",
+    role: "IOCI, India"
+  },
+  {
+    name: "Prof. (Dr.) Sonal Singhal",
+    role: "Punjab University, Chandigarh"
+  },
+  {
+    name: "Dr. Sudhir Kumar",
+    role: "Deputy Director, FSL, Moradabad"
+  },
+  {
+    name: "Prof. A. Dutta",
+    role: "GGSIP University, India"
+  },
+  {
+    name: "Dr. Tripti Bhatnagar",
+    role: "Codon Biotech Pvt. Ltd., Noida, India"
+  },
+  {
+    name: "Dr. Yatendra S Chaudhary",
+    role: "CSIR-IMMT, Bhubaneswar"
+  },
+  {
+    name: "Prof. Sandeep Kumar",
+    role: "C.V. Raman Avenue, Bangalore, India"
+  },
+  {
+    name: "Prof. Pabitra Nayak",
+    role: "TIFR, Hyderabad"
+  },
+  {
+    name: "Dr. Bhaskar Chauhan",
+    role: "Puniska Healthcare Pvt. Ltd., Ahmedabad, India"
+  },
+  {
+    name: "Mr. Pradeep Kumar Jain",
+    role: "VP, Glenmark Pharma, Mumbai"
+  },
+  {
+    name: "Dr. S. Mahapatra",
+    role: "Professor, GGSIP University, New Delhi"
+  },
+  {
+    name: "Dr. Adarsh Kumar",
+    role: "Director, Forensic Science Laboratory, Lucknow"
+  },
+  {
+    name: "Dr. Amit Goel",
+    role: "Professor & Dean, SPSU, Udaipur"
+  },
+  {
+    name: "Dr. Sanjeev Sharma",
+    role: "Pro Vice Chancellor, Shushant University, Haryana"
+  },
+  {
+    name: "Dr. Pradeep Kumar",
+    role: "Pro Vice Chancellor, MRIIRS, Faridabad, Haryana"
+  },
+  {
+    name: "Dr. Tokeer Ahmed",
+    role: "Jamia Millia Islamia (JMI), New Delhi"
+  },
+  {
+    name: "Prof. (Dr.) O.P. Sharma",
+    role: "IIT Patna"
+  },
+  {
+    name: "Prof. (Dr.) Piyush Tiwari",
+    role: "Director, BITS Mesra, Jaipur Campus"
+  },
+  {
+    name: "Prof. (Dr.) Piyush Kant",
+    role: "BHU"
+  },
+  {
+    name: "Prof. (Dr.) Adrijit Goswami",
+    role: "IIT Kharagpur"
+  },
+  {
+    name: "Prof. (Dr.) Rajesh",
+    role: "CSIR-NPL, Delhi"
+  },
+  {
+    name: "Dr. Sandeep Gupta",
+    role: "DST, New Delhi"
+  },
+  {
     name: "Prof. (Dr.) Arun Kumar Choudhary",
-    role: "MNRE"
+    role: "MNRE, New Delhi"
   },
   {
     name: "Prof. (Dr.) Vinod Kr. Yadav",
-    role: "DTU"
+    role: "DTU, New Delhi"
   },
   {
     name: "Prof. (Dr.) Anil Kumar",
-    role: "DTU"
+    role: "DTU, New Delhi"
+  },
+  {
+    name: "Prof. (Dr.) JS Lather",
+    role: "NIT Kurukshetra"
   },
   {
     name: "Prof. (Dr.) Sanjay Jain",
-    role: "TIET"
+    role: "TIET, Punjab"
   },
   {
     name: "Dr. Indivar Gupta",
@@ -121,7 +272,7 @@ const internationalAdvisoryBoard = [
   },
   {
     name: "Dr. Dhananjoy Dey",
-    role: "IIIT, Lucknow"
+    role: "IIIT Lucknow"
   },
   {
     name: "Prof. (Dr.) Neeraj Atrai",
@@ -133,11 +284,11 @@ const internationalAdvisoryBoard = [
   },
   {
     name: "Dr. Bhupinder Singh",
-    role: "IIT, Roorkee"
+    role: "IIT Delhi"
   },
   {
     name: "Dr. Ashok Panwar",
-    role: "(Industry)"
+    role: "Head & Executive VP - Quality & Regulatory, MedTherapy Biotech, Noida"
   },
   {
     name: "Dr. Amit Panwar",
@@ -153,15 +304,15 @@ const internationalAdvisoryBoard = [
   },
   {
     name: "Dr. Rajesh Ghangal",
-    role: "Scientist, DST"
+    role: "Scientist, DST, New Delhi"
   },
   {
     name: "Dr. Sandeep Shiromani",
-    role: "Associate Director, BioCon"
+    role: "Associate Director, BioCon, Bengaluru, Karnataka"
   },
   {
     name: "Dr. Rupak Raja",
-    role: "(Industry)"
+    role: "Syngene Scientific Solutions Ltd., Hyderabad, India"
   },
   {
     name: "Prof. (Dr.) Pritish Varadwaj",
@@ -169,124 +320,16 @@ const internationalAdvisoryBoard = [
   },
   {
     name: "Prof. (Dr.) Anita Yadav",
-    role: "Kurukshetra University"
+    role: "Kurukshetra University, Haryana"
   },
   {
     name: "Prof. (Dr.) Suresh Chandra",
-    role: "(Indore)"
-  },
-];
-
-const nationalAdvisoryBoard = [
-  {
-    name: "Dr. A.K Jaiswal",
-    role: "AIIMS"
-
+    role: "Devi Ahilya University, Indore"
   },
   {
-    name: "Dr. Amardeep Singh",
-    role: "IOCI, India"
-
-  },
-  {
-    name: "Prof. (Dr.) Sonal Singhal",
-    role: "Punjab University, Chandigarh"
-
-  },
-  {
-    name: "Dr. Sudhir Kumar",
-    role: "Deputy Director, FSL, Moradabad"
-
-  },
-  {
-    name: "Prof. A. Dutta",
-    role: "GGSIP University, India"
-
-  },
-  {
-    name: "Dr. Tripti Bhatnagar",
-    role: "Codon Biotech Pvt. Ltd., Noida, India"
-
-  },
-  {
-    name: "Dr. Yatendra S Chaudhary",
-    role: "CSIR-Institute OF Minerals and Materials Technology, Bhubaneswar"
-
-  },
-  {
-    name: "Prof. Sandeep Kumar",
-    role: "C.V. Raman Avenue, Bangalore, India"
-
-  },
-  {
-    name: "Prof. Pabitra Nayak",
-    role: "TIFR, Hyderabad"
-
-  },
-  {
-    name: "Dr. Bhaskar Chauhan",
-    role: "Puniska Healthcare Pvt. Ltd., Aahmadabad, India"
-
-  },
-  {
-    name: "Mr. Pradeep Kumar Jain",
-    role: "VP, Glenmark Pharma"
-
-  },
-  {
-    name: "Dr. S. Mahapatra",
-    role: "Professor, GGSIP University, New Delhi"
-
-  },
-  {
-    name: "Dr. Adarsh Kumar",
-    role: "Director, Forensic Science Laboratory, Lucknow"
-
-  },
-  {
-    name: "Dr. Amit Goel",
-    role: "Professor & Dean, SPSU, Udaipur"
-
-  },
-  {
-    name: "Dr. Sanjeev Sharma",
-    role: "Pro Vice Chancellor, Shushant University, Haryana"
-
-  },
-  {
-    name: "Dr. Pradeep Kumar",
-    role: "Pro Vice Chancellor, MRIIRS, Faridabad, Haryana"
-
-  },
-  {
-    name: "Dr. Tokeer Ahmed",
-    role: "JMI, New Delhi"
-
-  },
-  {
-    name: "Prof. (Dr.) O.P. Sharma",
-    role: "IIT-Patna"
-
-  },
-  {
-    name: "Prof. (Dr.) Piyush Tiwari",
-    role: "Director, Bits, Jaipur"
-
-  },
-  {
-    name: "Prof. (Dr.) Piyush Kant",
-    role: "BHU"
-  },
-  {
-    name: "Prof. (Dr.) Adrijit Goswami",
-    role: "IIT – Khargpur"
-
-  },
-  {
-    name: "Prof. (Dr.) Rajesh",
-    role: "CSIR-NPL, Delhi"
-
-  },
+    name: "Prof. (Dr.) Gunjan Varshney",
+    role: "Head, Robotics & AI, JSS, Noida"
+  }
 ];
 
 

@@ -12,7 +12,7 @@ const CommitteeMemberGrid = ({ members }) => (
     </div>
 );
 
-const scientificCommittee = [
+const technicalCommittee = [
     { name: "Dr. Pankaj", role: "IILM University, Greater Noida" },
     { name: "Dr. A.K. Jain", role: "IILM University, Greater Noida" },
     { name: "Dr. Chhavi Pahawa", role: "IILM University, Greater Noida" },
@@ -103,6 +103,7 @@ const hospitalityCommittee = [
     { name: "Dr. Vibhav Narayan Singh", role: "IILM University, Greater Noida" },
     { name: "Mr. Satish Jha", role: "IILM University, Greater Noida" },
     { name: "Mr. Mayank", role: "IILM University, Greater Noida" },
+    { name: "Mr. Pradeep Upadhyay", role: "IILM University, Greater Noida" },
 ];
 
 const registrationHelpDeskCommittee = [
@@ -181,7 +182,7 @@ export default function OtherCommitteesPage() {
                 dividerColor="primary"
             />
             <div className="max-w-7xl mx-auto px-4 py-12">
-                <Section title="Scientific Committee" members={scientificCommittee} />
+                <Section title="Technical Committee" members={technicalCommittee} />
                 <Section title="Technical Session Committee" members={technicalSessionCommittee} />
                 <Section title="Food Committee" members={foodCommittee} />
                 <Section title="Sponsorship Committee" members={sponsorshipCommittee} />
