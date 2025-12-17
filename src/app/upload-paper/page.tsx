@@ -31,6 +31,16 @@ const categoryTable = [
   ["Research Scholars/Faculty – Non-IILM (Oral/Poster + Publication in Scopus Journals)", "₹2000/- + APC Charges"],
 ];
 
+const bankDetails = [
+  ["Beneficiary Name", "IILM UNIVERSITY"],
+  ["Account Number", "10094813150"],
+  ["IFSC Code", "IDFB0020154"],
+  ["SWIFT Code", "IDFBINBBMUM"],
+  ["Bank Name", "IDFC FIRST BANK"],
+  ["Branch", "GREATER NOIDA BRANCH"],
+];
+
+
 export default function UploadPaperPage() {
   const [form, setForm] = useState({
     fullName: "",
@@ -135,6 +145,41 @@ export default function UploadPaperPage() {
   return (
     <div className="min-h-screen bg-background">
       <div className="max-w-7xl mx-auto px-4 py-12 space-y-8">
+        {/* Bank details */}
+        <Card className="border-none shadow-medium overflow-hidden">
+          <CardHeader className="bg-linear-to-r from-primary to-primary/90 text-white">
+            <h2 className="text-2xl font-bold">Bank Details</h2>
+          </CardHeader>
+          <CardContent className="p-0">
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr className="border-b border-gray-300 bg-muted/50">
+                  </tr>
+                </thead>
+                <tbody>
+                  {bankDetails.map(([label, value], idx) => (
+                    <tr
+                      key={idx}
+                      className="border-b border-gray-200 hover:bg-muted/20 transition-colors"
+                    >
+                      <td className="px-3 py-1.5">{label}</td>
+                      <td className="px-3 py-1.5 text-right font-medium text-primary">
+                        {value}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="px-3 py-3 bg-muted/30 border-t border-gray-300">
+              <p className="text-xs text-muted-foreground">
+                <span className="font-semibold text-foreground">APC:</span> Article
+                Processing Charges, applicable where indicated.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
         {/* Registration Fees */}
         <Card className="border-none shadow-medium overflow-hidden">
           <CardHeader className="bg-linear-to-r from-primary to-primary/90 text-white">
@@ -476,3 +521,4 @@ export default function UploadPaperPage() {
     </div>
   );
 }
+
