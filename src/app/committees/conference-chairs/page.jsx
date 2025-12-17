@@ -140,12 +140,12 @@ export default function ConferenceChairPage() {
                 }))} />
 <br />
 <br />
-                <h2 className="text-3xl md:text-4xl font-bold mb-8">Co-Patron</h2>
+                {/* <h2 className="text-3xl md:text-4xl font-bold mb-8">Co-Patron</h2>
                 <CommitteeMemberGrid members={coPatron.map(m => ({
                     name: m.name,
                     role: `${m.role}${m.affiliation ? `, ${m.affiliation}` : ""}`,
                     image: m.image
-                }))} />
+                }))} /> */}
 
                 <h2 className="text-3xl md:text-4xl font-bold mb-8 mt-16">Conference Chair</h2>
                 <CommitteeMemberGrid members={conferenceChair.map(m => ({

@@ -9,6 +9,7 @@ import Patners from "../components/home/Patners";
 import Faq from "@/components/home/Faq";
 import Aim from "@/components/home/Aim";
 import Objective from "@/components/home/Objective";
+import Association from "@/components/home/Association";
 
 const Home = () => {
     return (
@@ -16,6 +17,7 @@ const Home = () => {
             <Hero />
             {/* <MinisterSection /> */}
             <Overview />
+            <Association />
             <Aim />
             <Objective />
             <Tracks />
