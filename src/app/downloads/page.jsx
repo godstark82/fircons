@@ -34,7 +34,7 @@ export default function DownloadsPage() {
         <div className="min-h-screen bg-white">
             <AboutHeader
                 title="Downloads"
-                date="5 - 7 September"
+                date="17 - 19 September"
                 image="/images/simdte-white-lg.png"
                 overlayColor="#1a1a2e"
                 bgImage="/images/utb-images/gallery/gallery-2.jpg"

@@ -3,7 +3,7 @@ import AboutHeader from '../../../components/common/AboutHeader';
 const importantDates = [
     {
         event: "Conference Date",
-        date: "25 - 26 February, 2025",
+        date: "17 - 19 September, 2026",
         rowClass: "bg-gray-50"
     },
     {
@@ -28,7 +28,7 @@ const importantDates = [
     },
     {
         event: "Full length paper submission Deadline",
-        date: "20 January, 2026",
+        date: "17 September, 2026",
         rowClass: "bg-gray-50"
     }
 ];
@@ -36,7 +36,7 @@ const importantDates = [
 export default function ImportantDates() {
     return (
         <div className="bg-white">
-            <AboutHeader title="Important Dates" date="5 -7 September" image='/images/simdte-dark-lg.png' overlayColor='#1f1f33' bgImage='/images/calendar-imp-dates.png' dividerColor='white' />
+            <AboutHeader title="Important Dates" date="17 - 19 September" image='/images/simdte-dark-lg.png' overlayColor='#1f1f33' bgImage='/images/calendar-imp-dates.png' dividerColor='white' />
             <div className="container mx-auto px-4 py-16">
                 <div className="overflow-x-auto">
                     <table className="min-w-full border-separate border-spacing-0 rounded-lg overflow-hidden shadow-md">

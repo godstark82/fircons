@@ -4,7 +4,7 @@ import SectionHeader from '../../../components/common/SectionHeader';
 export default function AboutUniversityPage() {
     return (
         <div className="bg-white">
-            <AboutHeader title="University Profile" image='/images/simdte-white-lg.png' overlayColor='#d0224a' bgImage='/images/iilm/iilm_uni_back.webp' />
+            <AboutHeader title="University Profile" image='/images/simdte-white-lg.png' overlayColor='#d0224a' bgImage='/images/ghrce/iilm_uni_back.webp' />
             <div className="container mx-auto px-4 py-16">
                 <SectionHeader title="IILM University Greater, Noida" />
                 <div className="flex flex-col md:flex-row gap-12 items-start">

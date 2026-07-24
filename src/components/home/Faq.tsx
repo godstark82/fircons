@@ -4,7 +4,7 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/
 const FAQ_DATA = [
   {
     question: "Who Should Attend?",
-    answer: `The International Conference on Advanced Materials & Engineering for Sustainable Future is not just a knowledge-sharing forum, but also a catalyst for international collaboration and innovation, empowering the next generation of scientists, engineers, and leaders to drive progress toward a greener and more sustainable world. We invite the Researchers, Academicians, Students, Industry Professionals, and Policy Makers from National and International Institutes, Universities, R&D Organizations, Leading Industries, and Startups to join us in this prestigious conference and share your research findings, innovative ideas, and solutions.`
+    answer: `The International Symposium on Frontiers in Mathematical Sciences is not just a knowledge-sharing forum, but also a catalyst for international collaboration and innovation, empowering the next generation of scientists, engineers, and leaders to drive progress toward a greener and more sustainable world. We invite the Researchers, Academicians, Students, Industry Professionals, and Policy Makers from National and International Institutes, Universities, R&D Organizations, Leading Industries, and Startups to join us in this prestigious conference and share your research findings, innovative ideas, and solutions.`
   },
   {
     question: "Why Attend?",

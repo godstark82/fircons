@@ -6,8 +6,8 @@ import Layout from '../components/layout/Layout';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'IC-AMESF 2026',
-  description: 'International Conference on Advanced Materials & Engineering for Sustainable Future',
+  title: 'IS-FMS 2026',
+  description: 'International Symposium on Frontiers in Mathematical Sciences',
 };
 
 export default function RootLayout({ children }) {

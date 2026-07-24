@@ -21,7 +21,7 @@ export default function Overview() {
                 <SectionHeader title="Conference Overview" />
                 <div className="text-black text-lg text-justify space-y-4">
                     <p>
-                        The International Conference on Advanced Materials & Engineering for Sustainable Future is a premier academic and industry-focused gathering dedicated to exploring the latest advancements in materials science, engineering innovations, and sustainable technologies. The conference aims to serve as a global platform where researchers, academicians, industry experts, policymakers, and young innovators come together to exchange knowledge, foster collaborations, and address the pressing challenges of sustainability.
+                        The International Symposium on Frontiers in Mathematical Sciences is a premier academic and industry-focused gathering dedicated to exploring the latest advancements in materials science, engineering innovations, and sustainable technologies. The conference aims to serve as a global platform where researchers, academicians, industry experts, policymakers, and young innovators come together to exchange knowledge, foster collaborations, and address the pressing challenges of sustainability.
                     </p>
                     <p>
                         In an era where resource efficiency, environmental responsibility, and technological innovation are paramount, advanced materials and engineering solutions play a vital role in shaping a sustainable future. This conference will highlight cutting-edge research in areas such as nanomaterials, composites, biomaterials, smart and functional materials, renewable energy technologies, green manufacturing, and sustainable engineering practices.

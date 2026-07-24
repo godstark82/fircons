@@ -2,12 +2,24 @@ import React from "react";
 import AboutHeader from "../../../components/common/AboutHeader";
 import CommitteeMemberGrid from "../../../components/common/CommitteeMemberGrid";
 
-const chiefPatron = [
+const patron = [
     {
-        image: "https://iilm.ac.in/uploads/all/1067/conversions/Taruna-Ma'am-full.webp",
-        name: "Prof (Dr) Taruna Gautam",
-        role: "Vice-Chancellor",
-        affiliation: "IILM University, Greater Noida",
+        image: "/images/user.jpg",
+        name: "Shri Sunilji Raisoni",
+        role: "Chairman",
+        affiliation: "Raisoni Group of Institutions",
+    },
+    {
+        image: "/images/user.jpg",
+        name: "Smt. Shobhaji Raisoni",
+        role: "Patron",
+        affiliation: "Raisoni Group of Institutions",
+    },
+    {
+        image: "/images/user.jpg",
+        name: "Mr. Shreyas Raison",
+        role: "Executive Director",
+        affiliation: "Raisoni Group of Institutions",
     }
 ];
 
@@ -20,102 +32,117 @@ const coPatron = [
     }
 ];
 
-const conferenceChair = [
+const honoraryChair = [
     {
-        image: "https://iilm.ac.in/uploads/all/700/conversions/Munish-Sabharwal-full.webp",
-        name: "Prof. Munish Sabharwal",
-        role: "IILM University",
-        affiliation: "Greater Noida",
+        image: "/images/user.jpg",
+        name: "Dr. Sachin Untawale",
+        role: "Director, Raisoni Group of Institutions",
+        affiliation: "",
     }
 ];
 
-const internationalChair = [
+const internationalCooperation = [
     {
         image: "/images/user.jpg",
-        name: "Dr. Akhatov Akmal Rustamovich",
-        role: "Vice Rector for international cooperation",
-        affiliation: "Samarkand State University, Uzbekistan",
+        name: "Prof. Aroon Kumar Beesham",
+        role: "Senior Professor",
+        affiliation: "University of Zululand",
+    },
+    {
+        image: "/images/user.jpg",
+        name: "Prof. Maxim Khlopov",
+        role: "",
+        affiliation: "Paris, France,Moscow and Rostov/Don, Russia",
+    },
+    {
+        image: "/images/user.jpg",
+        name: "Prof. Rajendra Pant",
+        role: "Professor & Deputy HoD",
+        affiliation: "Department of Mathematics, University of Johannesburg",
+    },
+    {
+        image: "/images/user.jpg",
+        name: "Prof. Mahmood Khalid Jasim",
+        role: "Professor in Mathematics",
+        affiliation: "DMPS College of Arts and Sciences, Nizwa, Sultanate of Oman",
+    }
+];
+
+const organizingChair = [
+    {
+        image: "/images/user.jpg",
+        name: "Dr. Santosh B Jaju",
+        role: "Dy-Director & Dean R&D",
+        affiliation: "GHRCE",
     }
 ];
 
 const conveners = [
     {
-        image: "https://iilm.ac.in/uploads/all/422/conversions/AK-JAIN-350x240-full.webp",
-        name: "Prof. A.K. Jain",
-        role:"Convener",
-        affiliation: "IILM University, Greater Noida",
-    },
-    {
-        image: "/images/speakers/dr-narendra.jpeg",
-        name: "Prof. Narendra Kumar",
-        role: "Co Convener",
-        affiliation: "IILM University, Greater Noida",
-    },
-    {
-        image: "/images/speakers/nazarov-fayzullo.jpeg",
-        name: "Dr. Nazarov Fayzullo",
-        role: "Co Convener",
-        affiliation: "Uzbekistan",
-    },
+        image: "/images/user.jpg",
+        name: "Dr. Rupali J. Thete",
+        role:"Dr. Rupali J. Thete",
+        affiliation: "GHRCE",
+    }
 ];
 
 const organizingSecretaries = [
     {
-        image: "https://iilm.ac.in/uploads/all/439/conversions/Artboard-18-350x240-full.webp",
-        name: "Dr. Nidhi Puri",
+        image: "/images/user.jpg",
+        name: "Smita Pidurkar",
         role: "Organising Secretary",
-        affiliation: "IILM University, Greater Noida"
+        affiliation: ""
     },
     {
         image: "/images/user.jpg",
-        name: "Dr. Arpit Varshney",
+        name: "Dr. Nalini Vaidya",
         role: "Organising Secretary",
-        affiliation: "IILM University, Greater Noida"
+        affiliation: ""
     },
     {
         image: "/images/user.jpg",
-        name: "Dr. KM Bala",
+        name: "Dr. Akilahmad Sheikh",
         role: "Organising Secretary",
-        affiliation: "IILM University, Greater Noida"
-    },
-    {
-        image: "/images/user.jpg",
-        name: "Dr. Yarmatov Sherzodjon",
-        role: "Organising Secretary",
-        affiliation: "Samarkand State University, Uzbekistan"
+        affiliation: ""
     }
 ];
 
 const organizingCommittee = [
     {
-        name: "Dr. Priyanka Bhatnagar",
+        image: "/images/user.jpg",
+        name: "Mr. Bhagwat Thakran",
         role: "Organising Committee",
-        affiliation: " IILM University, Greater Noida"
+        affiliation: ""
     },
     {
-        name: "Dr. Nidhi Puri",
+        image: "/images/user.jpg",
+        name: "Ms. Pranali Kamdi",
         role: "Organising Committee",
-        affiliation: " IILM University, Greater Noida"
+        affiliation: ""
     },
     {
-        name: "Dr. Vanya",
+        image: "/images/user.jpg",
+        name: "Ms. Archana Deshpande",
         role: "Organising Committee",
-        affiliation: " IILM University, Greater Noida"
+        affiliation: ""
     },
     {
-        name: "Dr. Bharti",
+        image: "/images/user.jpg",
+        name: "Ms. Rita Mate",
         role: "Organising Committee",
-        affiliation: " IILM University, Greater Noida"
+        affiliation: ""
     },
     {
-        name: "Dr. Pankaj",
+        image: "/images/user.jpg",
+        name: "Ms. Shital Tayade",
         role: "Organising Committee",
-        affiliation: " IILM University, Greater Noida"
+        affiliation: ""
     },
     {
-        name: "Dr. Lalit",
+        image: "/images/user.jpg",
+        name: "Ms. Pallavi Bagde",
         role: "Organising Committee",
-        affiliation: " IILM University, Greater Noida"
+        affiliation: ""
     }
 ];
 
@@ -124,7 +151,7 @@ export default function ConferenceChairPage() {
         <div className="min-h-screen bg-white">
             <AboutHeader
                 title="Conference Chairs & Committee"
-                date="5 - 7 September"
+                date="17 - 19 September"
                 image="/images/simdte-white-lg.png"
                 overlayColor="#1a1a2e"
                 bgImage="/images/utb-images/gallery/gallery-2.jpg"
@@ -132,8 +159,8 @@ export default function ConferenceChairPage() {
             />
             <section className="max-w-6xl mx-auto px-4 py-12">
 
-                <h2 className="text-3xl md:text-4xl font-bold mb-8">Chief Patron</h2>
-                <CommitteeMemberGrid members={chiefPatron.map(m => ({
+                <h2 className="text-3xl md:text-4xl font-bold mb-8">Patrons</h2>
+                <CommitteeMemberGrid members={patron.map(m => ({
                     name: m.name,
                     role: `${m.role}${m.affiliation ? `, ${m.affiliation}` : ""}`,
                     image: m.image
@@ -147,21 +174,28 @@ export default function ConferenceChairPage() {
                     image: m.image
                 }))} /> */}
 
-                <h2 className="text-3xl md:text-4xl font-bold mb-8 mt-16">Conference Chair</h2>
-                <CommitteeMemberGrid members={conferenceChair.map(m => ({
+                <h2 className="text-3xl md:text-4xl font-bold mb-8 mt-16">Honorary Chair</h2>
+                <CommitteeMemberGrid members={honoraryChair.map(m => ({
                     name: m.name,
                     role: `${m.role}${m.affiliation ? `, ${m.affiliation}` : ""}`,
                     image: m.image
                 }))} />
 
-                <h2 className="text-3xl md:text-4xl font-bold mb-8 mt-16">International Chair</h2>
-                <CommitteeMemberGrid members={internationalChair.map(m => ({
+                <h2 className="text-3xl md:text-4xl font-bold mb-8 mt-16">International Cooperation</h2>
+                <CommitteeMemberGrid members={internationalCooperation.map(m => ({
                     name: m.name,
                     role: `${m.role}${m.affiliation ? `, ${m.affiliation}` : ""}`,
                     image: m.image
                 }))} />
 
-                <h2 className="text-3xl md:text-4xl font-bold mb-8 mt-16">Conveners & Co-Conveners</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-8 mt-16">Organizing Chair</h2>
+                <CommitteeMemberGrid members={organizingChair.map(m => ({
+                    name: m.name,
+                    role: `${m.role}${m.affiliation ? `, ${m.affiliation}` : ""}`,
+                    image: m.image
+                }))} />
+
+                <h2 className="text-3xl md:text-4xl font-bold mb-8 mt-16">Conveners</h2>
                 <CommitteeMemberGrid members={conveners.map(m => ({
                     name: m.name,
                     role: `${m.role}${m.affiliation ? `, ${m.affiliation}` : ""}`,

@@ -6,7 +6,7 @@ const DATES = [
     { day: "20", month: "December", desc: "Abstract Acceptance Notification" },
     { day: "15", month: "February", desc: "Registration Deadline" },
     { day: "15", month: "November", desc: "Submission of full Paper starts" },
-    // { day: "6-7", month: "September", desc: "Conference Dates" },
+    { day: "17-19", month: "September", desc: "Conference Dates" },
 ];
 
 export default function ImportantDates() {

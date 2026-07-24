@@ -9,7 +9,7 @@ export default function Hero() {
                 <div className="flex flex-col items-center justify-center py-8 md:py-12">
                     <div className="flex flex-col items-center gap-2 md:gap-4">
                         <span className="text-5xl md:text-3xl font-bold text-[#E13A59] tracking-tight leading-none" style={{ letterSpacing: '-0.04em' }}>
-                            IC-AMESF <span className="text-2xl md:text-3xl font-bold text-white">2026</span>
+                            IS-FMS <span className="text-2xl md:text-3xl font-bold text-white">2026</span>
                         </span>
                     </div>
                     <div className="mt-2 md:mt-4 max-w-5xl">

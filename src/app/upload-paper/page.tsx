@@ -18,26 +18,43 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { CheckCircle2, Upload, Mail } from "lucide-react";
 import { CONSTANTS } from "@/lib/constants";
 
-const categoryTable = [
-  ["Student (Poster Presentation) IILM Only", "₹500/-"],
-  ["Student (Poster Presentation) Non-IILM", "₹750/-"],
-  ["Research Scholars/Faculty – IILM Only (Oral/Poster)", "₹1500/-"],
-  ["Research Scholars/Faculty – Non-IILM (Oral/Poster)", "₹2000/-"],
-  ["Research Scholars/Faculty – IILM Only (Oral/Poster + Publication in Peer Reviewed Journals)", "₹2500/-"],
-  ["Research Scholars/Faculty – Non-IILM (Oral/Poster + Publication in Peer Reviewed Journals)", "₹3000/-"],
-  ["Research Scholars/Faculty – IILM Only (Oral/Poster + Publication in Proceedings)", "₹1500/- + APC Charges"],
-  ["Research Scholars/Faculty – Non-IILM (Oral/Poster + Publication in Proceedings)", "₹2000/- + APC Charges"],
-  ["Research Scholars/Faculty – IILM Only (Oral/Poster + Publication in Scopus Journals)", "₹1500/- + APC Charges"],
-  ["Research Scholars/Faculty – Non-IILM (Oral/Poster + Publication in Scopus Journals)", "₹2000/- + APC Charges"],
+const categories = [
+  "Research Scholar",
+  "Faculty/Industry Person",
+  "Attendee",
+];
+
+const feeTable = [
+  {
+    category: "Research Scholar",
+    earlyBirdIndian: "2000 INR",
+    earlyBirdForeign: "25 USD",
+    lateIndian: "2500 INR",
+    lateForeign: "30 USD",
+  },
+  {
+    category: "Faculty/Industry Person",
+    earlyBirdIndian: "3000 INR",
+    earlyBirdForeign: "35 USD",
+    lateIndian: "3500 INR",
+    lateForeign: "40 USD",
+  },
+  {
+    category: "Attendee",
+    earlyBirdIndian: "500 INR",
+    earlyBirdForeign: "10 USD",
+    lateIndian: "500 INR",
+    lateForeign: "10 USD",
+  },
 ];
 
 const bankDetails = [
-  ["Beneficiary Name", "IILM UNIVERSITY"],
-  ["Account Number", "10094813150"],
-  ["IFSC Code", "IDFB0020154"],
+  ["Beneficiary Name", "G H Raisoni Career Foundation"],
+  ["Account Number", "624205012873"],
+  ["IFSC Code", "ICIC0006242"],
   ["SWIFT Code", "IDFBINBBMUM"],
-  ["Bank Name", "IDFC FIRST BANK"],
-  ["Branch", "GREATER NOIDA BRANCH"],
+  ["Bank Name", "ICICI Bank"],
+  ["Branch", "Ramdaspeth Nagpur"],
 ];
 
 
@@ -193,30 +210,46 @@ export default function UploadPaperPage() {
               <table className="w-full text-sm border-collapse">
                 <thead>
                   <tr className="border-b border-gray-300 bg-muted/50">
-                    <th className="px-3 py-2 text-left font-semibold">Category</th>
-                    <th className="px-3 py-2 text-right font-semibold">Amount (INR)</th>
+                    <th rowSpan={2} className="px-3 py-2 text-left font-semibold align-middle border-r border-gray-300">
+                      Category
+                    </th>
+                    <th colSpan={2} className="px-3 py-2 text-center font-semibold border-r border-gray-300">
+                      Early Bird
+                    </th>
+                    <th colSpan={2} className="px-3 py-2 text-center font-semibold">
+                      After 31st August 2026
+                    </th>
+                  </tr>
+                  <tr className="border-b border-gray-300 bg-muted/30">
+                    <th className="px-3 py-2 text-center font-semibold">Indian</th>
+                    <th className="px-3 py-2 text-center font-semibold border-r border-gray-300">Foreign</th>
+                    <th className="px-3 py-2 text-center font-semibold">Indian</th>
+                    <th className="px-3 py-2 text-center font-semibold">Foreign</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {categoryTable.map(([cat, amt], idx) => (
+                  {feeTable.map((row) => (
                     <tr
-                      key={idx}
+                      key={row.category}
                       className="border-b border-gray-200 hover:bg-muted/20 transition-colors"
                     >
-                      <td className="px-3 py-1.5">{cat}</td>
-                      <td className="px-3 py-1.5 text-right font-medium text-primary">
-                        {amt}
-                      </td>
+                      <td className="px-3 py-2 font-medium border-r border-gray-200">{row.category}</td>
+                      <td className="px-3 py-2 text-center text-primary font-medium">{row.earlyBirdIndian}</td>
+                      <td className="px-3 py-2 text-center text-primary font-medium border-r border-gray-200">{row.earlyBirdForeign}</td>
+                      <td className="px-3 py-2 text-center text-primary font-medium">{row.lateIndian}</td>
+                      <td className="px-3 py-2 text-center text-primary font-medium">{row.lateForeign}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-            <div className="px-3 py-3 bg-muted/30 border-t border-gray-300">
-              <p className="text-xs text-muted-foreground">
-                <span className="font-semibold text-foreground">APC:</span> Article
-                Processing Charges, applicable where indicated.
-              </p>
+            <div className="px-4 py-4 bg-muted/30 border-t border-gray-300">
+              <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5">
+                <li>Author has to pay APC as per journal.</li>
+                <li>Author can present their paper on an online mode also.</li>
+                <li>Registration fees once paid will not be refunded under any circumstances.</li>
+                <li>Last date of full paper submission: 17 September 2026.</li>
+              </ul>
             </div>
           </CardContent>
         </Card>
@@ -317,7 +350,7 @@ export default function UploadPaperPage() {
                       <option value="" disabled>
                         Select a category
                       </option>
-                      {categoryTable.map(([cat]) => (
+                      {categories.map((cat) => (
                         <option key={cat} value={cat}>
                           {cat}
                         </option>

@@ -8,7 +8,7 @@ export default function Aim() {
                 <div className="text-black text-lg text-justify space-y-4">
                     <p>
                         The aim of the “International Conference on Advanced Materials & Engineering for
-                        Sustainable Future (IC-AMESF 2026)” is to bring together leading researchers,
+                        Sustainable Future (IS-FMS 2026)” is to bring together leading researchers,
                         academicians, industry professionals, and policymakers from around the world to share
                         knowledge, innovations, and advancements in the scientific and technical domains. The
                         conference seeks to focus to address global challenges via sustainable practices, advanced

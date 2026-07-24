@@ -54,7 +54,7 @@ export default function AccommodationOptionsPage() {
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <AboutHeader
         title="Accommodation Options"
-        date="November 6-7, 2025"
+        date="17 - 19 September"
         image="/images/simdte-white-lg.png"
         overlayColor="#1a1a2e"
         bgImage="/images/utb-images/gallery/gallery-2.jpg"
@@ -66,13 +66,13 @@ export default function AccommodationOptionsPage() {
         <div className="max-w-4xl mx-auto mb-16">
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-10">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-              Welcome to IC-AMESF 2025
+              Welcome to IS-FMS 2025
             </h2>
             <div className="space-y-4 text-base md:text-lg text-gray-700 leading-relaxed">
               <p>
                 We are pleased to offer accommodation options for delegates attending the{" "}
                 <span className="font-semibold text-gray-900">
-                  International Conference on Advanced Materials & Engineering for Sustainable Future (IC-AMESF 2025)
+                  International Symposium on Frontiers in Mathematical Sciences (IS-FMS 2025)
                 </span>.
               </p>
               <p>

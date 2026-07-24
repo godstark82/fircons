@@ -8,7 +8,7 @@ export default function ContactUsPage() {
         <div className="min-h-screen bg-white">
             <AboutHeader
                 title="Contact Us"
-                date="5 - 7 September"
+                date="17 - 19 September"
                 // bgImage={"/images/simdte-white-lg.png"}
                 overlayColor="#1a1a2e"
                 bgImage="/images/utb-images/gallery/gallery-2.jpg"

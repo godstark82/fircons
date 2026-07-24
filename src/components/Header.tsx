@@ -34,7 +34,7 @@ const Header = () => {
                 <Link
                     key={key}
                     href={`/${key.toLowerCase().replace(/\s+/g, '-')}`}
-                    className={`${isMobile ? 'text-black' : 'text-white'} hover:text-primary transition-colors font-bold block py-2`}
+                    className={`${isMobile ? 'text-black' : 'text-secondary'} hover:text-primary transition-colors font-bold block py-2`}
                     onClick={() => setIsMobileMenuOpen(false)}
                 >
                     {value}
@@ -43,7 +43,7 @@ const Header = () => {
         } else {
             return (
                 <div key={key} className="relative group">
-                    <button className={`${isMobile ? 'text-black' : 'text-white'} hover:text-primary transition-colors font-bold flex items-center gap-1 w-full py-2`}>
+                    <button className={`${isMobile ? 'text-black' : 'text-secondary'} hover:text-primary transition-colors font-bold flex items-center gap-1 w-full py-2`}>
                         {key}
                         <svg
                             className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
@@ -77,12 +77,12 @@ const Header = () => {
     };
 
     return (
-        <header className="bg-secondary shadow-md sticky top-0 z-50">
+        <header className="bg-white shadow-md sticky top-0 z-50">
             <div className="container mx-auto px-4 py-4">
                 <nav className="flex justify-between items-center">
                     <div className="text-2xl font-bold text-black">
                         <Link href="/">
-                            <Image src={'/images/iilm/iilm_logo.png'} alt='IILM_LOGO' width={200} height={100} />
+                            <Image src={'/images/ghrce/ghrce.webp'} alt='GHRCE_LOGO' width={200} height={100} className="h-12 w-auto object-contain" />
                         </Link>
                     </div>
                     <div className="hidden md:flex space-x-6 ">
