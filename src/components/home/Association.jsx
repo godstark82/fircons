@@ -2,8 +2,7 @@ import SectionHeader from "../common/SectionHeader";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
-const ASSOCIATION_IMAGE = "https://studyin-uzbekistan.uz/media/cache/12/5f/125f4b0b90afccc88819e127154fdc0a.jpg";
-
+const ASSOCIATION_IMAGE = "/images/ghrce/ghrce.webp";
 
 export default function Association() {
     return (
@@ -12,38 +11,32 @@ export default function Association() {
                 <SectionHeader title="In Association With" />
                 <Card className="max-w-6xl mx-auto overflow-hidden border-none shadow-2xl bg-white/95 backdrop-blur">
                     <div className="grid grid-cols-1 md:grid-cols-2">
-                        <div className="relative h-full">
+                        <div className="relative h-full min-h-[280px] bg-white flex items-center justify-center p-8">
                             <img
                                 src={ASSOCIATION_IMAGE}
-                                alt="Samarkand State University campus"
-                                className="h-full w-full object-cover"
+                                alt="G H Raisoni College of Engineering, Nagpur"
+                                className="h-full w-full object-contain"
                                 loading="lazy"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent" />
-                            <div className="absolute bottom-4 left-4 text-white space-y-1">
-                                <p className="text-xs uppercase tracking-[0.2em]">Samarkand State University</p>
-                                <p className="text-lg font-semibold">Uzbekistan</p>
-                            </div>
                         </div>
                         <CardContent className="p-8 space-y-6">
                             <Badge variant="secondary" className="w-fit">Partner Institution</Badge>
                             <div className="space-y-2">
                                 <h3 className="text-2xl font-bold text-primary">
-                                    Faculty of Artificial Intelligence and Digital Technologies
+                                    G H Raisoni College of Engineering
                                 </h3>
                                 <p className="text-lg font-semibold text-muted-foreground">
-                                    Samarkand State University, Uzbekistan
+                                    GHRCE, Nagpur
                                 </p>
                             </div>
                             <p className="text-base leading-relaxed text-justify text-muted-foreground">
-                                Samarkand State University, Uzbekistan, officially founded in 1927 but rooted in the
-                                600-year legacy of the Mirzo Ulughbek Madrasa, is one of Uzbekistan&apos;s oldest and
-                                most renowned institutions. It has evolved through several historical stages and now
-                                comprises 7 faculties, 4 institutes, and 59 departments offering 72 programs. The
-                                university serves nearly 17,000 undergraduate and 700 graduate students, supported by
-                                around 900 faculty members and extensive research opportunities.
+                                Established in 1996, G H Raisoni College of Engineering [GHRCE] is an Empowered
+                                Autonomous Institution in central India imparting a holistic technical education to
+                                students from India and abroad. The institution is accredited “A++” by NAAC in its
+                                3rd cycle, with almost all programs Tier-I accredited by NBA, and is ranked under the
+                                Platinum category for Best Industry Linked Institution by AICTE-CII Survey. GHRCE is
+                                positioned in the Band of 11-50 in the Innovation Category by NIRF Ranking 2024.
                             </p>
-                            
                         </CardContent>
                     </div>
                 </Card>
@@ -51,4 +44,3 @@ export default function Association() {
         </section>
     );
 }
-

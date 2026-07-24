@@ -1,9 +1,5 @@
-import { Inter } from 'next/font/google';
 import './globals.css';
-import LayoutWrapper from '../components/LayoutWrapper';
 import Layout from '../components/layout/Layout';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'IS-FMS 2026',
@@ -13,7 +9,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className="antialiased">
         <Layout>
           {children}
         </Layout>

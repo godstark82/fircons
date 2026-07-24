@@ -21,13 +21,13 @@ export default function Overview() {
                 <SectionHeader title="Conference Overview" />
                 <div className="text-black text-lg text-justify space-y-4">
                     <p>
-                        The International Symposium on Frontiers in Mathematical Sciences is a premier academic and industry-focused gathering dedicated to exploring the latest advancements in materials science, engineering innovations, and sustainable technologies. The conference aims to serve as a global platform where researchers, academicians, industry experts, policymakers, and young innovators come together to exchange knowledge, foster collaborations, and address the pressing challenges of sustainability.
+                        The International Conference on Mathematics 2025 will unite experts from diverse mathematical disciplines worldwide to discuss and advance both pure and applied mathematics.
                     </p>
                     <p>
-                        In an era where resource efficiency, environmental responsibility, and technological innovation are paramount, advanced materials and engineering solutions play a vital role in shaping a sustainable future. This conference will highlight cutting-edge research in areas such as nanomaterials, composites, biomaterials, smart and functional materials, renewable energy technologies, green manufacturing, and sustainable engineering practices.
+                        The conference aims to foster research in pure and applied mathematics while encouraging innovative ideas in the field. It seeks to establish collaborative research groups, facilitating knowledge exchange and in-depth discussions on recent findings.
                     </p>
                     <p>
-                        Participants will gain the opportunity to engage in thought-provoking keynote lectures, and technical paper presentations led by renowned experts from across the domains. By bridging the gap between scientific discovery and practical application, the conference seeks to inspire innovative solutions that contribute to environmental preservation, economic growth, and societal well-being.
+                        Additionally, the conference offers a platform for mathematicians and researchers to present their original work, innovative ideas, and novel mathematical approaches. It encourages contributions that blend theoretical advancements with practical applications, fostering interdisciplinary collaboration and the exploration of emerging trends in mathematics.
                     </p>
                 </div>
             </div>

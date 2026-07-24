@@ -47,7 +47,7 @@ export default function ContactUsPage() {
                     {/* Google Map */}
                     <div className="flex-1 min-h-[300px]">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.6370219293717!2d77.4887393758811!3d28.460356391877994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cc1e13dcbf0eb%3A0xfcf1c4d9749a78b4!2sIILM%20University%2C%20Greater%20Noida!5e0!3m2!1sen!2sin!4v1761980394948!5m2!1sen!2sin"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3722.183520391772!2d79.00091537503361!3d21.105248380563285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4954f412ca411%3A0x4fd4cb2d05b49c7d!2sG.%20H.%20Raisoni%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1784876969666!5m2!1sen!2sin"
                             width="100%"
                             height="350"
                             style={{ border: 0 }}
