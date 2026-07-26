@@ -3,32 +3,27 @@ import AboutHeader from '../../../components/common/AboutHeader';
 const importantDates = [
     {
         event: "Conference Date",
-        date: "17 - 19 September, 2026",
+        date: "25, 26, 27 September, 2026",
         rowClass: "bg-gray-50"
     },
     {
-        event: "Registration and Abstract Submission Starts",
-        date: "15 December, 2025",
+        event: "Abstract Notification",
+        date: "10 May, 2026",
         rowClass: "bg-gray-50"
     },
     {
-        event: "Last Date of Registration without late payment",
-        date: "15 February, 2026",
+        event: "Acceptance Notification",
+        date: "10 June, 2026",
         rowClass: "bg-gray-50"
     },
     {
-        event: "Abstract submission Deadline",
-        date: "25 December, 2025",
+        event: "Registration Deadline",
+        date: "15 September, 2026",
         rowClass: "bg-gray-50"
     },
     {
-        event: "Abstract Acceptance Notification",
-        date: "30 December, 2025",
-        rowClass: "bg-gray-50"
-    },
-    {
-        event: "Full length paper submission Deadline",
-        date: "17 September, 2026",
+        event: "Submission of Full Paper Starts",
+        date: "20 May, 2026",
         rowClass: "bg-gray-50"
     }
 ];

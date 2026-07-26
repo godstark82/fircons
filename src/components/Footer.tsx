@@ -74,8 +74,13 @@ const Footer = () => {
                         <h3 className="text-xl font-bold text-white">Quick Links</h3>
                         <ul className="space-y-3">
                             <li>
+                                <Link href="/login" className="text-light/80 hover:text-primary transition-colors block">
+                                    Login
+                                </Link>
+                            </li>
+                            <li>
                                 <Link href="/upload-paper" className="text-light/80 hover:text-primary transition-colors block">
-                                    Upload Paper/Registeration
+                                    Registration
                                 </Link>
                             </li>
                             <li>
@@ -110,6 +115,29 @@ const Footer = () => {
                             ></iframe>
 
                         </div>
+                    </div>
+                </div>
+                <div className="mt-8">
+                    <div className="bg-primary text-white text-center text-lg font-bold py-2 rounded-t-md">
+                        Academic Partner
+                    </div>
+                    <div className="border border-light/20 border-t-0 rounded-b-md px-4 py-4 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-8">
+                        <a
+                            href="https://abhijournals.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-light/80 hover:text-primary transition-colors"
+                        >
+                            abhijournals.com
+                        </a>
+                        <a
+                            href="https://janolijaournals.org"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-light/80 hover:text-primary transition-colors"
+                        >
+                            janolijaournals.org
+                        </a>
                     </div>
                 </div>
                 <div className="border-t border-light/20 mt-8 pt-8 text-center text-light/80">

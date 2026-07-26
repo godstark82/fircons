@@ -1,13 +1,11 @@
 export const ROUTES = {
     ADMIN: '/admin',
     LOGIN: '/login',
-    // Add other routes as needed
+    USER: '/user',
 };
 
 export const getLayoutConfig = (pathname) => {
-    // List of routes that should not show the layout
-    const noLayoutRoutes = [ROUTES.ADMIN, ROUTES.LOGIN];
-
-    // Check if current path starts with any of the no-layout routes
+    // Hide site chrome on admin, login, and user panel routes
+    const noLayoutRoutes = [ROUTES.ADMIN, ROUTES.LOGIN, ROUTES.USER];
     return !noLayoutRoutes.some(route => pathname?.startsWith(route));
 }; 

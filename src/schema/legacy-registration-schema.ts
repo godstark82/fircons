@@ -1,6 +1,7 @@
 import { z } from "zod";
 
-export const RegistrationWithPaperSchema = z.object({
+/** Legacy schema for /api/paper-upload (combined registration + optional paper). */
+export const LegacyRegistrationWithPaperSchema = z.object({
   fullName: z.string().min(1),
   email: z.string().email(),
   phone: z.string().min(1),
@@ -10,11 +11,9 @@ export const RegistrationWithPaperSchema = z.object({
   daysAttending: z.string().min(1),
   presentingPaper: z.boolean(),
   paymentIntentId: z.string().min(1),
-
-  // Paper fields are optional unless presentingPaper is true
   paperTitle: z.string().optional(),
   paperAbstract: z.string().optional(),
-  uploadedFile: z.instanceof(File).optional(),
+  uploadedFile: z.instanceof(File).optional().nullable(),
 })
 .superRefine((data, ctx) => {
   if (data.presentingPaper) {

@@ -10,6 +10,7 @@ import Faq from "@/components/home/Faq";
 import Aim from "@/components/home/Aim";
 import Objective from "@/components/home/Objective";
 import Association from "@/components/home/Association";
+import NagpurCity from "@/components/home/NagpurCity";
 
 const Home = () => {
     return (
@@ -17,6 +18,7 @@ const Home = () => {
             <Hero />
             {/* <MinisterSection /> */}
             <Overview />
+            <NagpurCity />
             <Association />
             <Aim />
             <Objective />

@@ -10,13 +10,29 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Checkbox } from "@/components/ui/checkbox";
-import { CheckCircle2, Upload, Mail } from "lucide-react";
+import {
+  CheckCircle2,
+  Mail,
+  User,
+  Phone,
+  Building2,
+  Globe,
+  Calendar,
+  FileText,
+  AlertCircle,
+  Loader2,
+  CheckCircle,
+  XCircle,
+  Lock,
+  Eye,
+  EyeOff,
+} from "lucide-react";
+import Link from "next/link";
 import { CONSTANTS } from "@/lib/constants";
+import { registerUser, type RegistrationData } from "@/lib/registration";
+import { cn } from "@/lib/utils";
 
 const categories = [
   "Research Scholar",
@@ -57,123 +73,236 @@ const bankDetails = [
   ["Branch", "Ramdaspeth Nagpur"],
 ];
 
+interface FormErrors {
+  [key: string]: string;
+}
 
 export default function UploadPaperPage() {
   const [form, setForm] = useState({
     fullName: "",
     email: "",
+    password: "",
+    confirmPassword: "",
     phone: "",
     affiliation: "",
     country: "",
     category: "",
     daysAttending: "",
-    presentingPaper: false,
-    paymentIntentId: "",
-    paperTitle: "",
-    paperAbstract: "",
-    uploadedFile: null,
   });
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [touched, setTouched] = useState<{ [key: string]: boolean }>({});
   const [status, setStatus] = useState("");
+  const [statusType, setStatusType] = useState<"success" | "error" | "">("");
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
-  };
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      setForm({ ...form, uploadedFile: e.target.files[0] });
+  const validateField = (name: string, value: string | boolean | File | null): string => {
+    switch (name) {
+      case "fullName":
+        if (!value || (typeof value === "string" && value.trim().length === 0)) {
+          return "Full name is required";
+        }
+        return "";
+      case "email":
+        if (!value || (typeof value === "string" && value.trim().length === 0)) {
+          return "Email is required";
+        }
+        if (typeof value === "string" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+          return "Please enter a valid email address";
+        }
+        return "";
+      case "password":
+        if (!value || (typeof value === "string" && value.trim().length === 0)) {
+          return "Password is required";
+        }
+        if (typeof value === "string" && value.length < 8) {
+          return "Password must be at least 8 characters long";
+        }
+        return "";
+      case "confirmPassword":
+        if (!value || (typeof value === "string" && value.trim().length === 0)) {
+          return "Please confirm your password";
+        }
+        if (typeof value === "string" && value !== form.password) {
+          return "Passwords do not match";
+        }
+        return "";
+      case "phone":
+        if (!value || (typeof value === "string" && value.trim().length === 0)) {
+          return "Phone number is required";
+        }
+        if (typeof value === "string" && value.replace(/\D/g, "").length < 7) {
+          return "Please enter a valid phone number";
+        }
+        return "";
+      case "affiliation":
+        if (!value || (typeof value === "string" && value.trim().length === 0)) {
+          return "Affiliation is required";
+        }
+        return "";
+      case "country":
+        if (!value || (typeof value === "string" && value.trim().length === 0)) {
+          return "Country is required";
+        }
+        return "";
+      case "category":
+        if (!value || (typeof value === "string" && value.trim().length === 0)) {
+          return "Registration category is required";
+        }
+        return "";
+      case "daysAttending":
+        if (!value || (typeof value === "string" && value.trim().length === 0)) {
+          return "Days attending is required";
+        }
+        return "";
+      default:
+        return "";
     }
   };
 
-  const handleCheckboxChange = (checked: boolean) => {
-    setForm({ ...form, presentingPaper: checked });
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+
+    if (touched[name]) {
+      const error = validateField(name, value);
+      setErrors({ ...errors, [name]: error });
+    }
+  };
+
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setTouched({ ...touched, [name]: true });
+    const error = validateField(name, value);
+    setErrors({ ...errors, [name]: error });
+  };
+
+  const handleSelectChange = (
+    e: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+    setTouched((prev) => ({ ...prev, [name]: true }));
+    const error = validateField(name, value);
+    setErrors((prev) => ({ ...prev, [name]: error }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const allFields = [
+      "fullName",
+      "email",
+      "password",
+      "confirmPassword",
+      "phone",
+      "affiliation",
+      "country",
+      "category",
+      "daysAttending",
+    ] as const;
+    const newTouched: { [key: string]: boolean } = {};
+    const newErrors: FormErrors = {};
+
+    allFields.forEach((field) => {
+      newTouched[field] = true;
+      const value = form[field];
+      const error = validateField(field, value);
+      if (error) {
+        newErrors[field] = error;
+      }
+    });
+
+    setTouched(newTouched);
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length > 0) {
+      const firstError = Object.values(newErrors)[0];
+      setStatus(firstError || "Please fix the errors in the form before submitting.");
+      setStatusType("error");
+      const firstField = Object.keys(newErrors)[0];
+      if (firstField) {
+        document.getElementById(firstField)?.scrollIntoView({ behavior: "smooth", block: "center" });
+        document.getElementById(firstField)?.focus();
+      }
+      return;
+    }
+
     setLoading(true);
     setStatus("");
+    setStatusType("");
 
     try {
-      const formDataPayload = new FormData();
-      formDataPayload.append("fullName", form.fullName);
-      formDataPayload.append("email", form.email);
-      formDataPayload.append("phone", form.phone);
-      formDataPayload.append("affiliation", form.affiliation);
-      formDataPayload.append("country", form.country);
-      formDataPayload.append("category", form.category);
-      formDataPayload.append("daysAttending", form.daysAttending);
-      formDataPayload.append("presentingPaper", form.presentingPaper ? "true" : "false");
-      formDataPayload.append("paymentIntentId", form.paymentIntentId);
+      const registrationData: RegistrationData = {
+        fullName: form.fullName,
+        email: form.email,
+        password: form.password,
+        phone: form.phone,
+        affiliation: form.affiliation,
+        country: form.country,
+        category: form.category,
+        daysAttending: form.daysAttending,
+        presentingPaper: false,
+      };
 
-      if (form.presentingPaper) {
-        formDataPayload.append("paperTitle", form.paperTitle);
-        formDataPayload.append("paperAbstract", form.paperAbstract);
-        if (form.uploadedFile) {
-          formDataPayload.append("uploadedFile", form.uploadedFile, form.uploadedFile.name);
-        }
-      }
+      const result = await registerUser(registrationData);
 
-      const response = await fetch("/api/paper-upload", {
-        method: "POST",
-        body: formDataPayload,
-      });
-
-      const result = await response.json();
-
-      if (!response.ok) {
-        setStatus(result.error || "Submission failed");
+      if (!result.success) {
+        setStatus(result.error || result.message || "Submission failed");
+        setStatusType("error");
         setLoading(false);
         return;
       }
 
       setStatus(result.message || "Submission successful");
+      setStatusType("success");
       setShowModal(true);
 
-      // Reset form after successful submission
+      if (typeof window !== 'undefined') {
+        sessionStorage.setItem('userEmail', form.email);
+        if (result.userId) {
+          sessionStorage.setItem('userId', result.userId);
+        }
+      }
+
       setForm({
         fullName: "",
         email: "",
+        password: "",
+        confirmPassword: "",
         phone: "",
         affiliation: "",
         country: "",
         category: "",
         daysAttending: "",
-        presentingPaper: false,
-        paymentIntentId: "",
-        paperTitle: "",
-        paperAbstract: "",
-        uploadedFile: null,
       });
+      setErrors({});
+      setTouched({});
+      setShowPassword(false);
+      setShowConfirmPassword(false);
     } catch (error) {
       setStatus("Unexpected error occurred, please try again.");
+      setStatusType("error");
       console.error(error);
     } finally {
       setLoading(false);
     }
   };
 
-
   return (
     <div className="min-h-screen bg-background">
       <div className="max-w-7xl mx-auto px-4 py-12 space-y-8">
-        {/* Bank details */}
-        <Card className="border-none shadow-medium overflow-hidden">
-          <CardHeader className="bg-linear-to-r from-primary to-primary/90 text-white">
+        <Card className="border-none shadow-md overflow-hidden">
+          <CardHeader className="bg-primary text-white">
             <h2 className="text-2xl font-bold">Bank Details</h2>
           </CardHeader>
           <CardContent className="p-0">
             <div className="overflow-x-auto">
               <table className="w-full text-sm border-collapse">
-                <thead>
-                  <tr className="border-b border-gray-300 bg-muted/50">
-                  </tr>
-                </thead>
                 <tbody>
                   {bankDetails.map(([label, value], idx) => (
                     <tr
@@ -189,17 +318,11 @@ export default function UploadPaperPage() {
                 </tbody>
               </table>
             </div>
-            <div className="px-3 py-3 bg-muted/30 border-t border-gray-300">
-              <p className="text-xs text-muted-foreground">
-                <span className="font-semibold text-foreground">APC:</span> Article
-                Processing Charges, applicable where indicated.
-              </p>
-            </div>
           </CardContent>
         </Card>
-        {/* Registration Fees */}
-        <Card className="border-none shadow-medium overflow-hidden">
-          <CardHeader className="bg-linear-to-r from-primary to-primary/90 text-white">
+
+        <Card className="border-none shadow-md overflow-hidden">
+          <CardHeader className="bg-primary text-white">
             <h2 className="text-2xl font-bold">Registration Categories & Fees</h2>
             <p className="text-primary-foreground/80 text-sm">
               Choose the category that applies to you
@@ -210,21 +333,11 @@ export default function UploadPaperPage() {
               <table className="w-full text-sm border-collapse">
                 <thead>
                   <tr className="border-b border-gray-300 bg-muted/50">
-                    <th rowSpan={2} className="px-3 py-2 text-left font-semibold align-middle border-r border-gray-300">
-                      Category
-                    </th>
-                    <th colSpan={2} className="px-3 py-2 text-center font-semibold border-r border-gray-300">
-                      Early Bird
-                    </th>
-                    <th colSpan={2} className="px-3 py-2 text-center font-semibold">
-                      After 31st August 2026
-                    </th>
-                  </tr>
-                  <tr className="border-b border-gray-300 bg-muted/30">
-                    <th className="px-3 py-2 text-center font-semibold">Indian</th>
-                    <th className="px-3 py-2 text-center font-semibold border-r border-gray-300">Foreign</th>
-                    <th className="px-3 py-2 text-center font-semibold">Indian</th>
-                    <th className="px-3 py-2 text-center font-semibold">Foreign</th>
+                    <th className="px-3 py-2 text-left font-semibold">Category</th>
+                    <th className="px-3 py-2 text-right font-semibold">Early Bird (Indian)</th>
+                    <th className="px-3 py-2 text-right font-semibold">Early Bird (Foreign)</th>
+                    <th className="px-3 py-2 text-right font-semibold">Late (Indian)</th>
+                    <th className="px-3 py-2 text-right font-semibold">Late (Foreign)</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -233,240 +346,314 @@ export default function UploadPaperPage() {
                       key={row.category}
                       className="border-b border-gray-200 hover:bg-muted/20 transition-colors"
                     >
-                      <td className="px-3 py-2 font-medium border-r border-gray-200">{row.category}</td>
-                      <td className="px-3 py-2 text-center text-primary font-medium">{row.earlyBirdIndian}</td>
-                      <td className="px-3 py-2 text-center text-primary font-medium border-r border-gray-200">{row.earlyBirdForeign}</td>
-                      <td className="px-3 py-2 text-center text-primary font-medium">{row.lateIndian}</td>
-                      <td className="px-3 py-2 text-center text-primary font-medium">{row.lateForeign}</td>
+                      <td className="px-3 py-1.5">{row.category}</td>
+                      <td className="px-3 py-1.5 text-right font-medium text-primary">{row.earlyBirdIndian}</td>
+                      <td className="px-3 py-1.5 text-right font-medium text-primary">{row.earlyBirdForeign}</td>
+                      <td className="px-3 py-1.5 text-right font-medium text-primary">{row.lateIndian}</td>
+                      <td className="px-3 py-1.5 text-right font-medium text-primary">{row.lateForeign}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-            <div className="px-4 py-4 bg-muted/30 border-t border-gray-300">
-              <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5">
-                <li>Author has to pay APC as per journal.</li>
-                <li>Author can present their paper on an online mode also.</li>
-                <li>Registration fees once paid will not be refunded under any circumstances.</li>
-                <li>Last date of full paper submission: 17 September 2026.</li>
-              </ul>
-            </div>
           </CardContent>
         </Card>
 
-        {/* Registration Form */}
-        <Card className="border-none shadow-medium" id="submit-paper">
-          <CardHeader className="bg-linear-to-r from-primary to-primary/90 text-white">
-            <h2 className="text-2xl font-bold">Registration & Paper Submission</h2>
+        <Card className="border-none shadow-md" id="register">
+          <CardHeader className="bg-primary text-white">
+            <h2 className="text-2xl font-bold">Conference Registration</h2>
             <p className="text-primary-foreground/80">
-              Fill out the form below to register for the conference
+              Fill out the form below to register for the conference. You can submit papers later from your user panel.
             </p>
           </CardHeader>
           <CardContent className="pt-6">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Personal Information */}
-              <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-foreground">
-                  Personal Information
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <form onSubmit={handleSubmit} className="space-y-8">
+              <div className="flex items-start gap-3 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                <Lock className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                <div className="flex-1">
+                  <p className="text-sm font-semibold text-blue-900 mb-1">
+                    Account Creation
+                  </p>
+                  <p className="text-xs text-blue-800">
+                    By registering, you&apos;ll create an account that allows you to log in later to manage your submissions,
+                    view your registration status, and submit papers.
+                  </p>
+                </div>
+              </div>
+
+              <div className="space-y-5">
+                <div className="flex items-center gap-2 pb-2 border-b">
+                  <User className="w-5 h-5 text-primary" />
+                  <h3 className="text-lg font-semibold text-foreground">
+                    Personal Information
+                  </h3>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div className="space-y-2">
-                    <Label htmlFor="fullName">Full Name *</Label>
+                    <Label htmlFor="fullName" className="flex items-center gap-1.5">
+                      <User className="w-3.5 h-3.5 text-muted-foreground" />
+                      Full Name *
+                    </Label>
                     <Input
                       id="fullName"
                       name="fullName"
                       value={form.fullName}
                       onChange={handleChange}
+                      onBlur={handleBlur}
                       placeholder="Dr. John Doe"
                       required
-                      className="transition-all duration-200 focus:ring-2 focus:ring-primary/20"
+                      className={errors.fullName ? "border-destructive" : ""}
                     />
+                    {errors.fullName && (
+                      <p className="text-xs text-destructive flex items-center gap-1">
+                        <AlertCircle className="w-3 h-3" />
+                        {errors.fullName}
+                      </p>
+                    )}
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="email">Email Address *</Label>
+                    <Label htmlFor="email" className="flex items-center gap-1.5">
+                      <Mail className="w-3.5 h-3.5 text-muted-foreground" />
+                      Email Address *
+                    </Label>
                     <Input
                       id="email"
                       name="email"
                       type="email"
                       value={form.email}
                       onChange={handleChange}
+                      onBlur={handleBlur}
                       placeholder="john.doe@university.edu"
                       required
-                      className="transition-all duration-200 focus:ring-2 focus:ring-primary/20"
+                      className={errors.email ? "border-destructive" : ""}
                     />
+                    {errors.email && (
+                      <p className="text-xs text-destructive flex items-center gap-1">
+                        <AlertCircle className="w-3 h-3" />
+                        {errors.email}
+                      </p>
+                    )}
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="phone">Phone Number *</Label>
+                    <Label htmlFor="password" className="flex items-center gap-1.5">
+                      <Lock className="w-3.5 h-3.5 text-muted-foreground" />
+                      Password * <span className="text-xs text-muted-foreground font-normal">(min. 8 characters)</span>
+                    </Label>
+                    <div className="relative">
+                      <Input
+                        id="password"
+                        name="password"
+                        type={showPassword ? "text" : "password"}
+                        value={form.password}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        placeholder="Create a secure password"
+                        required
+                        className={`pr-10 ${errors.password ? "border-destructive" : ""}`}
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setShowPassword(!showPassword)}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                        aria-label={showPassword ? "Hide password" : "Show password"}
+                      >
+                        {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                      </button>
+                    </div>
+                    {errors.password && (
+                      <p className="text-xs text-destructive flex items-center gap-1">
+                        <AlertCircle className="w-3 h-3" />
+                        {errors.password}
+                      </p>
+                    )}
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="confirmPassword" className="flex items-center gap-1.5">
+                      <Lock className="w-3.5 h-3.5 text-muted-foreground" />
+                      Confirm Password *
+                    </Label>
+                    <div className="relative">
+                      <Input
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        type={showConfirmPassword ? "text" : "password"}
+                        value={form.confirmPassword}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        placeholder="Re-enter your password"
+                        required
+                        className={`pr-10 ${errors.confirmPassword ? "border-destructive" : ""}`}
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                        aria-label={showConfirmPassword ? "Hide password" : "Show password"}
+                      >
+                        {showConfirmPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                      </button>
+                    </div>
+                    {errors.confirmPassword && (
+                      <p className="text-xs text-destructive flex items-center gap-1">
+                        <AlertCircle className="w-3 h-3" />
+                        {errors.confirmPassword}
+                      </p>
+                    )}
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="phone" className="flex items-center gap-1.5">
+                      <Phone className="w-3.5 h-3.5 text-muted-foreground" />
+                      Phone Number *
+                    </Label>
                     <Input
                       id="phone"
                       name="phone"
                       type="tel"
                       value={form.phone}
                       onChange={handleChange}
+                      onBlur={handleBlur}
                       placeholder="+91 98765 43210"
                       required
-                      className="transition-all duration-200 focus:ring-2 focus:ring-primary/20"
+                      className={errors.phone ? "border-destructive" : ""}
                     />
+                    {errors.phone && (
+                      <p className="text-xs text-destructive flex items-center gap-1">
+                        <AlertCircle className="w-3 h-3" />
+                        {errors.phone}
+                      </p>
+                    )}
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="affiliation">Affiliation *</Label>
+                    <Label htmlFor="affiliation" className="flex items-center gap-1.5">
+                      <Building2 className="w-3.5 h-3.5 text-muted-foreground" />
+                      Affiliation *
+                    </Label>
                     <Input
                       id="affiliation"
                       name="affiliation"
                       value={form.affiliation}
                       onChange={handleChange}
+                      onBlur={handleBlur}
                       placeholder="University/Institution Name"
                       required
-                      className="transition-all duration-200 focus:ring-2 focus:ring-primary/20"
+                      className={errors.affiliation ? "border-destructive" : ""}
                     />
+                    {errors.affiliation && (
+                      <p className="text-xs text-destructive flex items-center gap-1">
+                        <AlertCircle className="w-3 h-3" />
+                        {errors.affiliation}
+                      </p>
+                    )}
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="country">Country *</Label>
+                    <Label htmlFor="country" className="flex items-center gap-1.5">
+                      <Globe className="w-3.5 h-3.5 text-muted-foreground" />
+                      Country *
+                    </Label>
                     <Input
                       id="country"
                       name="country"
                       value={form.country}
                       onChange={handleChange}
+                      onBlur={handleBlur}
                       placeholder="India"
                       required
-                      className="transition-all duration-200 focus:ring-2 focus:ring-primary/20"
+                      className={errors.country ? "border-destructive" : ""}
                     />
+                    {errors.country && (
+                      <p className="text-xs text-destructive flex items-center gap-1">
+                        <AlertCircle className="w-3 h-3" />
+                        {errors.country}
+                      </p>
+                    )}
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="category">Registration Category *</Label>
+                    <Label htmlFor="category" className="flex items-center gap-1.5">
+                      <FileText className="w-3.5 h-3.5 text-muted-foreground" />
+                      Registration Category *
+                    </Label>
                     <select
                       id="category"
                       name="category"
                       value={form.category}
-                      onChange={handleChange}
+                      onChange={handleSelectChange}
                       required
-                      className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+                      className={cn(
+                        "flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm outline-none focus-visible:ring-1 focus-visible:ring-ring",
+                        errors.category && "border-destructive"
+                      )}
                     >
-                      <option value="" disabled>
-                        Select a category
-                      </option>
+                      <option value="">Select category</option>
                       {categories.map((cat) => (
                         <option key={cat} value={cat}>
                           {cat}
                         </option>
                       ))}
                     </select>
+                    {errors.category && (
+                      <p className="text-xs text-destructive flex items-center gap-1">
+                        <AlertCircle className="w-3 h-3" />
+                        {errors.category}
+                      </p>
+                    )}
                   </div>
-                </div>
-              </div>
 
-              {/* Conference Details */}
-              <div className="space-y-4 pt-4 border-t">
-                <h3 className="text-lg font-semibold text-foreground">
-                  Conference Details
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="daysAttending">Days Attending *</Label>
-                    <Input
+                    <Label htmlFor="daysAttending" className="flex items-center gap-1.5">
+                      <Calendar className="w-3.5 h-3.5 text-muted-foreground" />
+                      Days Attending *
+                    </Label>
+                    <select
                       id="daysAttending"
                       name="daysAttending"
                       value={form.daysAttending}
-                      onChange={handleChange}
-                      placeholder="All days / Day 1, Day 2"
+                      onChange={handleSelectChange}
                       required
-                      className="transition-all duration-200 focus:ring-2 focus:ring-primary/20"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="paymentIntentId">Payment Reference ID *</Label>
-                    <Input
-                      id="paymentIntentId"
-                      name="paymentIntentId"
-                      value={form.paymentIntentId}
-                      onChange={handleChange}
-                      placeholder="Transaction ID"
-                      required
-                      className="transition-all duration-200 focus:ring-2 focus:ring-primary/20"
-                    />
+                      className={cn(
+                        "flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm outline-none focus-visible:ring-1 focus-visible:ring-ring",
+                        errors.daysAttending && "border-destructive"
+                      )}
+                    >
+                      <option value="">Select days</option>
+                      <option value="day1">Day 1</option>
+                      <option value="day2">Day 2</option>
+                      <option value="day3">Day 3</option>
+                      <option value="allDays">All Days</option>
+                    </select>
+                    {errors.daysAttending && (
+                      <p className="text-xs text-destructive flex items-center gap-1">
+                        <AlertCircle className="w-3 h-3" />
+                        {errors.daysAttending}
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>
 
-              {/* Paper Submission Toggle */}
-              <div className="flex items-center space-x-3 p-4 border rounded-lg bg-muted/30">
-                <Checkbox
-                  id="presentingPaper"
-                  checked={form.presentingPaper}
-                  onCheckedChange={handleCheckboxChange}
-                />
-                <Label
-                  htmlFor="presentingPaper"
-                  className="text-base font-medium cursor-pointer"
-                >
-                  I wish to present/upload a paper
-                </Label>
+              <div className="flex items-start gap-3 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                <FileText className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                <div className="flex-1">
+                  <p className="text-sm font-semibold text-blue-900 mb-1">
+                    Paper Submission
+                  </p>
+                  <p className="text-xs text-blue-800">
+                    After registration, log in to your user panel to submit papers and manage your submissions.
+                  </p>
+                </div>
               </div>
 
-              {/* Paper Details (Conditional) */}
-              {form.presentingPaper && (
-                <div className="space-y-4 pt-4 border-t border-primary/20 animate-in slide-in-from-top-4 duration-300">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Upload className="w-5 h-5 text-primary" />
-                    <h3 className="text-lg font-semibold text-foreground">
-                      Paper Details
-                    </h3>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="paperTitle">Paper Title *</Label>
-                    <Input
-                      id="paperTitle"
-                      name="paperTitle"
-                      value={form.paperTitle}
-                      onChange={handleChange}
-                      placeholder="Enter your paper title"
-                      required={form.presentingPaper}
-                      className="transition-all duration-200 focus:ring-2 focus:ring-primary/20"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="paperAbstract">Abstract *</Label>
-                    <Textarea
-                      id="paperAbstract"
-                      name="paperAbstract"
-                      value={form.paperAbstract}
-                      onChange={handleChange}
-                      placeholder="Enter your paper abstract (150-300 words)"
-                      required={form.presentingPaper}
-                      className="min-h-[150px] transition-all duration-200 focus:ring-2 focus:ring-primary/20"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="uploadedFile">Upload Paper (DOCX) *</Label>
-                    <Input
-                      id="uploadedFile"
-                      name="uploadedFile"
-                      type="file"
-                      onChange={handleFileChange}
-                      accept=".docx"
-                      required={form.presentingPaper}
-                      className="cursor-pointer file:mr-4 file:px-4 file:py-2 file:rounded-md file:border-0 file:bg-primary file:text-primary-foreground file:cursor-pointer hover:file:bg-primary/90 transition-all duration-200"
-                    />
-                  </div>
-                </div>
-              )}
-
-              {/* Technical Support Notice */}
-              <div className="flex items-start gap-3 p-4 bg-accent/10 border border-accent/20 rounded-lg">
-                <Mail className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+              <div className="flex items-start gap-3 p-4 bg-muted/40 border rounded-lg">
+                <Mail className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                 <p className="text-sm">
                   <span className="font-semibold">Technical Support:</span> If you
-                  face any issues during submission, please email your paper
-                  directly to{" "}
+                  face any issues during registration, please email{" "}
                   <a
                     href={`mailto:${CONSTANTS.SUPPORT_EMAIL}`}
                     className="text-primary hover:underline font-medium"
@@ -476,82 +663,116 @@ export default function UploadPaperPage() {
                 </p>
               </div>
 
-              {/* Submit Button */}
-              <div className="flex justify-center pt-4">
+              {status && (
+                <div
+                  className={`flex items-center gap-3 p-4 rounded-lg border ${
+                    statusType === "error"
+                      ? "bg-destructive/10 border-destructive/20 text-destructive"
+                      : statusType === "success"
+                      ? "bg-green-500/10 border-green-500/20 text-green-700"
+                      : "bg-primary/10 border-primary/20 text-primary"
+                  }`}
+                >
+                  {statusType === "error" ? (
+                    <XCircle className="w-5 h-5 shrink-0" />
+                  ) : statusType === "success" ? (
+                    <CheckCircle2 className="w-5 h-5 shrink-0" />
+                  ) : (
+                    <AlertCircle className="w-5 h-5 shrink-0" />
+                  )}
+                  <p className="font-semibold">{status}</p>
+                </div>
+              )}
+
+              <div className="flex justify-center pt-2">
                 <Button
                   type="submit"
                   disabled={loading}
                   size="lg"
-                  className="min-w-[200px] shadow-medium hover:shadow-strong transition-all duration-300"
+                  className="min-w-[220px] h-11 text-base font-semibold"
                 >
                   {loading ? (
                     <span className="flex items-center gap-2">
-                      <span className="animate-spin">⏳</span>
-                      {form.presentingPaper ? "Submitting..." : "Registering..."}
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                      Registering...
                     </span>
-                  ) : form.presentingPaper ? (
-                    "Submit Paper"
                   ) : (
-                    "Complete Registration"
+                    <>
+                      <CheckCircle className="w-4 h-4 mr-2" />
+                      Complete Registration
+                    </>
                   )}
                 </Button>
               </div>
 
-              {status && (
-                <div className="text-center p-4 bg-primary/10 border border-primary/20 rounded-lg animate-in fade-in duration-300">
-                  <p className="text-primary font-semibold">{status}</p>
-                </div>
-              )}
+              <div className="text-center text-sm">
+                <p className="text-muted-foreground">
+                  Already have an account?{" "}
+                  <Link href="/login" className="text-primary hover:underline font-medium">
+                    Login here
+                  </Link>
+                </p>
+              </div>
             </form>
           </CardContent>
         </Card>
       </div>
 
-      {/* Success Modal */}
       <Dialog open={showModal} onOpenChange={setShowModal}>
         <DialogContent className="sm:max-w-[500px]">
           <DialogHeader>
-            <div className="mx-auto w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-              <CheckCircle2 className="w-8 h-8 text-primary" />
+            <div className="mx-auto w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center mb-4">
+              <CheckCircle2 className="w-8 h-8 text-green-600" />
             </div>
             <DialogTitle className="text-center text-2xl">
-              Submission Confirmed!
+              Registration Confirmed!
             </DialogTitle>
           </DialogHeader>
 
           <div className="space-y-4 py-4">
             <p className="text-center text-muted-foreground">
-              {form.presentingPaper
-                ? `Your paper has been successfully submitted to ${CONSTANTS.CONFERENCE_ABBR}, hosted by ${CONSTANTS.COLLAGE_NAME}`
-                : `Your registration has been received for ${CONSTANTS.CONFERENCE_ABBR}, hosted by ${CONSTANTS.COLLAGE_NAME}`}
+              Your registration has been successfully completed for {CONSTANTS.CONFERENCE_ABBR}, hosted by {CONSTANTS.COLLAGE_NAME}
             </p>
 
+            <div className="bg-green-500/10 border border-green-500/20 p-4 rounded-lg space-y-2">
+              <p className="text-sm font-semibold text-green-700 flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4" />
+                Account Created Successfully
+              </p>
+              <p className="text-sm text-muted-foreground">
+                Your account has been created and you are logged in.
+                You can now access your user panel to manage submissions and view registration details.
+              </p>
+            </div>
+
             <div className="bg-muted/50 p-4 rounded-lg space-y-2">
-              <p className="text-sm font-medium">What's Next?</p>
+              <p className="text-sm font-medium">What&apos;s Next?</p>
               <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
-                <li>You will receive a confirmation email shortly</li>
-                {form.presentingPaper && (
-                  <li>Paper review results will be sent by September 15, 2025</li>
-                )}
+                <li>Log in to your user panel to submit papers</li>
+                <li>Upload payment proof after completing bank transfer</li>
                 <li>Check your email regularly for updates</li>
               </ul>
             </div>
-
-            <p className="text-center text-sm text-muted-foreground">
-              We appreciate your{" "}
-              {form.presentingPaper ? "contribution" : "interest"} and look
-              forward to {form.presentingPaper ? "reviewing your work" : "seeing you at the event"}.
-            </p>
           </div>
 
-          <DialogFooter>
+          <DialogFooter className="flex-col gap-2 sm:flex-row">
             <DialogClose asChild>
-              <Button className="w-full">Close</Button>
+              <Button variant="outline" className="w-full sm:w-auto">
+                Close
+              </Button>
             </DialogClose>
+            <Button
+              className="w-full sm:w-auto"
+              onClick={() => {
+                setShowModal(false);
+                window.location.href = '/user';
+              }}
+            >
+              Go to User Panel
+            </Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
     </div>
   );
 }
-

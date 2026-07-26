@@ -37,7 +37,7 @@ export default function DownloadsPage() {
                 date="17 - 19 September"
                 image="/images/simdte-white-lg.png"
                 overlayColor="#1a1a2e"
-                bgImage="/images/utb-images/gallery/gallery-2.jpg"
+                bgImage="/images/kyrgyzskiy/gallery/gallery-2.jpg"
                 dividerColor="primary"
             />
             <div className="max-w-5xl mx-auto px-4 py-16">

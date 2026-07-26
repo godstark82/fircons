@@ -8,6 +8,6 @@ export const CONSTANTS = {
     YEAR: "2026",
     CONFERENCE_FULL_TITLE: "International Symposium on Frontiers in Mathematical Sciences",
     CONFERENCE_DATES: "September 17-19, 2026",
-    COLLAGE_NAME: "IILM University, Greater Noida",
-    COLLAGE_ADDRESS: 'IILM University, 16-18, Knowledge Park II, Greater Noida, Uttar Pradesh 201310',
+    COLLAGE_NAME: "G H Raisoni College of Engineering, Nagpur",
+    COLLAGE_ADDRESS: "CRPF Gate No. 3, Hingna Road, Digdoh Hills, Nagpur, Maharashtra 440016",
 }

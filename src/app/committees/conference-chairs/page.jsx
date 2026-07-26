@@ -154,7 +154,7 @@ export default function ConferenceChairPage() {
                 date="17 - 19 September"
                 image="/images/simdte-white-lg.png"
                 overlayColor="#1a1a2e"
-                bgImage="/images/utb-images/gallery/gallery-2.jpg"
+                bgImage="/images/kyrgyzskiy/gallery/gallery-2.jpg"
                 dividerColor="primary"
             />
             <section className="max-w-6xl mx-auto px-4 py-12">

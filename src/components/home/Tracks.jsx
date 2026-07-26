@@ -9,66 +9,95 @@ import SectionHeader from "../common/SectionHeader";
 
 const TRACKS = [
   {
-    name: "Materials Science & Sustainability",
+    name: "Advancing Mathematical Frontiers",
     subtopics: [
-      "Green Materials", "Circular Economy", "Biodegradable Polymers", "Recycling Technologies"
-    ]
+      "Algebraic Structures and Number Theory",
+      "Differential Geometry and Topology",
+      "Functional Analysis and Operator Theory",
+      "Nonlinear Analysis and Dynamical Systems",
+    ],
   },
   {
-    name: "Energy & Environmental Engineering",
+    name: "Innovations in Mathematical Sciences",
     subtopics: [
-      "Renewable Energy Systems", "Waste Management", "Carbon Capture", "Water Purification"
-    ]
+      "Discrete Mathematics and Combinatorics",
+      "Graph Theory and Network Science",
+      "Probability Theory and Stochastic Processes",
+      "Mathematical Logic and Foundations",
+    ],
   },
   {
-    name: "Sustainable Engineering",
+    name: "Mathematics for Global Challenges",
     subtopics: [
-      "Life Cycle Assessment", "Eco-design", "Sustainable Manufacturing"
-    ]
+      "Mathematical Epidemiology and Public Health",
+      "Climate and Environmental Modelling",
+      "Optimization for Sustainable Development",
+      "Financial Mathematics and Risk Analysis",
+    ],
   },
   {
-    name: "Electronics, AI & Computing in Material",
+    name: "Future of Mathematical Research",
     subtopics: [
-      "AI-driven Material Discovery", "Smart Sensors", "Computational Modelling"
-    ]
+      "AI-Assisted Mathematical Discovery",
+      "Data-Driven Mathematical Methods",
+      "Interdisciplinary Research Frameworks",
+      "Open Problems and Emerging Directions",
+    ],
   },
   {
-    name: "Interdisciplinary & Policy Topics",
+    name: "Emerging Trends in Mathematics",
     subtopics: [
-      "Climate Policy", "Socio-Economic Impacts", "Regulatory Frameworks"
-    ]
+      "Machine Learning and Mathematical Foundations",
+      "Quantum Computing and Quantum Information",
+      "Topological Data Analysis",
+      "Cryptography and Coding Theory",
+    ],
   },
   {
-    name: "Sustainability in Digital Engineering",
+    name: "Frontiers of Pure Mathematics",
     subtopics: [
-      "Digital Twins", "IoT for Sustainability", "Virtual Prototyping"
-    ]
+      "Algebraic Geometry and Commutative Algebra",
+      "Analytic Number Theory",
+      "Representation Theory",
+      "Homological Algebra and Category Theory",
+    ],
   },
   {
-    name: "Mathematical Modelling and weather forecasting",
+    name: "Applied Mathematics for Innovation",
     subtopics: [
-      "Numerical Weather Prediction", "Data Assimilation", "Climate Simulation"
-    ]
+      "Industrial and Engineering Mathematics",
+      "Control Theory and Systems Engineering",
+      "Operations Research and Decision Science",
+      "Image Processing and Signal Analysis",
+    ],
   },
   {
-    name: "Forensic Science",
+    name: "Mathematics Driving Discovery",
     subtopics: [
-      "Crime Scene Analysis", "Forensic Toxicology", "Biometrics"
-    ]
+      "Mathematical Physics",
+      "Biomathematics and Systems Biology",
+      "Statistical Learning and Inference",
+      "Scientific Computing for Discovery",
+    ],
   },
   {
-    name: "Food Technology",
+    name: "Mathematical Models and Applications",
     subtopics: [
-      "Nutrition and Dietetics", "Food Quality & Safety", "Packaging Technology", "Food Fortification", "Nutrigenomics"
-    ]
+      "Differential Equations and Modelling",
+      "Numerical Methods and Approximation Theory",
+      "Multiscale and Multiphysics Models",
+      "Inverse Problems and Parameter Estimation",
+    ],
   },
   {
-    name: "Biological Sciences",
+    name: "Computational Mathematics Revolution",
     subtopics: [
-      "Fermentation Technology", "Virology", "Biofuels", "Biofuels", "Environmental Biotechnology",
-      "Bioinformatics"
-    ]
-  }
+      "High-Performance Scientific Computing",
+      "Numerical Linear Algebra",
+      "Computational Fluid Dynamics",
+      "Algorithm Design and Complexity",
+    ],
+  },
 ];
 
 export default function Tracks() {
@@ -83,15 +112,17 @@ export default function Tracks() {
                 <AccordionTrigger className="px-7 py-6 text-lg font-semibold text-left rounded-t-xl border-none focus:ring-2 focus:ring-secondary">
                   {track.name}
                 </AccordionTrigger>
-                <AccordionContent>
-                  <CardContent className="pl-7 pb-5">
-                    <ul className="list-disc text-base space-y-2">
-                      {track.subtopics?.map((sub, i) => (
-                        <li key={i} className="ml-4 text-white">{sub}</li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </AccordionContent>
+                {track.subtopics?.length > 0 && (
+                  <AccordionContent>
+                    <CardContent className="pl-7 pb-5">
+                      <ul className="list-disc text-base space-y-2">
+                        {track.subtopics.map((sub, i) => (
+                          <li key={i} className="ml-4 text-white">{sub}</li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </AccordionContent>
+                )}
               </Card>
             </AccordionItem>
           ))}

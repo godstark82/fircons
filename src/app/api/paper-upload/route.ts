@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { db, storage } from '../../../firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
-import { RegistrationWithPaperSchema } from "@/schema/registration-schema"
+import { LegacyRegistrationWithPaperSchema } from "@/schema/legacy-registration-schema"
 
 export async function POST(request: any) {
   try {
@@ -27,7 +27,7 @@ export async function POST(request: any) {
     const fileRaw = formData.get('uploadedFile');
     data.uploadedFile = (fileRaw instanceof File) ? fileRaw : null;
 
-    const validatedData = RegistrationWithPaperSchema.parse(data);
+    const validatedData = LegacyRegistrationWithPaperSchema.parse(data);
 
 
     // If presenting paper, handle upload and Firestore save with paper details

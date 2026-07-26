@@ -2,18 +2,18 @@ import SectionImageHeader from "../common/SectionImageHeader";
 import Image from "next/image";
 
 const PHOTOS = [
-    "/images/utb-images/gallery/gallery-12.jpg",
-    "/images/utb-images/gallery/gallery-11.jpg", 
-    "/images/utb-images/gallery/gallery-7.jpg",
-    "/images/utb-images/gallery/gallery-6.jpg",
-    "/images/utb-images/gallery/gallery-3.jpg",
-    "/images/utb-images/gallery/gallery-2.jpg",
+    "/images/kyrgyzskiy/gallery/gallery-12.jpg",
+    "/images/kyrgyzskiy/gallery/gallery-11.jpg", 
+    "/images/kyrgyzskiy/gallery/gallery-7.jpg",
+    "/images/kyrgyzskiy/gallery/gallery-6.jpg",
+    "/images/kyrgyzskiy/gallery/gallery-3.jpg",
+    "/images/kyrgyzskiy/gallery/gallery-2.jpg",
 ];
 
 export default function Highlights() {
     return (
         <section className="bg-white">
-            <SectionImageHeader title="Conference Highlights" image="/images/utb-images/gallery/BG6A0073.jpg" />
+            <SectionImageHeader title="Conference Highlights" image="/images/kyrgyzskiy/gallery/BG6A0073.jpg" />
             <div className="container mx-auto px-4 py-12">
                 {/* Photo Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">

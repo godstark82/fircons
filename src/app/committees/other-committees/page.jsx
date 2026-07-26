@@ -175,10 +175,10 @@ export default function OtherCommitteesPage() {
         <div className="min-h-screen bg-white">
             <AboutHeader
                 title="Committees"
-                date="17 - 19 September"
+                date="25, 26, 27 September, 2026"
                 image="/images/simdte-white-lg.png"
                 overlayColor="#1a1a2e"
-                bgImage="/images/utb-images/gallery/gallery-2.jpg"
+                bgImage="/images/kyrgyzskiy/gallery/gallery-2.jpg"
                 dividerColor="primary"
             />
             <div className="max-w-7xl mx-auto px-4 py-12">

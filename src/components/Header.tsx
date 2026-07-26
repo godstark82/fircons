@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import { LogIn } from 'lucide-react';
 
 const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -25,7 +26,7 @@ const Header = () => {
         // "REGISTRATION": "REGISTRATION/PAYMENT",
         "UPLOAD PAPER": "REGISTRATION",
         "DOWNLOADS": "DOWNLOADS",
-        "CONTACT US": "CONTACT US"
+        "CONTACT US": "CONTACT US",
     }
 
     const renderLink = (key, value, isMobile = false) => {
@@ -76,6 +77,16 @@ const Header = () => {
         }
     };
 
+    const loginLink = (isMobile = false) => (
+        <Link
+            href="/login"
+            className={`${isMobile ? 'text-black' : 'text-secondary'} hover:text-primary transition-colors font-bold flex items-center gap-1.5 py-2`}
+            onClick={() => setIsMobileMenuOpen(false)}
+        >
+            <LogIn className="w-4 h-4" />
+            LOGIN
+        </Link>
+    );
 
     return (
         <header className="bg-white shadow-md sticky top-0 z-50">
@@ -86,8 +97,9 @@ const Header = () => {
                             <Image src={'/images/ghrce/ghrce.webp'} alt='GHRCE_LOGO' width={200} height={100} className="h-12 w-auto object-contain" />
                         </Link>
                     </div>
-                    <div className="hidden md:flex space-x-6 ">
+                    <div className="hidden md:flex space-x-6 items-center">
                         {Object.entries(links).map(([key, value]) => renderLink(key, value))}
+                        {loginLink()}
                     </div>
                     <button
                         className="md:hidden text-primary hover:text-secondary"
@@ -114,6 +126,7 @@ const Header = () => {
                         </button>
                         <div className="mt-8 space-y-4">
                             {Object.entries(links).map(([key, value]) => renderLink(key, value, true))}
+                            {loginLink(true)}
                         </div>
                     </div>
                 </div>
