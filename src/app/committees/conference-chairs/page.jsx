@@ -4,19 +4,19 @@ import CommitteeMemberGrid from "../../../components/common/CommitteeMemberGrid"
 
 const patron = [
     {
-        image: "/images/user.jpg",
+        image: "https://ghrce.raisoni.net/icetme/assets/images/petrons/sunil-raisoni.jpg",
         name: "Shri Sunilji Raisoni",
         role: "Chairman",
         affiliation: "Raisoni Group of Institutions",
     },
     {
-        image: "/images/user.jpg",
+        image: "https://ghrce.raisoni.net/ices/assets/images/shobha-raisoni.jpg",
         name: "Smt. Shobhaji Raisoni",
         role: "Patron",
         affiliation: "Raisoni Group of Institutions",
     },
     {
-        image: "/images/user.jpg",
+        image: "https://ghrce.raisoni.net/icraiwc/assets/images/shreyas-raisoni.jpg",
         name: "Mr. Shreyas Raison",
         role: "Executive Director",
         affiliation: "Raisoni Group of Institutions",
@@ -34,7 +34,7 @@ const coPatron = [
 
 const honoraryChair = [
     {
-        image: "/images/user.jpg",
+        image: "https://ghrce.raisoni.net/icpam-25/assets/images/patrons/dr-sachin-untawale.webp",
         name: "Dr. Sachin Untawale",
         role: "Director, Raisoni Group of Institutions",
         affiliation: "",
@@ -43,7 +43,7 @@ const honoraryChair = [
 
 const internationalCooperation = [
     {
-        image: "/images/user.jpg",
+        image: "https://www.gla.ac.in/Uploads/faculty/781largefrt_781largefrt_Aroon-kumar-Beesham-lg.webp",
         name: "Prof. Aroon Kumar Beesham",
         role: "Senior Professor",
         affiliation: "University of Zululand",
@@ -70,7 +70,7 @@ const internationalCooperation = [
 
 const organizingChair = [
     {
-        image: "/images/user.jpg",
+        image: "https://rgicdn.s3.ap-south-1.amazonaws.com/ghrcenagpur/images/faculties/dr-jaju.webp",
         name: "Dr. Santosh B Jaju",
         role: "Dy-Director & Dean R&D",
         affiliation: "GHRCE",
@@ -79,22 +79,22 @@ const organizingChair = [
 
 const conveners = [
     {
-        image: "/images/user.jpg",
+        image: "https://media.licdn.com/dms/image/v2/D5603AQGY6ERqo_jkxQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1637646542179?e=2147483647&v=beta&t=5SvkmRSEeOiNhUVAL2NEuS-BrinA4SMEju9svZKUQzM",
         name: "Dr. Rupali J. Thete",
-        role:"Dr. Rupali J. Thete",
+        role:"Convenor",
         affiliation: "GHRCE",
     }
 ];
 
 const organizingSecretaries = [
     {
-        image: "/images/user.jpg",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoHgIe7Pztu0ASYeY5ZfnNoWK5dUayz-QEHlPNmKglow&s=10",
         name: "Smita Pidurkar",
         role: "Organising Secretary",
         affiliation: ""
     },
     {
-        image: "/images/user.jpg",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe6D8tiSiWKh3MYcQyycoGHgPo3RDJ7cITjXgFQyj73w&s=10",
         name: "Dr. Nalini Vaidya",
         role: "Organising Secretary",
         affiliation: ""
@@ -121,7 +121,7 @@ const organizingCommittee = [
         affiliation: ""
     },
     {
-        image: "/images/user.jpg",
+        image: "https://apex-assets-exl.pages.dev/image/maam.jpeg",
         name: "Ms. Archana Deshpande",
         role: "Organising Committee",
         affiliation: ""

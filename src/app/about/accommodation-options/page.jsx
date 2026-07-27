@@ -72,7 +72,7 @@ export default function AccommodationOptionsPage() {
               <p>
                 We are pleased to offer accommodation options for delegates attending the{" "}
                 <span className="font-semibold text-gray-900">
-                  International Symposium on Frontiers in Mathematical Sciences (IS-FMS 2025)
+                  International Symposium on Applied Mathematics and Mathematical Modeling (IS-FMS 2025)
                 </span>.
               </p>
               <p>

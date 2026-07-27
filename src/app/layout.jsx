@@ -3,7 +3,7 @@ import Layout from '../components/layout/Layout';
 
 export const metadata = {
   title: 'IS-FMS 2026',
-  description: 'International Symposium on Frontiers in Mathematical Sciences',
+  description: 'International Symposium on Applied Mathematics and Mathematical Modeling',
 };
 
 export default function RootLayout({ children }) {
