@@ -2,84 +2,108 @@ import SectionImageHeader from "../common/SectionImageHeader";
 
 const KEYNOTE_SPEAKERS = [
     {
-        name: "Dr. L.P. Singh",
-        affiliation: "DG - NCCBM, Govt of India",
-        country: "India",
-        img: "", // No image provided for keynote speaker
-    },
-];
-
-const SPEAKERS = [
-    {
-        name: "Dr. Imran Ali",
-        affiliation: "Professor & Head, JMI New Delhi",
-        country: "India",
-        img: "",
-    },
-    {
         name: "Dr. Liliana Guran",
         affiliation: "Babes-Bolyai University, Cluj-Napoca, Romania",
         country: "Romania",
         img: "/images/speakers/liliana.jpg",
     },
     {
-        name: "Dr. Dorota Jelonek",
-        affiliation: "Czestochowa University of Technology, Poland",
-        country: "Poland",
-        img: "/images/speakers/prof-dorota2.jpeg",
-    },
-    {
         name: "Dr. Monika Bota",
-        affiliation: "Babes-Bolyai University, Cluj-Napoca, Romania",
+        affiliation: "Babes-Bolyai University, Cluj-Napoca",
         country: "Romania",
         img: "/images/speakers/monalika_bota.jpg",
     },
     {
-        name: "Dr. Sameer Sapra",
-        affiliation: "IIT Delhi",
-        country: "India",
+        name: "Dr. Devendra Kumar",
+        affiliation: "",
+        country: "Oman",
         img: "",
     },
     {
-        name: "Dr. Adarsh Kumar",
-        affiliation: "Director, Forensic Science Laboratory, Lucknow",
-        country: "India",
+        name: "Rakesh M Patel",
+        affiliation: "",
+        country: "Gujarat, India",
+        img: "",
+    },
+];
+
+const SPEAKERS = [
+    {
+        name: "Dr. Devendra Kumar",
+        affiliation: "",
+        country: "Oman",
         img: "",
     },
     {
-        name: "Dr. Millie Pant",
-        affiliation: "Professor & Head, Department of Applied Mathematics and Scientific Computing, IIT Roorkee",
-        country: "India",
+        name: "Dr. Monika Bota",
+        affiliation: "Babes-Bolyai University, Cluj-Napoca",
+        country: "Romania",
+        img: "/images/speakers/monalika_bota.jpg",
+    },
+    {
+        name: "Dr. Liliana Guran",
+        affiliation: "Babes-Bolyai University, Cluj-Napoca",
+        country: "Romania",
+        img: "/images/speakers/liliana.jpg",
+    },
+    {
+        name: "Dr. Niveen",
+        affiliation: "",
+        country: "Kuwait",
         img: "",
     },
     {
-        name: "Dr. S. Mahapatra",
-        affiliation: "Professor, GGSIP University, New Delhi",
-        country: "India",
+        name: "Dr. Rakesh M Patel",
+        affiliation: "",
+        country: "Gujarat, India",
         img: "",
     },
     {
-        name: "Dr. Tokeer Ahmed",
-        affiliation: "Professor of Nano/Energy/Physical Chemistry, JMI, New Delhi",
-        country: "India",
+        name: "Dr. Jimit R Patel",
+        affiliation: "",
+        country: "Gujarat, India",
         img: "",
     },
     {
-        name: "Prof. Dinesh Mohan",
-        affiliation: "JNU, New Delhi",
-        country: "India",
+        name: "Dr. Akhil Mittal",
+        affiliation: "",
+        country: "Gujarat, India",
         img: "",
     },
     {
-        name: "Dr. Antony George",
-        affiliation: "Adjunct Professor, Friedrich Schiller University, Jena, Germany",
-        country: "Germany",
+        name: "Dr. Vinod Kumar",
+        affiliation: "",
+        country: "Himachal Pradesh, India",
         img: "",
     },
     {
-        name: "Dr. M.V.R Reddy",
-        affiliation: "Senior Researcher, Hydro-Québec, Canada",
-        country: "Canada",
+        name: "Dr. Yogendra Rajoria",
+        affiliation: "",
+        country: "Haryana, India",
+        img: "",
+    },
+    {
+        name: "Dr. Pankaj",
+        affiliation: "",
+        country: "Noida, India",
+        img: "",
+    },
+    {
+        name: "Dr. Amrendra",
+        affiliation: "",
+        country: "Agra, India",
+        img: "",
+    },
+    {
+        name: "Dr. U S Rana",
+        affiliation: "",
+        country: "Dehradun, India",
+        img: "",
+    },
+    {
+        name: "Dr. Jitendra Beniwal",
+        affiliation: "Mody University",
+        country: "Rajasthan, India",
         img: "",
     },
 ];
