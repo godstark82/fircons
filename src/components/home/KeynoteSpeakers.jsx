@@ -3,7 +3,7 @@ import SectionImageHeader from "../common/SectionImageHeader";
 const KEYNOTE_SPEAKERS = [
     {
         name: "Dr. Liliana Guran",
-        affiliation: "Babes-Bolyai University, Cluj-Napoca, Romania",
+        affiliation: "Babes-Bolyai University, Cluj-Napoca",
         country: "Romania",
         img: "/images/speakers/liliana.jpg",
     },
@@ -23,6 +23,36 @@ const KEYNOTE_SPEAKERS = [
         name: "Rakesh M Patel",
         affiliation: "",
         country: "Gujarat, India",
+        img: "",
+    },
+    {
+        name: " Prof. (Dr.) Saibal Ray,",
+        affiliation: "Centre for Cosmology, Astrophysics and Space Science, GLA University, Mathura ",
+        country: "Uttar Pradesh, India",
+        img: "",
+    },
+    {
+        name: "Dr. Hemant Nashine",
+        affiliation: "",
+        country: "India",
+        img: "",
+    },
+    {
+        name: "Dr. Rahul Shukla",
+        affiliation: "",
+        country: "India",
+        img: "",
+    },
+    {
+        name: "Dr. G. P. Singh",
+        affiliation: "Ph.D., FRAS, FMASc Dean (FW) Professor(HAG) of Mathematics",
+        country: "India",
+        img: "",
+    },
+    {
+        name: "Prof. J K Singh",
+        affiliation: "Dept. of Mathematics Netaji Subhas University of Technology Sector-3, Dwarka",
+        country: "New Delhi,India",
         img: "",
     },
 ];
