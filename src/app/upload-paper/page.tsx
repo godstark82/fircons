@@ -28,11 +28,14 @@ import {
   Lock,
   Eye,
   EyeOff,
+  CreditCard,
 } from "lucide-react";
 import Link from "next/link";
 import { CONSTANTS } from "@/lib/constants";
 import { registerUser, type RegistrationData } from "@/lib/registration";
 import { cn } from "@/lib/utils";
+import { getRegistrationFeeInr } from "@/lib/fees";
+import { openRazorpayCheckout } from "@/lib/razorpay-client";
 
 const categories = [
   "Research Scholar",
@@ -237,6 +240,43 @@ export default function UploadPaperPage() {
     setStatusType("");
 
     try {
+      const orderRes = await fetch("/api/razorpay/create-order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          category: form.category,
+          country: form.country,
+          email: form.email,
+          fullName: form.fullName,
+        }),
+      });
+      const orderData = await orderRes.json();
+      if (!orderRes.ok) {
+        throw new Error(orderData.error || "Failed to create payment order");
+      }
+
+      const paymentResponse = await openRazorpayCheckout({
+        keyId: orderData.keyId,
+        orderId: orderData.orderId,
+        amount: orderData.amount,
+        currency: orderData.currency,
+        name: form.fullName,
+        description: `${CONSTANTS.CONFERENCE_ABBR} — ${form.category}`,
+        email: form.email,
+        contact: form.phone,
+        onSuccess: () => {},
+      });
+
+      const verifyRes = await fetch("/api/razorpay/verify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(paymentResponse),
+      });
+      const verifyData = await verifyRes.json();
+      if (!verifyRes.ok || !verifyData.verified) {
+        throw new Error(verifyData.error || "Payment verification failed");
+      }
+
       const registrationData: RegistrationData = {
         fullName: form.fullName,
         email: form.email,
@@ -247,6 +287,13 @@ export default function UploadPaperPage() {
         category: form.category,
         daysAttending: form.daysAttending,
         presentingPaper: false,
+        payment: {
+          razorpayOrderId: paymentResponse.razorpay_order_id,
+          razorpayPaymentId: paymentResponse.razorpay_payment_id,
+          razorpaySignature: paymentResponse.razorpay_signature,
+          amountPaise: orderData.amount,
+          currency: orderData.currency,
+        },
       };
 
       const result = await registerUser(registrationData);
@@ -284,9 +331,15 @@ export default function UploadPaperPage() {
       setTouched({});
       setShowPassword(false);
       setShowConfirmPassword(false);
-    } catch (error) {
-      setStatus("Unexpected error occurred, please try again.");
-      setStatusType("error");
+    } catch (error: any) {
+      const message = error?.message || "Unexpected error occurred, please try again.";
+      if (message !== "Payment cancelled") {
+        setStatus(message);
+        setStatusType("error");
+      } else {
+        setStatus("Payment was cancelled. Please try again to complete registration.");
+        setStatusType("error");
+      }
       console.error(error);
     } finally {
       setLoading(false);
@@ -694,12 +747,15 @@ export default function UploadPaperPage() {
                   {loading ? (
                     <span className="flex items-center gap-2">
                       <Loader2 className="w-5 h-5 animate-spin" />
-                      Registering...
+                      Processing Payment...
                     </span>
                   ) : (
                     <>
-                      <CheckCircle className="w-4 h-4 mr-2" />
-                      Complete Registration
+                      <CreditCard className="w-4 h-4 mr-2" />
+                      Pay &amp; Complete Registration
+                      {form.category && form.country
+                        ? ` (₹${getRegistrationFeeInr(form.category, form.country)})`
+                        : ""}
                     </>
                   )}
                 </Button>
@@ -749,7 +805,7 @@ export default function UploadPaperPage() {
               <p className="text-sm font-medium">What&apos;s Next?</p>
               <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
                 <li>Log in to your user panel to submit papers</li>
-                <li>Upload payment proof after completing bank transfer</li>
+                <li>Your Razorpay payment has been recorded</li>
                 <li>Check your email regularly for updates</li>
               </ul>
             </div>

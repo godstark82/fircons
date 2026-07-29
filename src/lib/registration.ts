@@ -1,4 +1,4 @@
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { collection, addDoc, doc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { db, auth } from './firebase';
 import { RegistrationWithPaperSchema } from '@/schema/registration-schema';
@@ -16,6 +16,13 @@ export interface RegistrationData {
   paperTitle?: string;
   paperAbstract?: string;
   uploadedFile?: File | null;
+  payment?: {
+    razorpayOrderId: string;
+    razorpayPaymentId: string;
+    razorpaySignature: string;
+    amountPaise: number;
+    currency: string;
+  };
 }
 
 export interface RegistrationResult {
@@ -35,6 +42,14 @@ export async function registerUser(data: RegistrationData): Promise<Registration
         success: false,
         message: 'Registration failed',
         error: 'Authentication service is not available. Please refresh the page.',
+      };
+    }
+
+    if (!data.payment?.razorpayPaymentId) {
+      return {
+        success: false,
+        message: 'Registration failed',
+        error: 'Payment is required to complete registration.',
       };
     }
 
@@ -70,6 +85,31 @@ export async function registerUser(data: RegistrationData): Promise<Registration
 
     const userId = userCredential.user.uid;
 
+    const paymentFields = {
+      paymentIntentId: data.payment.razorpayPaymentId,
+      razorpayOrderId: data.payment.razorpayOrderId,
+      razorpayPaymentId: data.payment.razorpayPaymentId,
+      razorpaySignature: data.payment.razorpaySignature,
+      paymentAmountPaise: data.payment.amountPaise,
+      paymentCurrency: data.payment.currency,
+      payment_confirmed: true,
+      payment_confirmed_at: serverTimestamp(),
+      paymentMethod: 'razorpay',
+    };
+
+    await setDoc(doc(db, 'users', userId), {
+      uid: userId,
+      fullName: validatedData.fullName,
+      email: validatedData.email,
+      phone: validatedData.phone,
+      affiliation: validatedData.affiliation,
+      country: validatedData.country,
+      category: validatedData.category,
+      role: 'user',
+      createdAt: serverTimestamp(),
+      ...paymentFields,
+    });
+
     const registrationData: any = {
       userId,
       fullName: validatedData.fullName,
@@ -82,13 +122,14 @@ export async function registerUser(data: RegistrationData): Promise<Registration
       presentingPaper: false,
       role: 'user',
       registeredAt: serverTimestamp(),
+      ...paymentFields,
     };
 
     await addDoc(collection(db, 'registrations'), registrationData);
 
     return {
       success: true,
-      message: 'Registration successful! You can now log in to your user panel to submit papers and manage your submissions.',
+      message: 'Registration and payment successful! You can now log in to your user panel to submit papers and manage your submissions.',
       userId,
     };
   } catch (error: any) {

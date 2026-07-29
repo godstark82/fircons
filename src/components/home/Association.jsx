@@ -12,6 +12,14 @@ const PARTNERS = [
             "Scientific Research University “Kyrgyz Economic University named after M. Ryskulbekov” (Kyrgyz Republic) is a partner institution associated with the conference, fostering academic collaboration, research exchange, and international engagement in the field of mathematical and related sciences.",
     },
     {
+        name: "IILM University",
+        subtitle: "Greater Noida",
+        location: "India",
+        image: "/images/iilm.avif",
+        description:
+            "IILM University, Greater Noida is a partner institution associated with the conference, fostering academic collaboration, research exchange, and international engagement in the field of mathematical and related sciences.",
+    },
+    {
         name: "Shanti Research Foundation",
         subtitle: "Academic & Research Partner",
         location: null,
