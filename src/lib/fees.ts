@@ -6,7 +6,7 @@ export type FeeCategory =
   | "Attendee";
 
 const EARLY_BIRD_DEADLINE = new Date("2026-07-31T23:59:59+05:30");
-const USD_TO_INR = 85;
+const USD_TO_INR = 95.69;
 
 const FEES: Record<
   FeeCategory,

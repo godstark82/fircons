@@ -101,19 +101,36 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div className="space-y-4">
-                        <h3 className="text-xl font-bold text-white">Conference Venue</h3>
+                        <h3 className="text-xl font-bold text-white">Legal</h3>
+                        <ul className="space-y-3">
+                            <li>
+                                <Link href="/about/privacy-policy" className="text-light/80 hover:text-primary transition-colors block">
+                                    Privacy Policy
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/about/terms-and-conditions" className="text-light/80 hover:text-primary transition-colors block">
+                                    Terms &amp; Conditions
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/about/refund-and-cancellation-policy" className="text-light/80 hover:text-primary transition-colors block">
+                                    Refund &amp; Cancellation Policy
+                                </Link>
+                            </li>
+                        </ul>
+                        <h3 className="text-xl font-bold text-white pt-2">Conference Venue</h3>
                         <div className="aspect-w-16 aspect-h-9 w-full">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3722.183520391772!2d79.00091537503361!3d21.105248380563285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4954f412ca411%3A0x4fd4cb2d05b49c7d!2sG.%20H.%20Raisoni%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1784876969666!5m2!1sen!2sin"
                                 width="100%"
-                                height="200"
+                                height="160"
                                 style={{ border: 0 }}
                                 allowFullScreen={false}
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
                                 className="rounded-lg shadow-lg"
                             ></iframe>
-
                         </div>
                     </div>
                 </div>
@@ -140,7 +157,20 @@ const Footer = () => {
                         </a>
                     </div>
                 </div>
-                <div className="border-t border-light/20 mt-8 pt-8 text-center text-light/80">
+                <div className="border-t border-light/20 mt-8 pt-8 text-center text-light/80 space-y-3">
+                    <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm">
+                        <Link href="/about/privacy-policy" className="hover:text-primary transition-colors">
+                            Privacy Policy
+                        </Link>
+                        <span className="opacity-40">|</span>
+                        <Link href="/about/terms-and-conditions" className="hover:text-primary transition-colors">
+                            Terms &amp; Conditions
+                        </Link>
+                        <span className="opacity-40">|</span>
+                        <Link href="/about/refund-and-cancellation-policy" className="hover:text-primary transition-colors">
+                            Refund &amp; Cancellation
+                        </Link>
+                    </div>
                     <p className="text-sm">{CONSTANTS.CONFERENCE_ABBR} &copy; {new Date().getFullYear()} All rights reserved.</p>
                 </div>
             </div>

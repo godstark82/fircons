@@ -14,7 +14,10 @@ const Header = () => {
             "About School": 'About School',
             'Important Dates': 'Important Dates',
             'Programme': 'Programme',
-            'Accommodation Options': 'Accommodation Options'
+            'Accommodation Options': 'Accommodation Options',
+            'Privacy Policy': 'Privacy Policy',
+            'Terms And Conditions': 'Terms & Conditions',
+            'Refund And Cancellation Policy': 'Refund & Cancellation',
         },
         "COMMITTEES": {
             "Conference Chairs": "Conference Chairs",
