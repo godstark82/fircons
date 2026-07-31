@@ -49,7 +49,7 @@ const Footer = () => {
                         <h3 className="text-xl font-bold text-white">About</h3>
                         <ul className="space-y-3">
                             <li>
-                                <Link href="/about/utb" className="text-light/80 hover:text-primary transition-colors block">
+                                <Link href="/about/about-college" className="text-light/80 hover:text-primary transition-colors block">
                                     {CONSTANTS.COLLAGE_NAME}
                                 </Link>
                             </li>
@@ -86,6 +86,11 @@ const Footer = () => {
                             <li>
                                 <Link href="/downloads" className="text-light/80 hover:text-primary transition-colors block">
                                     Downloads
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/upload-payment-proof" className="text-light/80 hover:text-primary transition-colors block">
+                                    Upload Payment Proof
                                 </Link>
                             </li>
                             <li>

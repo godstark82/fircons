@@ -11,7 +11,7 @@ export default function AdminDashboardPage() {
   const [stats, setStats] = useState({
     totalRegistrations: 0,
     totalSubmissions: 0,
-    pendingReviews: 0,
+    pendingPayments: 0,
   })
   const [loading, setLoading] = useState(true)
 
@@ -22,18 +22,18 @@ export default function AdminDashboardPage() {
       if (currentUser) {
         try {
           const registrationsSnapshot = await getDocs(collection(db, 'registrations'))
-          const registrations = registrationsSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
+          const registrations = registrationsSnapshot.docs
+            .map(doc => ({ id: doc.id, ...doc.data() }))
+            .filter((r: any) => r.role !== 'admin')
 
           const totalRegistrations = registrations.length
           const totalSubmissions = registrations.filter((r: any) => r.presentingPaper).length
-          const pendingReviews = registrations.filter(
-            (r: any) => r.presentingPaper && (!r.paperStatus || r.paperStatus === 'pending')
-          ).length
+          const pendingPayments = registrations.filter((r: any) => !r.payment_confirmed).length
 
           setStats({
             totalRegistrations,
             totalSubmissions,
-            pendingReviews,
+            pendingPayments,
           })
         } catch (error) {
           console.error('Error fetching stats:', error)
@@ -77,23 +77,23 @@ export default function AdminDashboardPage() {
 
         <Card className="bg-white shadow-sm">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium text-gray-700">Pending Payment Verification</CardTitle>
+            <Clock className="h-4 w-4 text-gray-400" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold text-gray-900">{stats.pendingPayments}</div>
+            <p className="mt-1 text-xs text-gray-500">Awaiting screenshot verification</p>
+          </CardContent>
+        </Card>
+
+        <Card className="bg-white shadow-sm">
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium text-gray-700">Paper Submissions</CardTitle>
             <FileText className="h-4 w-4 text-gray-400" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-gray-900">{stats.totalSubmissions}</div>
             <p className="mt-1 text-xs text-gray-500">Papers submitted for review</p>
-          </CardContent>
-        </Card>
-
-        <Card className="bg-white shadow-sm">
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium text-gray-700">Pending Reviews</CardTitle>
-            <Clock className="h-4 w-4 text-gray-400" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold text-gray-900">{stats.pendingReviews}</div>
-            <p className="mt-1 text-xs text-gray-500">Papers awaiting review</p>
           </CardContent>
         </Card>
       </div>

@@ -103,6 +103,12 @@ const conveners = [
         role:"Co-Convenor",
         affiliation: "IILM University, Greater Noida, India",
     },
+    {
+        image: "/images/rajeev-kumar.jpeg",
+        name: "Dr. Rajev Kumar",
+        role:"Co-Convenor",
+        affiliation: "IILM University, Greater Noida, India",
+    },
 ];
 
 const organizingSecretaries = [
@@ -162,6 +168,12 @@ const organizingCommittee = [
         name: "Ms. Pallavi Bagde",
         role: "Organising Committee",
         affiliation: ""
+    },
+    {
+        image: "/images/aditya-saini.jpeg",
+        name: "Prof. Aditya Saini",
+        role: "Organising Committee",
+        affiliation: "IILM University, Greater Noida, India"
     }
 ];
 

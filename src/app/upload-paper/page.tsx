@@ -28,14 +28,13 @@ import {
   Lock,
   Eye,
   EyeOff,
-  CreditCard,
+  Upload,
 } from "lucide-react";
 import Link from "next/link";
 import { CONSTANTS } from "@/lib/constants";
 import { registerUser, type RegistrationData } from "@/lib/registration";
 import { cn } from "@/lib/utils";
 import { getRegistrationFeeInr } from "@/lib/fees";
-import { openRazorpayCheckout } from "@/lib/razorpay-client";
 
 const categories = [
   "Research Scholar",
@@ -68,12 +67,12 @@ const feeTable = [
 ];
 
 const bankDetails = [
-  ["Beneficiary Name", "G H Raisoni Career Foundation"],
-  ["Account Number", "624205012873"],
-  ["IFSC Code", "ICIC0006242"],
-  ["SWIFT Code", "IDFBINBBMUM"],
-  ["Bank Name", "ICICI Bank"],
-  ["Branch", "Ramdaspeth Nagpur"],
+  ["Beneficiary Name", "Redevs Technologies Private Limited"],
+  ["Account Number", "1942002100037171"],
+  ["IFSC Code", "PUNB0013800"],
+  ["SWIFT Code", "PUNBINBB0138"],
+  ["Bank Name", "Punjab National Bank"],
+  ["Branch", "Dholpur, Rajasthan"],
 ];
 
 interface FormErrors {
@@ -92,6 +91,7 @@ export default function UploadPaperPage() {
     category: "",
     daysAttending: "",
   });
+  const [paymentProofFile, setPaymentProofFile] = useState<File | null>(null);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [errors, setErrors] = useState<FormErrors>({});
@@ -235,48 +235,18 @@ export default function UploadPaperPage() {
       return;
     }
 
+    if (!paymentProofFile) {
+      setStatus("Payment screenshot is required to complete registration.");
+      setStatusType("error");
+      document.getElementById("paymentProof")?.scrollIntoView({ behavior: "smooth", block: "center" });
+      return;
+    }
+
     setLoading(true);
     setStatus("");
     setStatusType("");
 
     try {
-      const orderRes = await fetch("/api/razorpay/create-order", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          category: form.category,
-          country: form.country,
-          email: form.email,
-          fullName: form.fullName,
-        }),
-      });
-      const orderData = await orderRes.json();
-      if (!orderRes.ok) {
-        throw new Error(orderData.error || "Failed to create payment order");
-      }
-
-      const paymentResponse = await openRazorpayCheckout({
-        keyId: orderData.keyId,
-        orderId: orderData.orderId,
-        amount: orderData.amount,
-        currency: orderData.currency,
-        name: form.fullName,
-        description: `${CONSTANTS.CONFERENCE_ABBR} — ${form.category}`,
-        email: form.email,
-        contact: form.phone,
-        onSuccess: () => {},
-      });
-
-      const verifyRes = await fetch("/api/razorpay/verify", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(paymentResponse),
-      });
-      const verifyData = await verifyRes.json();
-      if (!verifyRes.ok || !verifyData.verified) {
-        throw new Error(verifyData.error || "Payment verification failed");
-      }
-
       const registrationData: RegistrationData = {
         fullName: form.fullName,
         email: form.email,
@@ -287,13 +257,7 @@ export default function UploadPaperPage() {
         category: form.category,
         daysAttending: form.daysAttending,
         presentingPaper: false,
-        payment: {
-          razorpayOrderId: paymentResponse.razorpay_order_id,
-          razorpayPaymentId: paymentResponse.razorpay_payment_id,
-          razorpaySignature: paymentResponse.razorpay_signature,
-          amountPaise: orderData.amount,
-          currency: orderData.currency,
-        },
+        paymentProofFile,
       };
 
       const result = await registerUser(registrationData);
@@ -309,13 +273,6 @@ export default function UploadPaperPage() {
       setStatusType("success");
       setShowModal(true);
 
-      if (typeof window !== 'undefined') {
-        sessionStorage.setItem('userEmail', form.email);
-        if (result.userId) {
-          sessionStorage.setItem('userId', result.userId);
-        }
-      }
-
       setForm({
         fullName: "",
         email: "",
@@ -327,19 +284,14 @@ export default function UploadPaperPage() {
         category: "",
         daysAttending: "",
       });
+      setPaymentProofFile(null);
       setErrors({});
       setTouched({});
       setShowPassword(false);
       setShowConfirmPassword(false);
     } catch (error: any) {
-      const message = error?.message || "Unexpected error occurred, please try again.";
-      if (message !== "Payment cancelled") {
-        setStatus(message);
-        setStatusType("error");
-      } else {
-        setStatus("Payment was cancelled. Please try again to complete registration.");
-        setStatusType("error");
-      }
+      setStatus(error?.message || "Unexpected error occurred, please try again.");
+      setStatusType("error");
       console.error(error);
     } finally {
       setLoading(false);
@@ -690,6 +642,50 @@ export default function UploadPaperPage() {
                 </div>
               </div>
 
+              <div className="space-y-5">
+                <div className="flex items-center gap-2 pb-2 border-b">
+                  <Upload className="w-5 h-5 text-primary" />
+                  <h3 className="text-lg font-semibold text-foreground">
+                    Payment Screenshot
+                  </h3>
+                </div>
+                <div className="flex items-start gap-3 p-4 bg-amber-50 border border-amber-200 rounded-lg">
+                  <AlertCircle className="w-5 h-5 text-amber-700 shrink-0 mt-0.5" />
+                  <div className="text-sm text-amber-900 space-y-1">
+                    <p className="font-semibold">Manual bank transfer</p>
+                    <p>
+                      Transfer the registration fee using the UPI or bank details above
+                      {form.category && form.country
+                        ? ` (₹${getRegistrationFeeInr(form.category, form.country)})`
+                        : ""}
+                      , then upload your payment screenshot below. An admin must verify your payment before you can log in.
+                    </p>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="paymentProof">Payment Screenshot *</Label>
+                  <Input
+                    id="paymentProof"
+                    type="file"
+                    accept="image/*,.pdf"
+                    required
+                    onChange={(e) => {
+                      const file = e.target.files?.[0] || null;
+                      setPaymentProofFile(file);
+                    }}
+                  />
+                  {paymentProofFile ? (
+                    <p className="text-xs text-muted-foreground">
+                      Selected: {paymentProofFile.name} ({(paymentProofFile.size / 1024).toFixed(1)} KB)
+                    </p>
+                  ) : (
+                    <p className="text-xs text-muted-foreground">
+                      Upload your UPI/bank transfer screenshot or PDF receipt (required).
+                    </p>
+                  )}
+                </div>
+              </div>
+
               <div className="flex items-start gap-3 p-4 bg-blue-50 border border-blue-200 rounded-lg">
                 <FileText className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
                 <div className="flex-1">
@@ -697,7 +693,7 @@ export default function UploadPaperPage() {
                     Paper Submission
                   </p>
                   <p className="text-xs text-blue-800">
-                    After registration, log in to your user panel to submit papers and manage your submissions.
+                    After your payment is verified by an admin, log in to your user panel to submit papers.
                   </p>
                 </div>
               </div>
@@ -747,15 +743,12 @@ export default function UploadPaperPage() {
                   {loading ? (
                     <span className="flex items-center gap-2">
                       <Loader2 className="w-5 h-5 animate-spin" />
-                      Processing Payment...
+                      Registering...
                     </span>
                   ) : (
                     <>
-                      <CreditCard className="w-4 h-4 mr-2" />
-                      Pay &amp; Complete Registration
-                      {form.category && form.country
-                        ? ` (₹${getRegistrationFeeInr(form.category, form.country)})`
-                        : ""}
+                      <CheckCircle className="w-4 h-4 mr-2" />
+                      Complete Registration
                     </>
                   )}
                 </Button>
@@ -781,31 +774,21 @@ export default function UploadPaperPage() {
               <CheckCircle2 className="w-8 h-8 text-green-600" />
             </div>
             <DialogTitle className="text-center text-2xl">
-              Registration Confirmed!
+              Registration Submitted!
             </DialogTitle>
           </DialogHeader>
 
           <div className="space-y-4 py-4">
             <p className="text-center text-muted-foreground">
-              Your registration has been successfully completed for {CONSTANTS.CONFERENCE_ABBR}, hosted by {CONSTANTS.COLLAGE_NAME}
+              Your registration for {CONSTANTS.CONFERENCE_ABBR} has been created and your payment
+              screenshot has been submitted for admin verification.
             </p>
-
-            <div className="bg-green-500/10 border border-green-500/20 p-4 rounded-lg space-y-2">
-              <p className="text-sm font-semibold text-green-700 flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4" />
-                Account Created Successfully
-              </p>
-              <p className="text-sm text-muted-foreground">
-                Your account has been created and you are logged in.
-                You can now access your user panel to manage submissions and view registration details.
-              </p>
-            </div>
 
             <div className="bg-muted/50 p-4 rounded-lg space-y-2">
               <p className="text-sm font-medium">What&apos;s Next?</p>
               <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
-                <li>Log in to your user panel to submit papers</li>
-                <li>Your Razorpay payment has been recorded</li>
+                <li>Wait for an admin to verify your payment</li>
+                <li>Once verified, you can log in to your user panel</li>
                 <li>Check your email regularly for updates</li>
               </ul>
             </div>
@@ -821,10 +804,10 @@ export default function UploadPaperPage() {
               className="w-full sm:w-auto"
               onClick={() => {
                 setShowModal(false);
-                window.location.href = '/user';
+                window.location.href = '/login';
               }}
             >
-              Go to User Panel
+              Go to Login
             </Button>
           </DialogFooter>
         </DialogContent>

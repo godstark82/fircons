@@ -1,4 +1,4 @@
-/** Registration fee amounts in INR (paise for Razorpay = amount * 100) */
+/** Registration fee amounts in INR */
 
 export type FeeCategory =
   | "Research Scholar"

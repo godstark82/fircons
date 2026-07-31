@@ -1,9 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import { signInWithEmailAndPassword } from 'firebase/auth'
+import { signInWithEmailAndPassword, signOut } from 'firebase/auth'
 import { auth } from '@/lib/firebase'
-import { isAdminFromRegistration } from '@/lib/auth-helpers'
+import { isAdminFromRegistration, isPaymentVerified } from '@/lib/auth-helpers'
 import { useRouter } from 'next/navigation'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
@@ -86,20 +86,40 @@ export default function LoginPage() {
       const userCredential = await signInWithEmailAndPassword(auth, form.email, form.password)
       const user = userCredential.user
 
-      // Store user info
+      const isAdmin = await isAdminFromRegistration(user.uid, user.email)
+      if (isAdmin) {
+        if (typeof window !== 'undefined') {
+          sessionStorage.setItem('userEmail', user.email || '')
+          sessionStorage.setItem('userId', user.uid)
+        }
+        router.push('/admin')
+        return
+      }
+
+      const paymentStatus = await isPaymentVerified(user.uid, user.email)
+      if (!paymentStatus.verified) {
+        await signOut(auth)
+        if (paymentStatus.hasProof) {
+          setStatus({
+            type: 'error',
+            message:
+              'Your payment screenshot is awaiting admin verification. Please try again after it is approved.',
+          })
+        } else {
+          setStatus({
+            type: 'error',
+            message:
+              'Payment not verified yet. Please upload your payment screenshot first, then wait for admin approval.',
+          })
+        }
+        return
+      }
+
       if (typeof window !== 'undefined') {
         sessionStorage.setItem('userEmail', user.email || '')
         sessionStorage.setItem('userId', user.uid)
       }
 
-      // Admin if registrations doc has role === 'admin'
-      const isAdmin = await isAdminFromRegistration(user.uid, user.email)
-      if (isAdmin) {
-        router.push('/admin')
-        return
-      }
-
-      // Regular user, redirect to user panel
       router.push('/user')
     } catch (error: any) {
       console.error('Login error:', error)
@@ -107,7 +127,7 @@ export default function LoginPage() {
 
       if (error.code === 'auth/user-not-found') {
         errorMessage = 'No account found with this email address.'
-      } else if (error.code === 'auth/wrong-password') {
+      } else if (error.code === 'auth/wrong-password' || error.code === 'auth/invalid-credential') {
         errorMessage = 'Incorrect password. Please try again.'
       } else if (error.code === 'auth/invalid-email') {
         errorMessage = 'Invalid email address format.'
@@ -250,11 +270,17 @@ export default function LoginPage() {
               )}
             </Button>
 
-            <div className="text-center text-sm">
+            <div className="text-center text-sm space-y-2">
               <p className="text-muted-foreground">
                 Don't have an account?{' '}
                 <Link href="/upload-paper" className="text-primary hover:underline font-medium">
                   Register here
+                </Link>
+              </p>
+              <p className="text-muted-foreground">
+                Need to submit payment proof?{' '}
+                <Link href="/upload-payment-proof" className="text-primary hover:underline font-medium">
+                  Upload screenshot
                 </Link>
               </p>
             </div>

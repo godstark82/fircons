@@ -1,6 +1,7 @@
 import { collection, addDoc, doc, setDoc, serverTimestamp } from 'firebase/firestore';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { db, auth } from './firebase';
+import { createUserWithEmailAndPassword, signOut } from 'firebase/auth';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { db, auth, storage } from './firebase';
 import { RegistrationWithPaperSchema } from '@/schema/registration-schema';
 
 export interface RegistrationData {
@@ -16,13 +17,7 @@ export interface RegistrationData {
   paperTitle?: string;
   paperAbstract?: string;
   uploadedFile?: File | null;
-  payment?: {
-    razorpayOrderId: string;
-    razorpayPaymentId: string;
-    razorpaySignature: string;
-    amountPaise: number;
-    currency: string;
-  };
+  paymentProofFile?: File | null;
 }
 
 export interface RegistrationResult {
@@ -45,11 +40,11 @@ export async function registerUser(data: RegistrationData): Promise<Registration
       };
     }
 
-    if (!data.payment?.razorpayPaymentId) {
+    if (!data.paymentProofFile) {
       return {
         success: false,
         message: 'Registration failed',
-        error: 'Payment is required to complete registration.',
+        error: 'Payment screenshot is required to complete registration.',
       };
     }
 
@@ -85,51 +80,57 @@ export async function registerUser(data: RegistrationData): Promise<Registration
 
     const userId = userCredential.user.uid;
 
-    const paymentFields = {
-      paymentIntentId: data.payment.razorpayPaymentId,
-      razorpayOrderId: data.payment.razorpayOrderId,
-      razorpayPaymentId: data.payment.razorpayPaymentId,
-      razorpaySignature: data.payment.razorpaySignature,
-      paymentAmountPaise: data.payment.amountPaise,
-      paymentCurrency: data.payment.currency,
-      payment_confirmed: true,
-      payment_confirmed_at: serverTimestamp(),
-      paymentMethod: 'razorpay',
+    let paymentProofFields: Record<string, unknown> = {};
+    if (data.paymentProofFile) {
+      const timestamp = Date.now();
+      const safeName = data.paymentProofFile.name.replace(/[^a-zA-Z0-9._-]/g, '_');
+      const fileName = `payment_proof_${timestamp}_${safeName}`;
+      const storageRef = ref(storage, `payment-proofs/${userId}/${fileName}`);
+      await uploadBytes(storageRef, data.paymentProofFile);
+      const fileUrl = await getDownloadURL(storageRef);
+      paymentProofFields = {
+        paymentProofUrl: fileUrl,
+        paymentProofFileName: data.paymentProofFile.name,
+        paymentProofStorageFileName: fileName,
+        paymentProofUploadedAt: serverTimestamp(),
+      };
+    }
+
+    const sharedFields = {
+      fullName: validatedData.fullName,
+      email: validatedData.email,
+      phone: validatedData.phone,
+      affiliation: validatedData.affiliation,
+      country: validatedData.country,
+      category: validatedData.category,
+      role: 'user',
+      paymentMethod: 'manual',
+      payment_confirmed: false,
+      status: 'pending',
+      ...paymentProofFields,
     };
 
     await setDoc(doc(db, 'users', userId), {
       uid: userId,
-      fullName: validatedData.fullName,
-      email: validatedData.email,
-      phone: validatedData.phone,
-      affiliation: validatedData.affiliation,
-      country: validatedData.country,
-      category: validatedData.category,
-      role: 'user',
+      ...sharedFields,
       createdAt: serverTimestamp(),
-      ...paymentFields,
     });
 
-    const registrationData: any = {
+    await addDoc(collection(db, 'registrations'), {
       userId,
-      fullName: validatedData.fullName,
-      email: validatedData.email,
-      phone: validatedData.phone,
-      affiliation: validatedData.affiliation,
-      country: validatedData.country,
-      category: validatedData.category,
       daysAttending: validatedData.daysAttending,
       presentingPaper: false,
-      role: 'user',
       registeredAt: serverTimestamp(),
-      ...paymentFields,
-    };
+      ...sharedFields,
+    });
 
-    await addDoc(collection(db, 'registrations'), registrationData);
+    // Sign out immediately — login is allowed only after admin payment verification
+    await signOut(auth);
 
     return {
       success: true,
-      message: 'Registration and payment successful! You can now log in to your user panel to submit papers and manage your submissions.',
+      message:
+        'Registration successful! Your payment screenshot has been submitted. You can log in after an admin verifies your payment.',
       userId,
     };
   } catch (error: any) {

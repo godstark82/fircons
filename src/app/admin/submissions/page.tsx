@@ -69,6 +69,7 @@ type Submission = {
   paymentProofFileName?: string
   paymentProofUploadedAt?: any
   registeredAt?: any
+  role?: string
 }
 
 type FilterType = 'all' | 'withPapers' | 'withoutPapers'
@@ -106,10 +107,12 @@ export default function AdminSubmissionsPage() {
   const fetchSubmissions = async () => {
     try {
       const registrationsSnapshot = await getDocs(collection(db, 'registrations'))
-      const allSubmissions = registrationsSnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      })) as Submission[]
+      const allSubmissions = registrationsSnapshot.docs
+        .map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }))
+        .filter((r: any) => r.role !== 'admin') as Submission[]
 
       setSubmissions(allSubmissions)
     } catch (error) {

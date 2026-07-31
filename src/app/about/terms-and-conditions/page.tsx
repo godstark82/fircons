@@ -34,9 +34,9 @@ export default function TermsAndConditionsPage() {
       <LegalSection title="3. Registration Fees &amp; Payments">
         <p>
           Applicable fees depend on your registration category and timing (early bird / late),
-          as published on the registration page. Payments made through Razorpay are subject to
-          Razorpay’s terms in addition to these Terms. Fees are generally non-refundable except
-          as stated in the Refund &amp; Cancellation Policy.
+          as published on the registration page. Payments are made by bank transfer and must be
+          verified by an administrator before login access is granted. Fees are generally
+          non-refundable except as stated in the Refund &amp; Cancellation Policy.
         </p>
       </LegalSection>
 

@@ -36,10 +36,9 @@ export default function RefundCancellationPolicyPage() {
 
       <LegalSection title="3. Duplicate or Failed Payments">
         <p>
-          If a payment is charged more than once due to a technical error, or if an amount is
-          deducted but registration is not completed, contact us with your Razorpay payment ID /
-          order ID. After verification with the payment gateway, a refund of the duplicate or
-          failed transaction amount may be processed.
+          If a payment appears to have been made more than once due to a technical or banking
+          error, contact us with your transaction reference details. After verification, a refund
+          of the duplicate amount may be processed.
         </p>
       </LegalSection>
 
@@ -81,9 +80,8 @@ export default function RefundCancellationPolicyPage() {
       <LegalSection title="8. Refund Processing (Where Applicable)">
         <p>
           Where a refund is approved, it will typically be credited to the original payment
-          method within <strong>7–14 business days</strong>, subject to Razorpay and bank
-          processing times. The organizers are not responsible for delays by banks or payment
-          gateways.
+          method within <strong>7–14 business days</strong>, subject to bank processing times.
+          The organizers are not responsible for delays by banks.
         </p>
       </LegalSection>
 
@@ -94,7 +92,7 @@ export default function RefundCancellationPolicyPage() {
             {CONSTANTS.SUPPORT_EMAIL}
           </a>
           <br />
-          Include your full name, registered email, category, and Razorpay payment/order ID.
+          Include your full name, registered email, category, and bank transaction reference.
         </p>
       </LegalSection>
 

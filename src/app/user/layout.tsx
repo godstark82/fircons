@@ -6,6 +6,7 @@ import { User, FileText, LogOut, LayoutDashboard, Home, Menu, X } from 'lucide-r
 import { Button } from '@/components/ui/button'
 import { signOut, onAuthStateChanged } from 'firebase/auth'
 import { auth } from '@/lib/firebase'
+import { isPaymentVerified } from '@/lib/auth-helpers'
 import { useEffect, useState } from 'react'
 
 const menuItems = [
@@ -34,12 +35,27 @@ export default function UserLayout({
   useEffect(() => {
     if (typeof window === 'undefined' || !auth) return
 
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      if (currentUser) {
-        setUser(currentUser)
-      } else {
+    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+      if (!currentUser) {
         router.push('/login')
+        setLoading(false)
+        return
       }
+
+      const paymentStatus = await isPaymentVerified(currentUser.uid, currentUser.email)
+      if (!paymentStatus.verified) {
+        try {
+          await signOut(auth)
+        } catch {
+          /* ignore */
+        }
+        sessionStorage.clear()
+        router.push('/login')
+        setLoading(false)
+        return
+      }
+
+      setUser(currentUser)
       setLoading(false)
     })
 

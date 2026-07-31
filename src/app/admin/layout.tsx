@@ -2,7 +2,7 @@
 
 import { usePathname, useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { LayoutDashboard, FileText, LogOut, Shield, Menu, X } from 'lucide-react'
+import { LayoutDashboard, FileText, LogOut, Shield, Menu, X, Users } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { signOut, onAuthStateChanged } from 'firebase/auth'
 import { auth } from '@/lib/firebase'
@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react'
 
 const menuItems = [
   { title: 'Dashboard', icon: LayoutDashboard, href: '/admin' },
+  { title: 'Registrations', icon: Users, href: '/admin/registrations' },
   { title: 'Submissions', icon: FileText, href: '/admin/submissions' },
 ]
 
@@ -159,7 +160,11 @@ export default function AdminLayout({
           </button>
           <div className="hidden h-5 w-px bg-gray-200 md:block" />
           <span className="text-sm font-semibold text-gray-900">
-            {pathname === '/admin/submissions' ? 'Submissions' : 'Dashboard'}
+            {pathname === '/admin/submissions'
+              ? 'Submissions'
+              : pathname === '/admin/registrations'
+                ? 'Registrations'
+                : 'Dashboard'}
           </span>
         </header>
 

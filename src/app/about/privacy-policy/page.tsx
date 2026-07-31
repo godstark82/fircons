@@ -21,7 +21,7 @@ export default function PrivacyPolicyPage() {
           <li>Name, email address, phone number, affiliation, and country</li>
           <li>Registration category and attendance details</li>
           <li>Account credentials (password is stored securely via Firebase Authentication)</li>
-          <li>Payment-related references (such as Razorpay order/payment IDs)</li>
+          <li>Payment proof screenshots and verification status</li>
           <li>Paper submissions and related files, if you choose to submit</li>
           <li>Technical data such as browser type and access logs, where applicable</li>
         </ul>
@@ -41,10 +41,8 @@ export default function PrivacyPolicyPage() {
 
       <LegalSection title="3. Payment Information">
         <p>
-          Online payments are processed through Razorpay. We do not store your full card or
-          banking credentials on our servers. Payment confirmation details (for example,
-          payment ID and order ID) may be stored to verify transactions and support refunds
-          where applicable under our Refund &amp; Cancellation Policy.
+          Registration fees are paid via bank transfer. You may upload a payment screenshot for
+          admin verification. We do not collect or store your bank card credentials on this website.
         </p>
       </LegalSection>
 
@@ -62,7 +60,7 @@ export default function PrivacyPolicyPage() {
           We do not sell your personal information. We may share limited data with:
         </p>
         <ul className="list-disc pl-6 space-y-1">
-          <li>Payment processors (e.g., Razorpay) to complete transactions</li>
+          <li>Payment processors or banks only as needed for verification support</li>
           <li>Conference organizers and authorized committee members for event operations</li>
           <li>Service providers who support hosting, email, or infrastructure</li>
           <li>Authorities where required by law</li>
