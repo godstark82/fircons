@@ -59,24 +59,6 @@ const KEYNOTE_SPEAKERS = [
 
 const SPEAKERS = [
     {
-        name: "Dr. Devendra Kumar",
-        affiliation: "",
-        country: "Oman",
-        img: "",
-    },
-    {
-        name: "Dr. Monika Bota",
-        affiliation: "Babes-Bolyai University, Cluj-Napoca",
-        country: "Romania",
-        img: "/images/speakers/monalika_bota.jpg",
-    },
-    {
-        name: "Dr. Liliana Guran",
-        affiliation: "Babes-Bolyai University, Cluj-Napoca",
-        country: "Romania",
-        img: "/images/speakers/liliana.jpg",
-    },
-    {
         name: "Dr. Niveen",
         affiliation: "",
         country: "Kuwait",
@@ -126,8 +108,14 @@ const SPEAKERS = [
     },
     {
         name: "Dr. U S Rana",
-        affiliation: "",
+        affiliation: "DAV (PG) College",
         country: "Dehradun, India",
+        img: "",
+    },
+    {
+        name: "Dr. Rahul Singh ",
+        affiliation: "IILM University, Greater Noida,",
+        country: "India",
         img: "",
     },
     {

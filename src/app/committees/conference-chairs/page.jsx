@@ -25,11 +25,18 @@ const patron = [
 
 const coPatron = [
     {
-        image: "https://iilm.ac.in/uploads/all/691/conversions/Dr-Sandeep-Chatterjee-full.webp",
-        name: "Dr. Sandeep Chattarjee",
-        role: "Pro VC",
-        affiliation: "IILM University, Greater Noida",
-    }
+        image: "https://iilm.edu/greater-noida/wp-content/uploads/sites/3/2026/06/vc-jay.png",
+        name: "Dr Jaykant Varier",
+        role: "Vice Chancellor",
+        affiliation: "IILM University, Greater Noida, India",
+    },
+    {
+        image: "https://iilm.edu/greater-noida/wp-content/uploads/sites/3/2026/02/Nihar-Amoncar-updated-350x240-full.webp",
+        name: "Dr Nihar Amonkar ",
+        role: "Pro Vice Chancellor",
+        affiliation: "IILM University, Greater Noida, India",
+    },
+
 ];
 
 const honoraryChair = [
@@ -83,7 +90,19 @@ const conveners = [
         name: "Dr. Rupali J. Thete",
         role:"Convenor",
         affiliation: "GHRCE",
-    }
+    },
+    {
+        image: "https://iilm.edu/greater-noida/wp-content/uploads/sites/3/2026/03/IILMGN006892025-full.webp",
+        name: "Dr Narendra Kumar",
+        role:"Convenor",
+        affiliation: "IILM University, Greater Noida, India",
+    },
+    {
+        image: "https://iilm.edu/greater-noida/wp-content/uploads/sites/3/2026/03/Pankaj-350x240-full.webp",
+        name: "Dr. Pankaj",
+        role:"Co-Convenor",
+        affiliation: "IILM University, Greater Noida, India",
+    },
 ];
 
 const organizingSecretaries = [
@@ -167,12 +186,12 @@ export default function ConferenceChairPage() {
                 }))} />
 <br />
 <br />
-                {/* <h2 className="text-3xl md:text-4xl font-bold mb-8">Co-Patron</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-8">Co-Patron</h2>
                 <CommitteeMemberGrid members={coPatron.map(m => ({
                     name: m.name,
                     role: `${m.role}${m.affiliation ? `, ${m.affiliation}` : ""}`,
                     image: m.image
-                }))} /> */}
+                }))} /> 
 
                 <h2 className="text-3xl md:text-4xl font-bold mb-8 mt-16">Honorary Chair</h2>
                 <CommitteeMemberGrid members={honoraryChair.map(m => ({
@@ -195,7 +214,7 @@ export default function ConferenceChairPage() {
                     image: m.image
                 }))} />
 
-                <h2 className="text-3xl md:text-4xl font-bold mb-8 mt-16">Conveners</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-8 mt-16">Conveners & co-conveners</h2>
                 <CommitteeMemberGrid members={conveners.map(m => ({
                     name: m.name,
                     role: `${m.role}${m.affiliation ? `, ${m.affiliation}` : ""}`,
