@@ -88,35 +88,26 @@ const conveners = [
     {
         image: "https://media.licdn.com/dms/image/v2/D5603AQGY6ERqo_jkxQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1637646542179?e=2147483647&v=beta&t=5SvkmRSEeOiNhUVAL2NEuS-BrinA4SMEju9svZKUQzM",
         name: "Dr. Rupali J. Thete",
-        role:"Convenor",
+        role: "Convenor",
         affiliation: "GHRCE",
     },
     {
         image: "https://iilm.edu/greater-noida/wp-content/uploads/sites/3/2026/03/IILMGN006892025-full.webp",
         name: "Dr Narendra Kumar",
-        role:"Convenor",
+        role: "Convenor",
         affiliation: "IILM University, Greater Noida, India",
     },
     {
         image: "https://iilm.edu/greater-noida/wp-content/uploads/sites/3/2026/03/Pankaj-350x240-full.webp",
         name: "Dr. Pankaj",
-        role:"Co-Convenor",
+        role: "Co-Convenor",
         affiliation: "IILM University, Greater Noida, India",
     },
     {
         image: "/images/rajeev-kumar.jpeg",
         name: "Dr. Rajev Kumar",
-        role:"Co-Convenor",
+        role: "Co-Convenor",
         affiliation: "IILM University, Greater Noida, India",
-    },
-];
-
-const organizingSecretaries = [
-    {
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoHgIe7Pztu0ASYeY5ZfnNoWK5dUayz-QEHlPNmKglow&s=10",
-        name: "Smita Pidurkar",
-        role: "Organising Secretary",
-        affiliation: ""
     },
     {
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe6D8tiSiWKh3MYcQyycoGHgPo3RDJ7cITjXgFQyj73w&s=10",
@@ -124,6 +115,16 @@ const organizingSecretaries = [
         role: "Organising Secretary",
         affiliation: ""
     },
+    {
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoHgIe7Pztu0ASYeY5ZfnNoWK5dUayz-QEHlPNmKglow&s=10",
+        name: "Smita Pidurkar",
+        role: "Organising Secretary",
+        affiliation: ""
+    },
+
+];
+
+const organizingSecretaries = [
     {
         image: "/images/user.jpg",
         name: "Dr. Akilahmad Sheikh",
@@ -196,14 +197,14 @@ export default function ConferenceChairPage() {
                     role: `${m.role}${m.affiliation ? `, ${m.affiliation}` : ""}`,
                     image: m.image
                 }))} />
-<br />
-<br />
+                <br />
+                <br />
                 <h2 className="text-3xl md:text-4xl font-bold mb-8">Co-Patron</h2>
                 <CommitteeMemberGrid members={coPatron.map(m => ({
                     name: m.name,
                     role: `${m.role}${m.affiliation ? `, ${m.affiliation}` : ""}`,
                     image: m.image
-                }))} /> 
+                }))} />
 
                 <h2 className="text-3xl md:text-4xl font-bold mb-8 mt-16">Honorary Chair</h2>
                 <CommitteeMemberGrid members={honoraryChair.map(m => ({
