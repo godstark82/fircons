@@ -23,37 +23,37 @@ const KEYNOTE_SPEAKERS = [
         name: "Rakesh M Patel",
         affiliation: "",
         country: "Gujarat, India",
-        img: "",
+        img: "/images/speakers/rakesh-m-patel.jpg",
     },
     {
-        name: " Prof. (Dr.) Saibal Ray,",
+        name: "Prof. (Dr.) Saibal Ray",
         affiliation: "Centre for Cosmology, Astrophysics and Space Science, GLA University, Mathura ",
         country: "Uttar Pradesh, India",
-        img: "",
+        img: "/images/speakers/saibal-ray.jpeg",
     },
     {
         name: "Dr. Hemant Nashine",
         affiliation: "",
         country: "India",
-        img: "",
+        img: "images/speakers/hemant-nashine.jpeg",
     },
     {
         name: "Dr. Rahul Shukla",
         affiliation: "",
         country: "India",
-        img: "",
+        img: "/images/speakers/rahul-shukla.jpeg",
     },
     {
         name: "Dr. G. P. Singh",
         affiliation: "Ph.D., FRAS, FMASc Dean (FW) Professor(HAG) of Mathematics",
         country: "India",
-        img: "",
+        img: "/images/speakers/gp-singh.jpeg",
     },
     {
         name: "Prof. J K Singh",
         affiliation: "Dept. of Mathematics Netaji Subhas University of Technology Sector-3, Dwarka",
         country: "New Delhi,India",
-        img: "",
+        img: "/images/speakers/jk-singh.jpeg",
     },
 ];
 
@@ -68,7 +68,7 @@ const SPEAKERS = [
         name: "Dr. Rakesh M Patel",
         affiliation: "",
         country: "Gujarat, India",
-        img: "",
+        img: "/images/speakers/rakesh-m-patel.jpg",
     },
     {
         name: "Dr. Jimit R Patel",
@@ -128,21 +128,24 @@ const SPEAKERS = [
 
 function SpeakerCard({ speaker }) {
     return (
-        <div className="bg-[#232335] rounded-md overflow-hidden shadow-md flex flex-col w-full max-w-[275px] p-4 text-white">
-            {/* {speaker.img ? (
-                <div className="h-[200px] overflow-hidden mb-4 rounded-md">
-                    <img
-                        src={speaker.img}
-                        alt={speaker.name}
-                        className="w-full h-full object-cover rounded-md"
-                    />
-                </div>
-            ) : null} */}
+        <div className="bg-[#232335] rounded-md overflow-hidden shadow-md flex flex-col w-full max-w-[275px] p-4 text-white hover:scale-105 transition-transform duration-300">
+            <div className="h-[240px] w-full overflow-hidden mb-4 rounded-md bg-[#1a1a2e] flex items-center justify-center relative group">
+                <img
+                    src={speaker.img || "/images/user.jpg"}
+                    alt={speaker.name}
+                    className="w-full h-full object-cover rounded-md object-top group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
+                />
+            </div>
             <div>
-                <div className="h-1.5 w-12 bg-primary my-1.5"></div>
+                <div className="h-1.5 w-12 bg-primary my-1.5 rounded-full"></div>
                 <div className="font-semibold text-sm md:text-base leading-tight mb-1">{speaker.name}</div>
-                <div className="text-xs opacity-90 leading-tight whitespace-normal mb-1">{speaker.affiliation}</div>
-                <div className="text-xs opacity-70 leading-tight whitespace-normal">{speaker.country}</div>
+                {speaker.affiliation && (
+                    <div className="text-xs opacity-90 leading-tight whitespace-normal mb-1">{speaker.affiliation}</div>
+                )}
+                {speaker.country && (
+                    <div className="text-xs opacity-70 leading-tight whitespace-normal">{speaker.country}</div>
+                )}
             </div>
         </div>
     );

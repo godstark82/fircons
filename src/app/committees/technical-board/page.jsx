@@ -59,7 +59,7 @@ const nationalCooperation = [
     role: "Professor & Dean SASL, VIT Bhopal University, Bhopal & Visiting Professor at University of Johannesburg, South Africa",
   },
   {
-    image: "/images/user.jpg",
+    image: "/images/speakers/saibal-ray.jpg",
     name: "Dr. Saibal Ray",
     role: "Associate Director, Centre for Cosmology, Astrophysics and Space Science (CCASS), GLA University, Mathura",
   },
