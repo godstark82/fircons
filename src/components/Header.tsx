@@ -94,13 +94,13 @@ const Header = () => {
         <header className="bg-secondary shadow-md sticky top-0 z-50">
             <div className="container mx-auto px-4 py-4">
                 <nav className="flex justify-between items-center">
-                    <Link href="/" className="flex items-center gap-2 sm:gap-3 min-w-0">
+                    <Link href="/" className="flex items-center gap-3 sm:gap-4 min-w-0">
                         <Image
                             src="/images/ghrce/ghrce.jpeg"
                             alt="G H Raisoni College of Engineering"
                             width={200}
                             height={100}
-                            className="h-10 sm:h-12 w-auto object-contain rounded-md mr-2 sm:mr-3"
+                            className="h-10 sm:h-12 w-auto object-contain"
                         />
                         <Image
                             src="/images/ghrce/iilm_logo.png"

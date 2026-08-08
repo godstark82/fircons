@@ -92,6 +92,12 @@ const conveners = [
         affiliation: "IILM University, Greater Noida, India",
     },
     {
+        image: "/images/aakansha-vyas.jpeg",
+        name: "Dr.Aakansha Vyas",
+        role: "Co-Convenor",
+        affiliation: "NIET, Greater Noida, India",
+    },
+    {
         image: "https://iilm.edu/greater-noida/wp-content/uploads/sites/3/2026/03/Pankaj-350x240-full.webp",
         name: "Dr. Pankaj",
         role: "Co-Convenor",
@@ -167,6 +173,12 @@ const organizingCommittee = [
     {
         image: "/images/aditya-saini.jpeg",
         name: "Prof. Aditya Saini",
+        role: "Organising Committee",
+        affiliation: "IILM University, Greater Noida, India"
+    },
+    {
+        image: "/images/manoj-kumar.jpeg",
+        name: "Dr. Manoj Kumar",
         role: "Organising Committee",
         affiliation: "IILM University, Greater Noida, India"
     }
