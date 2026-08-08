@@ -96,14 +96,14 @@ const Header = () => {
                 <nav className="flex justify-between items-center">
                     <Link href="/" className="flex items-center gap-2 sm:gap-3 min-w-0">
                         <Image
-                            src="/images/ghrce/ghrce.webp"
+                            src="/images/ghrce/ghrce.jpeg"
                             alt="G H Raisoni College of Engineering"
                             width={200}
                             height={100}
                             className="h-10 sm:h-12 w-auto object-contain"
                         />
                         <Image
-                            src="/images/iilm-logo.png"
+                            src="/images/ghrce/iilm_logo.png"
                             alt="IILM"
                             width={160}
                             height={80}

@@ -1,46 +1,57 @@
 import AboutHeader from '../../../components/common/AboutHeader';
 import SectionHeader from '../../../components/common/SectionHeader';
 
+const SCHOOLS = [
+    {
+        name: 'School of Engineering, IILM University',
+        image: '/images/iilm.avif',
+        alt: 'IILM University',
+        paragraphs: [
+            'The School of Engineering at IILM University prepares students to meet global industry demands by fostering technical expertise, innovation, and sustainable problem-solving. It offers diverse B.Tech programs in areas such as Biotechnology, Bioinformatics, Food Technology, Civil and Sustainable Infrastructure, Robotics & AI, and ECE in collaboration with L&T.',
+        ],
+    },
+    {
+        name: 'G H Raisoni College of Engineering, Nagpur',
+        image: '/images/ghrce/ghrce.jpeg',
+        alt: 'G H Raisoni College of Engineering, Nagpur',
+        paragraphs: [
+            'The G H Raisoni University in India is a leading higher education institution offering undergraduate, postgraduate, diploma, and doctoral programmes across engineering, management, sciences, commerce, and other disciplines. The university focuses on quality education, innovation, research, entrepreneurship, and industry-oriented learning. It actively promotes skill development, academic excellence, technological advancement, and holistic student development.',
+        ],
+    },
+    {
+        name: 'Kirinyaga University (KyU)',
+        image: '/images/kyrgyzskiy/kyrgyzskiy.jpg',
+        alt: 'Kirinyaga University',
+        paragraphs: [
+            'The Kirinyaga University (KyU) in Kenya is a leading higher education institution offering diverse Bachelor’s, Master’s, Diploma, Certificate, and PhD programmes. It focuses on quality education, research, innovation, technology, and professional development. The University actively promotes practical skills, academic excellence, research collaboration, and community development.',
+        ],
+    },
+];
+
 export default function AboutUniversityPage() {
     return (
         <div className="bg-white">
             <AboutHeader title="School Profile" date="25, 26, 27 September, 2026" image='/images/simdte-white-lg.png' overlayColor='#d0224a' bgImage='/images/kyrgyzskiy/gallery/gallery-1.jpg' />
             <div className="container mx-auto px-4 py-16">
                 <SectionHeader title="Organising Schools Profiles" />
-                <div className="flex flex-col md:flex-row gap-12 items-start">
-                    <div className="md:w-2/3 text-gray-900 space-y-6 text-lg text-justify">
-                        <p>
-                            The <b>School of Engineering</b> at IILM University prepares students to meet global industry
-                            demands by fostering technical expertise, innovation, and sustainable problem-solving. It
-                            offers diverse B.Tech programs in areas such as Biotechnology, Bioinformatics, Food
-                            Technology, Civil and Sustainable Infrastructure, Robotics & AI, and ECE in collaboration
-                            with L&T.
-
-                        </p>
-                        <p>
-                            <b>The School of Sciences (SoS)</b> at IILM University provides a strong academic foundation
-                            across Physics, Chemistry, Mathematics, Forensic Science, and Environmental Science. Its
-                            programs are designed to build scientific competence and support students pursuing
-                            careers in various science disciplines. All undergraduate and postgraduate programs follow
-                            the NEP 2020 framework, offering multiple entry and exit options for academic flexibility.
-                            </p>
-                            <p>
-                            The <b>Faculty of Artificial Intelligence and Digital Technologies</b> at Samarkand State
-                            University, Uzbekistan, reorganized from the Mechanical Mathematics faculty in 2017. It
-                            offers Bachelor’s, Master’s, and PhD programs in applied mathematics, informatics,
-                            information technologies, and related fields. It hosts scientific schools in information
-                            technologies and mechanics of anomalous liquids, with significant contributions from
-                            leading professors. The faculty actively develops software products, conducts research,
-                            and collaborates with educational institutions and regional organizations.
-                        </p>
-                    </div>
-                    <div className="md:w-1/3 w-full flex justify-center md:justify-end">
-                        <img
-                            src="https://iilm.ac.in/uploads/all/40/conversions/Group-20050-(1)-full.webp"
-                            alt="Arya College, Jaipur"
-                            className="shadow-lg w-full max-w-md object-contain"
-                        />
-                    </div>
+                <div className="space-y-16">
+                    {SCHOOLS.map((school) => (
+                        <div key={school.name} className="flex flex-col md:flex-row gap-12 items-start">
+                            <div className="md:w-2/3 text-gray-900 space-y-6 text-lg text-justify">
+                                <h3 className="text-2xl font-bold text-primary text-left">{school.name}</h3>
+                                {school.paragraphs.map((paragraph) => (
+                                    <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+                                ))}
+                            </div>
+                            <div className="md:w-1/3 w-full flex justify-center md:justify-end">
+                                <img
+                                    src={school.image}
+                                    alt={school.alt}
+                                    className="shadow-lg w-full max-w-md object-contain"
+                                />
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>

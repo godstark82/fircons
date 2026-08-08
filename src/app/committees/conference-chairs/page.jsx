@@ -50,12 +50,6 @@ const honoraryChair = [
 
 const internationalCooperation = [
     {
-        image: "https://www.gla.ac.in/Uploads/faculty/781largefrt_781largefrt_Aroon-kumar-Beesham-lg.webp",
-        name: "Prof. Aroon Kumar Beesham",
-        role: "Senior Professor",
-        affiliation: "University of Zululand",
-    },
-    {
         image: "/images/user.jpg",
         name: "Prof. Maxim Khlopov",
         role: "",

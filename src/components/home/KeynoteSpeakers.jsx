@@ -20,12 +20,6 @@ const KEYNOTE_SPEAKERS = [
         img: "",
     },
     {
-        name: "Rakesh M Patel",
-        affiliation: "",
-        country: "Gujarat, India",
-        img: "/images/speakers/rakesh-m-patel.jpg",
-    },
-    {
         name: "Prof. (Dr.) Saibal Ray",
         affiliation: "Centre for Cosmology, Astrophysics and Space Science, GLA University, Mathura ",
         country: "Uttar Pradesh, India",

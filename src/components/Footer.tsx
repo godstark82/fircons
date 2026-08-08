@@ -1,6 +1,6 @@
 import { CONSTANTS } from '@/lib/constants';
 import Link from 'next/link';
-import { FaFacebookF, FaTwitter, FaLinkedin, FaInstagram, FaYoutube, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaFacebookF, FaTwitter, FaLinkedin, FaInstagram, FaYoutube, FaWhatsapp, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Footer = () => {
     return (
@@ -15,12 +15,16 @@ const Footer = () => {
                                 <p>{CONSTANTS.COLLAGE_ADDRESS}</p>
                             </li>
                             <li className="flex items-center gap-2">
-                                <FaPhone className="text-primary" />
-                                <a href={`https://wa.me/${CONSTANTS.SUPPORT_PHONE_1}`} target="_blank" rel="noopener noreferrer"><span>{CONSTANTS.SUPPORT_PHONE_1}</span></a>
+                                <FaWhatsapp className="text-primary" />
+                                <a href={`https://wa.me/${CONSTANTS.SUPPORT_PHONE_1}`} target="_blank" rel="noopener noreferrer">
+                                    <span>(WhatsApp) {CONSTANTS.SUPPORT_PHONE_1}</span>
+                                </a>
                             </li>
                             <li className="flex items-center gap-2">
-                                <FaPhone className="text-primary" />
-                                <a href={`https://wa.me/${CONSTANTS.SUPPORT_PHONE_2}`} target="_blank" rel="noopener noreferrer"><span>{CONSTANTS.SUPPORT_PHONE_2}</span></a>
+                                <FaWhatsapp className="text-primary" />
+                                <a href={`https://wa.me/${CONSTANTS.SUPPORT_PHONE_2}`} target="_blank" rel="noopener noreferrer">
+                                    <span>(WhatsApp) {CONSTANTS.SUPPORT_PHONE_2}</span>
+                                </a>
                             </li>
                             <li className="flex items-center gap-2">
                                 <FaEnvelope className="text-primary" />

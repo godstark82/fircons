@@ -20,14 +20,14 @@ const PARTNERS = [
             "IILM University, Greater Noida is a partner institution associated with the conference, fostering academic collaboration, research exchange, and international engagement in the field of mathematical and related sciences.",
     },
     {
-        name: "Shanti Research Foundation",
+        name: "Shanti Educational Research Foundation",
         subtitle: "Academic & Research Partner",
         location: null,
         website: "https://shantiresearchfoundation.com",
         websiteLabel: "shantiresearchfoundation.com",
         image: "/images/serf/serf.jpeg",
         description:
-            "Shanti Research Foundation is associated with the conference as a research partner, supporting scholarly collaboration and the dissemination of research in mathematical and related sciences.",
+            "Shanti Educational Research Foundation is associated with the conference as a research partner, supporting scholarly collaboration and the dissemination of research in mathematical and related sciences.",
     },
 ];
 

@@ -18,7 +18,7 @@ export default function AboutUniversityPage() {
                     </div>
                     <div className="md:w-1/3 w-full flex justify-center md:justify-end">
                         <img
-                            src="/images/ghrce/ghrce.webp"
+                            src="/images/ghrce/ghrce.jpeg"
                             alt="G H Raisoni College of Engineering, Nagpur"
                             className="shadow-lg w-full max-w-md object-contain"
                         />

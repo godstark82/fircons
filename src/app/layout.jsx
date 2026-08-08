@@ -2,7 +2,7 @@ import './globals.css';
 import Layout from '../components/layout/Layout';
 
 export const metadata = {
-  title: 'IS-AMMM 2026',
+  title: 'IS-A3M 2026',
   description: 'International Symposium on Applied Mathematics and Mathematical Modeling',
 };
 
