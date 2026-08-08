@@ -100,7 +100,7 @@ const Header = () => {
                             alt="G H Raisoni College of Engineering"
                             width={200}
                             height={100}
-                            className="h-10 sm:h-12 w-auto object-contain"
+                            className="h-10 sm:h-12 w-auto object-contain rounded-md mr-2 sm:mr-3"
                         />
                         <Image
                             src="/images/ghrce/iilm_logo.png"

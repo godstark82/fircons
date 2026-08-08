@@ -302,6 +302,25 @@ export default function UploadPaperPage() {
       <div className="max-w-7xl mx-auto px-4 py-12 space-y-8">
         <Card className="border-none shadow-md overflow-hidden">
           <CardHeader className="bg-primary text-white">
+            <h2 className="text-2xl font-bold">Scan & Pay (UPI / QR)</h2>
+            <p className="text-primary-foreground/80 text-sm">
+              Scan this QR code with any UPI app to pay the registration fee
+            </p>
+          </CardHeader>
+          <CardContent className="flex flex-col items-center gap-4 p-6">
+            <img
+              src="/images/pankaj-indusind-qr.jpeg"
+              alt="UPI QR code for registration payment"
+              className="w-full max-w-xs rounded-lg border bg-white object-contain shadow-sm"
+            />
+            <p className="text-center text-sm text-muted-foreground max-w-md">
+              After successful payment, upload your payment screenshot in the registration form below.
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card className="border-none shadow-md overflow-hidden">
+          <CardHeader className="bg-primary text-white">
             <h2 className="text-2xl font-bold">Bank Details</h2>
           </CardHeader>
           <CardContent className="p-0">
@@ -651,9 +670,9 @@ export default function UploadPaperPage() {
                 <div className="flex items-start gap-3 p-4 bg-amber-50 border border-amber-200 rounded-lg">
                   <AlertCircle className="w-5 h-5 text-amber-700 shrink-0 mt-0.5" />
                   <div className="text-sm text-amber-900 space-y-1">
-                    <p className="font-semibold">Manual bank transfer</p>
+                    <p className="font-semibold">Scan QR or bank transfer</p>
                     <p>
-                      Transfer the registration fee using the UPI or bank details above
+                      Transfer the registration fee by scanning the QR code above or using the bank details
                       {form.category && form.country
                         ? ` (₹${getRegistrationFeeInr(form.category, form.country)})`
                         : ""}
