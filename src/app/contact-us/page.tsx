@@ -22,7 +22,7 @@ export default function ContactUsPage() {
                         <div>{CONSTANTS.COLLAGE_ADDRESS}</div>
                     </div>
                     <div className="bg-gray-100 rounded-lg p-6 shadow flex flex-col gap-2">
-                        <div className="font-bold text-lg flex items-center gap-2">💬 WhatsApp</div>
+                        <div className="font-bold text-lg flex items-center gap-2">WhatsApp Only</div>
                         <div><a href={`https://wa.me/${CONSTANTS.SUPPORT_PHONE_1}`} target="_blank" rel="noopener noreferrer">{CONSTANTS.SUPPORT_PHONE_1}</a></div>
                         <div><a href={`https://wa.me/${CONSTANTS.SUPPORT_PHONE_2}`} target="_blank" rel="noopener noreferrer">{CONSTANTS.SUPPORT_PHONE_2}</a></div>
                     </div>

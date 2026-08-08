@@ -113,16 +113,6 @@ const registrationHelpDeskCommittee = [
     { name: "Dr. Roma Pandey", role: "IILM University, Greater Noida" },
 ];
 
-const printingDesigningCommittee = [
-    { name: "Mr. Aditya Saini", role: "Committee Chair, IILM University, Greater Noida" },
-    { name: "Dr. Kriti Nagarkoti", role: "IILM University, Greater Noida" },
-    { name: "Dr. K.M. Bala", role: "IILM University, Greater Noida" },
-    { name: "Dr. Gaurav Upadhyay", role: "IILM University, Greater Noida" },
-    { name: "Dr. Priti", role: "IILM University, Greater Noida" },
-    { name: "Dr. Jayanta Biswas", role: "IILM University, Greater Noida" },
-    { name: "Dr. Monu", role: "IILM University, Greater Noida" },
-];
-
 const publicitySocialMediaCommittee = [
     { name: "Dr. Heena Khera", role: "Committee Chair, IILM University, Greater Noida" },
     { name: "Dr. Vinti Dhaka", role: "IILM University, Greater Noida" },
@@ -179,7 +169,6 @@ export default function OtherCommitteesPage() {
                 <Section title="Food Committee" members={foodCommittee} />
                 <Section title="Sponsorship Committee" members={sponsorshipCommittee} />
                 <Section title="Registration Committee & Help Desk" members={registrationHelpDeskCommittee} />
-                <Section title="Printing and Designing Committee" members={printingDesigningCommittee} />
                 <Section title="Publicity & Social Media Committee" members={publicitySocialMediaCommittee} />
                 <Section title="Cultural Committee" members={culturalCommittee} />
                 <Section title="Publication Committee" members={publicationCommittee} />

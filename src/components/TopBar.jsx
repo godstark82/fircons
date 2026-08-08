@@ -23,7 +23,7 @@ const TopBar = () => {
                             <FaWhatsapp className='inline-block mr-2 text-primary' />
                             <span className='text-black font-bold'>
                                 <a href={`https://wa.me/${CONSTANTS.SUPPORT_PHONE_1}`} target="_blank" rel="noopener noreferrer">
-                                    (WhatsApp) {CONSTANTS.SUPPORT_PHONE_1}
+                                    (WhatsApp Only) {CONSTANTS.SUPPORT_PHONE_1}
                                 </a>
                             </span>
                         </div>
@@ -31,7 +31,7 @@ const TopBar = () => {
                             <FaWhatsapp className='inline-block mr-2 text-primary' />
                             <span className='text-black font-bold'>
                                 <a href={`https://wa.me/${CONSTANTS.SUPPORT_PHONE_2}`} target="_blank" rel="noopener noreferrer">
-                                    (WhatsApp) {CONSTANTS.SUPPORT_PHONE_2}
+                                    (WhatsApp Only) {CONSTANTS.SUPPORT_PHONE_2}
                                 </a>
                             </span>
                         </div>
