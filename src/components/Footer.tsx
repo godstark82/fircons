@@ -63,11 +63,6 @@ const Footer = () => {
                                     Programme
                                 </Link>
                             </li>
-                            <li>
-                                <Link href="/about/accommodation-options" className="text-light/80 hover:text-primary transition-colors block">
-                                    Accommodation Options
-                                </Link>
-                            </li>
                         </ul>
                     </div>
                     <div className="space-y-4">
