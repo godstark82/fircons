@@ -116,7 +116,7 @@ const conveners = [
         affiliation: ""
     },
     {
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoHgIe7Pztu0ASYeY5ZfnNoWK5dUayz-QEHlPNmKglow&s=10",
+        image: "/images/smita-pidurkar.jpeg",
         name: "Smita Pidurkar",
         role: "Organising Secretary",
         affiliation: ""
@@ -135,7 +135,7 @@ const organizingSecretaries = [
 
 const organizingCommittee = [
     {
-        image: "/images/user.jpg",
+        image: "/images/b-thakaran.jpeg",
         name: "Mr. Bhagwat Thakran",
         role: "Organising Committee",
         affiliation: ""
@@ -153,7 +153,7 @@ const organizingCommittee = [
         affiliation: ""
     },
     {
-        image: "/images/user.jpg",
+        image: "/images/rita-mate.jpeg",
         name: "Ms. Rita Mate",
         role: "Organising Committee",
         affiliation: ""
@@ -165,7 +165,7 @@ const organizingCommittee = [
         affiliation: ""
     },
     {
-        image: "/images/user.jpg",
+        image: "/images/pallavi-bagde.jpeg",
         name: "Ms. Pallavi Bagde",
         role: "Organising Committee",
         affiliation: ""
