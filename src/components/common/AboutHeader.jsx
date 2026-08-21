@@ -32,7 +32,7 @@ export default function AboutHeader({
             />
             <div className="absolute inset-0 flex items-center">
                 <div className="w-full px-4 md:px-12 flex flex-col md:flex-row items-center text-white gap-4 md:gap-0">
-                    {/* Beautiful IC-RISEM 2025 text instead of image */}
+                    {/* Beautiful IS-A3M 2026 text instead of image */}
                     <div className="hidden md:flex flex-col items-center justify-center mr-6">
                         <span className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-widest text-white drop-shadow-lg bg-linear-to-r from-white via-[#ffe0ec] to-[#d0224a] bg-clip-text animate-pulse">
                             {CONSTANTS.ABBR_SHORT}

@@ -21,7 +21,7 @@ export default function Overview() {
                 <SectionHeader title="About the Conference" />
                 <div className="text-black text-lg text-justify space-y-4">
                     <p>
-                        The International Conference on Mathematics 2025 will unite experts from diverse mathematical
+                        The International Conference on Mathematics 2026 will unite experts from diverse mathematical
                         disciplines worldwide to discuss and advance both pure and applied mathematics. The conference
                         aims to foster research in pure and applied mathematics while encouraging innovative ideas in
                         the field. It seeks to establish collaborative research groups, facilitating knowledge exchange

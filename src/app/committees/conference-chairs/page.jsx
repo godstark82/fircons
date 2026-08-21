@@ -36,6 +36,12 @@ const coPatron = [
         role: "Pro Vice Chancellor",
         affiliation: "IILM University, Greater Noida, India",
     },
+    {
+        image: "/images/user.jpg",
+        name: "Prof Dsholdasheva Tamara Dholdashevna",
+        role: "Vice Rector",
+        affiliation: "Kirghiz economic university by name is Risqulbekova, Kyrgyzstan",
+    },
 
 ];
 
@@ -112,14 +118,20 @@ const conveners = [
     {
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe6D8tiSiWKh3MYcQyycoGHgPo3RDJ7cITjXgFQyj73w&s=10",
         name: "Dr. Nalini Vaidya",
-        role: "Organising Secretary",
+        role: "Convener",
         affiliation: ""
     },
     {
         image: "/images/smita-pidurkar.jpeg",
         name: "Smita Pidurkar",
-        role: "Organising Secretary",
+        role: "Convener",
         affiliation: ""
+    },
+    {
+        image: "/images/user.jpg",
+        name: "Dr ELEBESOVA GULZAT",
+        role: "Convener",
+        affiliation: "Kirghiz economic university by name is Risqulbekova, Kyrgyzstan"
     },
 
 ];

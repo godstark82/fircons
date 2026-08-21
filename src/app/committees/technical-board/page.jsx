@@ -2,6 +2,39 @@ import React from "react";
 import AboutHeader from "../../../components/common/AboutHeader";
 import CommitteeMemberGrid from "../../../components/common/CommitteeMemberGrid";
 
+const internationalAdvisoryBoard = [
+  {
+    image: "/images/user.jpg",
+    name: "Dr. Manuel Malaver de la Fuente",
+    role: "Department of Basic Sciences, Maritime University of the Caribbean, Venezuela",
+  },
+  {
+    image: "/images/user.jpg",
+    name: "Dr. Nelson Falcón",
+    role: "Laboratory of Physics of the Atmosphere and Outer Space, Department of Physics, Experimental Faculty of Science and Technology, University of Carabobo, Venezuela",
+  },
+  {
+    image: "/images/user.jpg",
+    name: "Dr. Ertan Gudekli",
+    role: "Faculty of Science, Department of Physics, Istanbul University, Istanbul, Turkey",
+  },
+  {
+    image: "/images/user.jpg",
+    name: "Dr. Gabriel Abellán",
+    role: "School of Physics, Faculty of Science, Central University of Venezuela, Caracas, Venezuela",
+  },
+  {
+    image: "/images/user.jpg",
+    name: "Dr. Andreas Gimsa",
+    role: "Faculty of Mechanical Engineering, Dresden University of Technology, Dresden, Germany",
+  },
+  {
+    image: "/images/user.jpg",
+    name: "Dr. Hanan Majid Saleh",
+    role: "Department of Physics, College of Education for Women, University of Kirkuk, Kirkuk, Iraq",
+  },
+];
+
 const nationalCooperation = [
   {
     image: "/images/user.jpg",
@@ -63,6 +96,11 @@ const nationalCooperation = [
     name: "Dr. Saibal Ray",
     role: "Associate Director, Centre for Cosmology, Astrophysics and Space Science (CCASS), GLA University, Mathura",
   },
+  {
+    image: "/images/user.jpg",
+    name: "Dr. Sudhaker Upadhyay",
+    role: "Department of Physics, K.L.S.College, Nawada, Bihar-805 110, India",
+  },
 ];
 
 
@@ -70,7 +108,7 @@ export default function ReviewCommitteePage() {
   return (
     <div className="min-h-screen bg-white">
       <AboutHeader
-        title="National Cooperation"
+        title="Advisory Board"
         date="17 - 19 September"
         image="/images/simdte-white-lg.png"
         overlayColor="#1a1a2e"
@@ -78,6 +116,12 @@ export default function ReviewCommitteePage() {
         dividerColor="primary"
       />
       <section className="max-w-7xl mx-auto px-4 py-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">International Advisory Board</h2>
+        <div className="h-1.5 md:h-2 w-20 md:w-24 bg-primary mx-auto mb-12" />
+        <CommitteeMemberGrid members={internationalAdvisoryBoard} />
+
+        <div className="my-16" />
+
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">National Advisory Board</h2>
         <div className="h-1.5 md:h-2 w-20 md:w-24 bg-primary mx-auto mb-12" />
         <CommitteeMemberGrid members={nationalCooperation} />
