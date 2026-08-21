@@ -49,8 +49,14 @@ const honoraryChair = [
     {
         image: "https://ghrce.raisoni.net/icpam-25/assets/images/patrons/dr-sachin-untawale.webp",
         name: "Dr. Sachin Untawale",
-        role: "Director, Raisoni Group of Institutions",
-        affiliation: "",
+        role: "Director",
+        affiliation: "Raisoni Group of Institutions",
+    },
+    {
+        image: "https://iilm.edu/greater-noida/wp-content/uploads/sites/3/2026/02/277b901c-7339-48bc-accd-ce646c93d9ae-1.png",
+        name: "Dr. Arvind Kumar Jain",
+        role: "Prof and Dean",
+        affiliation: "IILM University Greater Noida",
     }
 ];
 
