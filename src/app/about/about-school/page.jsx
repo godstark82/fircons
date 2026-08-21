@@ -12,7 +12,7 @@ const SCHOOLS = [
     },
     {
         name: 'G H Raisoni College of Engineering, Nagpur',
-        image: '/images/ghrce/ghrce.jpeg',
+        image: '/images/ghrce/ghrce2.jpeg',
         alt: 'G H Raisoni College of Engineering, Nagpur',
         paragraphs: [
             'The G H Raisoni University in India is a leading higher education institution offering undergraduate, postgraduate, diploma, and doctoral programmes across engineering, management, sciences, commerce, and other disciplines. The university focuses on quality education, innovation, research, entrepreneurship, and industry-oriented learning. It actively promotes skill development, academic excellence, technological advancement, and holistic student development.',

@@ -118,6 +118,12 @@ const SPEAKERS = [
         country: "Rajasthan, India",
         img: "",
     },
+    {
+        name: "Dr. D. C. Mishra",
+        affiliation: "Shaheed Durgamal Govt. P. G. College Doiwala,  Dehradun",
+        country: "Uttarakhand, India",
+        img: "",
+    },
 ];
 
 function SpeakerCard({ speaker }) {
