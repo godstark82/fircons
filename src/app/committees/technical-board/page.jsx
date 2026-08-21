@@ -5,6 +5,21 @@ import CommitteeMemberGrid from "../../../components/common/CommitteeMemberGrid"
 const internationalAdvisoryBoard = [
   {
     image: "/images/user.jpg",
+    name: "Prof Maxim Khlopov",
+    role: "Paris, France, Moscow and Rostov/Don, Russia",
+  },
+  {
+    image: "/images/user.jpg",
+    name: "Dr. Rahul Shukla",
+    role: "Department of Mathematical Sciences and Computing walter Sisulu University, Mathatha, South Africs",
+  },
+  {
+    image: "/images/user.jpg",
+    name: "Prof, Mahmood Khalid Jasim",
+    role: "PRofessor in Mathematics, DMPS College of rts and Sciences, Nizwa, Sultanate of Oman",
+  },
+  {
+    image: "/images/user.jpg",
     name: "Dr. Manuel Malaver de la Fuente",
     role: "Department of Basic Sciences, Maritime University of the Caribbean, Venezuela",
   },
@@ -20,18 +35,8 @@ const internationalAdvisoryBoard = [
   },
   {
     image: "/images/user.jpg",
-    name: "Dr. Gabriel Abellán",
-    role: "School of Physics, Faculty of Science, Central University of Venezuela, Caracas, Venezuela",
-  },
-  {
-    image: "/images/user.jpg",
     name: "Dr. Andreas Gimsa",
     role: "Faculty of Mechanical Engineering, Dresden University of Technology, Dresden, Germany",
-  },
-  {
-    image: "/images/user.jpg",
-    name: "Dr. Hanan Majid Saleh",
-    role: "Department of Physics, College of Education for Women, University of Kirkuk, Kirkuk, Iraq",
   },
 ];
 
@@ -43,48 +48,13 @@ const nationalCooperation = [
   },
   {
     image: "/images/user.jpg",
-    name: "Dr. Rajesh Pandey",
-    role: "Department of Mathematical Sciences, Indian Institute of Technology (BHU) Varanasi",
-  },
-  {
-    image: "/images/user.jpg",
-    name: "Dr. Shiv Prasad Yadav",
-    role: "Professor, Dept. of Mathematics, IIT Roorkee, India",
-  },
-  {
-    image: "/images/user.jpg",
-    name: "Dr. Arvind Kumar Sinha",
-    role: "Professor, NIT Raipur",
-  },
-  {
-    image: "/images/user.jpg",
     name: "Dr. G. P. Singh",
     role: "Professor, VNIT Nagpur",
   },
   {
     image: "/images/user.jpg",
-    name: "Dr. G. S. Khadekar",
-    role: "Retd Prof, RTMNU, Nagpur",
-  },
-  {
-    image: "/images/user.jpg",
     name: "Dr. Jainendra Kumar Singh",
     role: "Professor and HoD of Mathematics, Netaji Subhas University of Technology, New Delhi",
-  },
-  {
-    image: "/images/user.jpg",
-    name: "Dr. Dheeraj Kulkarni",
-    role: "Professor, IISER Bhopal",
-  },
-  {
-    image: "/images/user.jpg",
-    name: "Dr. D. D. Pawar",
-    role: "Director and Professor, Swami Ramanand Tirth Marathwada University",
-  },
-  {
-    image: "/images/user.jpg",
-    name: "Dr. Abhay Khamborkar",
-    role: "Head, Department of Statistics, Institute of Science, Nagpur",
   },
   {
     image: "/images/user.jpg",
@@ -95,11 +65,6 @@ const nationalCooperation = [
     image: "/images/speakers/saibal-ray.jpeg",
     name: "Dr. Saibal Ray",
     role: "Associate Director, Centre for Cosmology, Astrophysics and Space Science (CCASS), GLA University, Mathura",
-  },
-  {
-    image: "/images/user.jpg",
-    name: "Dr. Sudhaker Upadhyay",
-    role: "Department of Physics, K.L.S.College, Nawada, Bihar-805 110, India",
   },
 ];
 

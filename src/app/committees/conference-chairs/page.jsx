@@ -124,13 +124,13 @@ const conveners = [
     {
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe6D8tiSiWKh3MYcQyycoGHgPo3RDJ7cITjXgFQyj73w&s=10",
         name: "Dr. Nalini Vaidya",
-        role: "Convener",
+        role: "Co-Convener",
         affiliation: ""
     },
     {
         image: "/images/smita-pidurkar.jpeg",
         name: "Smita Pidurkar",
-        role: "Convener",
+        role: "Co-Convener",
         affiliation: ""
     },
     {
