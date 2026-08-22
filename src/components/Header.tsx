@@ -22,8 +22,6 @@ const Header = () => {
             "Conference Chairs": "Conference Chairs",
             // "Organising Committee": "Organising Committee",
             "Technical Board": "Advisory Board",
-            "Other Committees": "Other Committees"
-            // "Other Committees": "Other Committees",
         },
         // "REGISTRATION": "REGISTRATION/PAYMENT",
         "UPLOAD PAPER": "REGISTRATION",

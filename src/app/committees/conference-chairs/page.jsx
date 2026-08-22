@@ -159,7 +159,7 @@ const organizingCommittee = [
         affiliation: ""
     },
     {
-        image: "/images/user.jpg",
+        image: "/images/pranali-kamdi.jpeg  ",
         name: "Ms. Pranali Kamdi",
         role: "Organising Committee",
         affiliation: ""
@@ -193,6 +193,57 @@ const organizingCommittee = [
         name: "Dr. Manoj Kumar",
         role: "Organising Committee",
         affiliation: "IILM University, Greater Noida, India"
+    }
+];
+
+const publicationCommittee = [
+    {
+        image: "https://media.licdn.com/dms/image/v2/D5603AQGY6ERqo_jkxQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1637646542179?e=2147483647&v=beta&t=5SvkmRSEeOiNhUVAL2NEuS-BrinA4SMEju9svZKUQzM",
+        name: "Dr. Rupali J. Thete",
+        role: "India",
+        affiliation: ""
+    },
+    {
+        image: "/images/yogendra-rajoria.jpeg",
+        name: "Dr. Yogendra Rajoria",
+        role: "India",
+        affiliation: ""
+    },
+    {
+        image: "/images/speakers/rakesh-m-patel.jpg",
+        name: "Dr. Rakesh M Patel",
+        role: "India",
+        affiliation: ""
+    },
+    {
+        image: "/images/speakers/liliana.jpg",
+        name: "Dr. Liliana Guran",
+        role: "Romania",
+        affiliation: ""
+    },
+    {
+        image: "/images/narendra-kumar.jpeg",
+        name: "Dr Narendra Kumar",
+        role: "India",
+        affiliation: ""
+    },
+    {
+        image: "/images/aakansha-vyas.jpeg",
+        name: "Dr. Aakansha Vyas",
+        role: "India",
+        affiliation: ""
+    },
+    {
+        image: "/images/smita-pidurkar.jpeg",
+        name: "Dr Smita Pidurkar",
+        role: "India",
+        affiliation: ""
+    },
+    {
+        image: "/images/elebesova-gulzat.jpeg",
+        name: "Dr Elebesova Gulzat",
+        role: "Kyrgyzstan",
+        affiliation: ""
     }
 ];
 
@@ -261,6 +312,13 @@ export default function ConferenceChairPage() {
 
                 <h2 className="text-3xl md:text-4xl font-bold mb-8 mt-16">Organizing Committee</h2>
                 <CommitteeMemberGrid members={organizingCommittee.map(m => ({
+                    name: m.name,
+                    role: `${m.role}${m.affiliation ? `, ${m.affiliation}` : ""}`,
+                    image: m.image
+                }))} />
+
+                <h2 className="text-3xl md:text-4xl font-bold mb-8 mt-16">Publication Committee</h2>
+                <CommitteeMemberGrid members={publicationCommittee.map(m => ({
                     name: m.name,
                     role: `${m.role}${m.affiliation ? `, ${m.affiliation}` : ""}`,
                     image: m.image

@@ -49,9 +49,39 @@ const KEYNOTE_SPEAKERS = [
         country: "New Delhi,India",
         img: "/images/speakers/jk-singh.jpeg",
     },
+    {
+        name: "Dr. D. C. Mishra",
+        affiliation: "Shaheed Durgamal Govt. P. G. College Doiwala",
+        country: "Dehradun Uttarakhand,India",
+        img: "/images/user.jpg",
+    },
+    {
+        name: "Rakesh M Patel",
+        affiliation: "Gandhi Nagar College of Science",
+        country: "Gandhi Nagar,India",
+        img: "/images/speakers/rakesh-m-patel.jpg",
+    },
 ];
 
 const SPEAKERS = [
+    {
+        name: "Dr, Devendra Kumar",
+        affiliation: "",
+        country: "Oman",
+        img: "",
+    },
+    {
+        name: "Dr, Monika Bota",
+        affiliation: "",
+        country: "Romania",
+        img: "",
+    },
+    {
+        name: "Dr, Liliana Guran",
+        affiliation: "",
+        country: "Romania",
+        img: "",
+    },
     {
         name: "Dr. Niveen",
         affiliation: "",
@@ -89,12 +119,6 @@ const SPEAKERS = [
         img: "/images/yogendra-rajoria.jpeg",
     },
     {
-        name: "Dr. Pankaj",
-        affiliation: "",
-        country: "Noida, India",
-        img: "https://iilm.edu/greater-noida/wp-content/uploads/sites/3/2026/03/Pankaj-350x240-full.webp",
-    },
-    {
         name: "Dr. Amrendra",
         affiliation: "",
         country: "Agra, India",
@@ -107,14 +131,14 @@ const SPEAKERS = [
         img: "",
     },
     {
-        name: "Dr. Rahul Singh ",
-        affiliation: "IILM University, Greater Noida,",
-        country: "India",
+        name: "Dr. Jitendra Beniwal",
+        affiliation: "Mody University",
+        country: "Rajasthan, India",
         img: "",
     },
     {
-        name: "Dr. Jitendra Beniwal",
-        affiliation: "Mody University",
+        name: "Dr. AK Saini",
+        affiliation: "ICFAI University",
         country: "Rajasthan, India",
         img: "",
     },
