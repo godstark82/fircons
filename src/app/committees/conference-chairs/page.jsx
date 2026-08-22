@@ -65,7 +65,7 @@ const internationalCooperation = [
         image: "/images/user.jpg",
         name: "Prof. Maxim Khlopov",
         role: "",
-        affiliation: "Paris, France,Moscow and Rostov/Don, Russia",
+        affiliation: "Paris, France, Moscow and Rostov/Don, Russia",
     },
     {
         image: "/images/user.jpg",
@@ -165,7 +165,7 @@ const organizingCommittee = [
         affiliation: ""
     },
     {
-        image: "/images/user.jpg",
+        image: "/images/archana-deshpande.jpeg",
         name: "Ms. Archana Deshpande",
         role: "Organising Committee",
         affiliation: ""
@@ -177,7 +177,7 @@ const organizingCommittee = [
         affiliation: ""
     },
     {
-        image: "/images/user.jpg",
+        image: "/images/shital-tayade.jpeg",
         name: "Ms. Shital Tayade",
         role: "Organising Committee",
         affiliation: ""
