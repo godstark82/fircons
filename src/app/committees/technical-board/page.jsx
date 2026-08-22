@@ -4,37 +4,30 @@ import CommitteeMemberGrid from "../../../components/common/CommitteeMemberGrid"
 
 const internationalAdvisoryBoard = [
   {
-    image: "/images/user.jpg",
     name: "Prof Maxim Khlopov",
     role: "Paris, France, Moscow and Rostov/Don, Russia",
   },
   {
-    image: "/images/user.jpg",
     name: "Dr. Rahul Shukla",
     role: "Department of Mathematical Sciences and Computing walter Sisulu University, Mathatha, South Africs",
   },
   {
-    image: "/images/user.jpg",
     name: "Prof, Mahmood Khalid Jasim",
     role: "PRofessor in Mathematics, DMPS College of rts and Sciences, Nizwa, Sultanate of Oman",
   },
   {
-    image: "/images/user.jpg",
     name: "Dr. Manuel Malaver de la Fuente",
     role: "Department of Basic Sciences, Maritime University of the Caribbean, Venezuela",
   },
   {
-    image: "/images/user.jpg",
     name: "Dr. Nelson Falcón",
     role: "Laboratory of Physics of the Atmosphere and Outer Space, Department of Physics, Experimental Faculty of Science and Technology, University of Carabobo, Venezuela",
   },
   {
-    image: "/images/user.jpg",
     name: "Dr. Ertan Gudekli",
     role: "Faculty of Science, Department of Physics, Istanbul University, Istanbul, Turkey",
   },
   {
-    image: "/images/user.jpg",
     name: "Dr. Andreas Gimsa",
     role: "Faculty of Mechanical Engineering, Dresden University of Technology, Dresden, Germany",
   },
@@ -42,27 +35,22 @@ const internationalAdvisoryBoard = [
 
 const nationalCooperation = [
   {
-    image: "/images/user.jpg",
     name: "Dr. Debasis Kundu",
     role: "Department of Mathematics and Statistics, I.I.T. Kanpur",
   },
   {
-    image: "/images/user.jpg",
     name: "Dr. G. P. Singh",
     role: "Professor, VNIT Nagpur",
   },
   {
-    image: "/images/user.jpg",
     name: "Dr. Jainendra Kumar Singh",
     role: "Professor and HoD of Mathematics, Netaji Subhas University of Technology, New Delhi",
   },
   {
-    image: "/images/user.jpg",
     name: "Dr. Hemant Kumar Nashine",
     role: "Professor & Dean SASL, VIT Bhopal University, Bhopal & Visiting Professor at University of Johannesburg, South Africa",
   },
   {
-    image: "/images/speakers/saibal-ray.jpeg",
     name: "Dr. Saibal Ray",
     role: "Associate Director, Centre for Cosmology, Astrophysics and Space Science (CCASS), GLA University, Mathura",
   },

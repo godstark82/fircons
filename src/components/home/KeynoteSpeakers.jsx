@@ -86,13 +86,13 @@ const SPEAKERS = [
         name: "Dr. Yogendra Rajoria",
         affiliation: "",
         country: "Haryana, India",
-        img: "",
+        img: "/images/yogendra-rajoria.jpeg",
     },
     {
         name: "Dr. Pankaj",
         affiliation: "",
         country: "Noida, India",
-        img: "",
+        img: "https://iilm.edu/greater-noida/wp-content/uploads/sites/3/2026/03/Pankaj-350x240-full.webp",
     },
     {
         name: "Dr. Amrendra",

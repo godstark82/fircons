@@ -7,19 +7,19 @@ const patron = [
         image: "https://ghrce.raisoni.net/icetme/assets/images/petrons/sunil-raisoni.jpg",
         name: "Shri Sunilji Raisoni",
         role: "Chairman",
-        affiliation: "Raisoni Group of Institutions",
+        affiliation: "Raisoni Education",
     },
     {
         image: "https://ghrce.raisoni.net/ices/assets/images/shobha-raisoni.jpg",
         name: "Smt. Shobhaji Raisoni",
         role: "Patron",
-        affiliation: "Raisoni Group of Institutions",
+        affiliation: "Raisoni Education",
     },
     {
         image: "https://ghrce.raisoni.net/icraiwc/assets/images/shreyas-raisoni.jpg",
-        name: "Mr. Shreyas Raison",
+        name: "Mr. Shreyas Raisoni",
         role: "Executive Director",
-        affiliation: "Raisoni Group of Institutions",
+        affiliation: "Raisoni Education",
     }
 ];
 
@@ -37,7 +37,7 @@ const coPatron = [
         affiliation: "IILM University, Greater Noida, India",
     },
     {
-        image: "/images/user.jpg",
+        image: "/images/dsholdasheva-tamara.jpeg",
         name: "Prof Dsholdasheva Tamara Dholdashevna",
         role: "Vice Rector",
         affiliation: "Kirghiz economic university by name is Risqulbekova, Kyrgyzstan",
@@ -50,7 +50,7 @@ const honoraryChair = [
         image: "https://ghrce.raisoni.net/icpam-25/assets/images/patrons/dr-sachin-untawale.webp",
         name: "Dr. Sachin Untawale",
         role: "Director",
-        affiliation: "Raisoni Group of Institutions",
+        affiliation: "Raisoni Education",
     },
     {
         image: "https://iilm.edu/greater-noida/wp-content/uploads/sites/3/2026/02/277b901c-7339-48bc-accd-ce646c93d9ae-1.png",
@@ -98,7 +98,7 @@ const conveners = [
         affiliation: "GHRCE",
     },
     {
-        image: "https://iilm.edu/greater-noida/wp-content/uploads/sites/3/2026/03/IILMGN006892025-full.webp",
+        image: "/images/narendra-kumar.jpeg",
         name: "Dr Narendra Kumar",
         role: "Convenor",
         affiliation: "IILM University, Greater Noida, India",
@@ -134,7 +134,7 @@ const conveners = [
         affiliation: ""
     },
     {
-        image: "/images/user.jpg",
+        image: "/images/elebesova-gulzat.jpeg",
         name: "Dr ELEBESOVA GULZAT",
         role: "Convener",
         affiliation: "Kirghiz economic university by name is Risqulbekova, Kyrgyzstan"
@@ -144,7 +144,7 @@ const conveners = [
 
 const organizingSecretaries = [
     {
-        image: "/images/user.jpg",
+        image: "/images/akilahmad.jpeg",
         name: "Dr. Akilahmad Sheikh",
         role: "Organising Secretary",
         affiliation: ""
@@ -165,7 +165,7 @@ const organizingCommittee = [
         affiliation: ""
     },
     {
-        image: "https://apex-assets-exl.pages.dev/image/maam.jpeg",
+        image: "/images/user.jpg",
         name: "Ms. Archana Deshpande",
         role: "Organising Committee",
         affiliation: ""
@@ -187,12 +187,6 @@ const organizingCommittee = [
         name: "Ms. Pallavi Bagde",
         role: "Organising Committee",
         affiliation: ""
-    },
-    {
-        image: "/images/aditya-saini.jpeg",
-        name: "Prof. Aditya Saini",
-        role: "Organising Committee",
-        affiliation: "IILM University, Greater Noida, India"
     },
     {
         image: "/images/manoj-kumar.jpeg",

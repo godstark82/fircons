@@ -1,132 +1,392 @@
-import {
-  Accordion,
-  AccordionItem,
-  AccordionTrigger,
-  AccordionContent
-} from "@/components/ui/accordion";
+'use client';
+
+import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import SectionHeader from "../common/SectionHeader";
 
 const TRACKS = [
   {
-    name: "Advancing Mathematical Frontiers",
-    subtopics: [
-      "Algebraic Structures and Number Theory",
-      "Differential Geometry and Topology",
-      "Functional Analysis and Operator Theory",
-      "Nonlinear Analysis and Dynamical Systems",
-    ],
+    name: "Mathematical Modelling and Simulation",
   },
   {
-    name: "Innovations in Mathematical Sciences",
-    subtopics: [
-      "Discrete Mathematics and Combinatorics",
-      "Graph Theory and Network Science",
-      "Probability Theory and Stochastic Processes",
-      "Mathematical Logic and Foundations",
-    ],
+    name: "Mathematics for Artificial Intelligence and Machine Learning",
   },
   {
-    name: "Mathematics for Global Challenges",
-    subtopics: [
-      "Mathematical Epidemiology and Public Health",
-      "Climate and Environmental Modelling",
-      "Optimization for Sustainable Development",
-      "Financial Mathematics and Risk Analysis",
-    ],
+    name: "Optimization Theory and Applications",
   },
   {
-    name: "Future of Mathematical Research",
-    subtopics: [
-      "AI-Assisted Mathematical Discovery",
-      "Data-Driven Mathematical Methods",
-      "Interdisciplinary Research Frameworks",
-      "Open Problems and Emerging Directions",
-    ],
+    name: "Data Science and Statistical Mathematics",
   },
   {
-    name: "Emerging Trends in Mathematics",
-    subtopics: [
-      "Machine Learning and Mathematical Foundations",
-      "Quantum Computing and Quantum Information",
-      "Topological Data Analysis",
-      "Cryptography and Coding Theory",
-    ],
+    name: "Mathematical Biology and Healthcare",
   },
   {
-    name: "Frontiers of Pure Mathematics",
-    subtopics: [
-      "Algebraic Geometry and Commutative Algebra",
-      "Analytic Number Theory",
-      "Representation Theory",
-      "Homological Algebra and Category Theory",
-    ],
+    name: "Cryptography and Post-Quantum Security",
   },
   {
-    name: "Applied Mathematics for Innovation",
-    subtopics: [
-      "Industrial and Engineering Mathematics",
-      "Control Theory and Systems Engineering",
-      "Operations Research and Decision Science",
-      "Image Processing and Signal Analysis",
-    ],
+    name: "Financial Mathematics",
   },
   {
-    name: "Mathematics Driving Discovery",
-    subtopics: [
-      "Mathematical Physics",
-      "Biomathematics and Systems Biology",
-      "Statistical Learning and Inference",
-      "Scientific Computing for Discovery",
-    ],
+    name: "Climate and Environmental Mathematics",
   },
   {
-    name: "Mathematical Models and Applications",
-    subtopics: [
-      "Differential Equations and Modelling",
-      "Numerical Methods and Approximation Theory",
-      "Multiscale and Multiphysics Models",
-      "Inverse Problems and Parameter Estimation",
-    ],
+    name: "Quantum Computing and Quantum Information",
   },
   {
-    name: "Computational Mathematics Revolution",
-    subtopics: [
-      "High-Performance Scientific Computing",
-      "Numerical Linear Algebra",
-      "Computational Fluid Dynamics",
-      "Algorithm Design and Complexity",
-    ],
+    name: "Network Science and Complex Systems",
+  },
+  {
+    name: "Scientific Computing and Computational Mathematics",
+  },
+  {
+    name: "Mathematics for Sustainable Development",
   },
 ];
+
+const CONFERENCE_TRACKS = [
+  {
+    title: "1. Pure Mathematics",
+    subtopics: [
+      "Abstract Algebra",
+      "Group Theory",
+      "Ring Theory",
+      "Field Theory",
+      "Module Theory",
+      "Representation Theory",
+      "Number Theory",
+      "Algebraic Number Theory",
+      "Analytic Number Theory",
+      "Geometry",
+      "Euclidean and Non-Euclidean Geometry",
+      "Differential Geometry",
+      "Algebraic Geometry",
+      "Topology",
+      "Algebraic Topology",
+      "Differential Topology",
+      "Functional Analysis",
+      "Real Analysis",
+      "Complex Analysis",
+      "Measure Theory",
+      "Operator Theory",
+      "Set Theory",
+      "Mathematical Logic"
+    ]
+  },
+  {
+    title: "2. Applied Mathematics",
+    subtopics: [
+      "Mathematical Modelling",
+      "Differential Equations",
+      "Ordinary Differential Equations",
+      "Partial Differential Equations",
+      "Integral Equations",
+      "Difference Equations",
+      "Dynamical Systems",
+      "Nonlinear Systems",
+      "Perturbation Methods",
+      "Asymptotic Analysis",
+      "Numerical Analysis",
+      "Computational Mathematics",
+      "Scientific Computing"
+    ]
+  },
+  {
+    title: "3. Probability and Statistics",
+    subtopics: [
+      "Probability Theory",
+      "Stochastic Processes",
+      "Stochastic Differential Equations",
+      "Markov Chains",
+      "Random Processes",
+      "Bayesian Statistics",
+      "Mathematical Statistics",
+      "Multivariate Analysis",
+      "Time Series Analysis",
+      "Reliability Theory",
+      "Survival Analysis",
+      "Statistical Inference",
+      "Experimental Design",
+      "High-Dimensional Statistics"
+    ]
+  },
+  {
+    title: "4. Optimization and Operations Research",
+    subtopics: [
+      "Linear Programming",
+      "Nonlinear Programming",
+      "Integer Programming",
+      "Multi-objective Optimization",
+      "Convex Optimization",
+      "Global Optimization",
+      "Combinatorial Optimization",
+      "Dynamic Programming",
+      "Optimal Control Theory",
+      "Operations Research",
+      "Supply Chain Optimization",
+      "Transportation Problems",
+      "Scheduling Theory",
+      "Game Theory",
+      "Decision Theory"
+    ]
+  },
+  {
+    title: "5. Computational and Numerical Mathematics",
+    subtopics: [
+      "Numerical Methods for Differential Equations",
+      "Finite Element Methods",
+      "Finite Difference Methods",
+      "Spectral Methods",
+      "Computational Fluid Dynamics",
+      "High-Performance Computing",
+      "Parallel Computing",
+      "Mathematical Simulation",
+      "Computer Algebra",
+      "Numerical Optimization",
+      "Scientific Machine Learning"
+    ]
+  },
+  {
+    title: "6. Mathematical Modelling",
+    subtopics: [
+      "Mathematical Modelling in Biology",
+      "Mathematical Modelling in Medicine",
+      "Epidemiological Modelling",
+      "Population Dynamics",
+      "Ecological Modelling",
+      "Environmental Modelling",
+      "Climate Modelling",
+      "Mathematical Modelling in Engineering",
+      "Financial Modelling",
+      "Social and Economic Modelling",
+      "Traffic and Transportation Modelling",
+      "Energy System Modelling"
+    ]
+  },
+  {
+    title: "7. Mathematics and Artificial Intelligence",
+    subtopics: [
+      "Mathematical Foundations of Machine Learning",
+      "Deep Learning Theory",
+      "Optimization in Machine Learning",
+      "Statistical Learning Theory",
+      "Neural Network Mathematics",
+      "Graph Theory in AI",
+      "Explainable AI and Mathematical Interpretability",
+      "Reinforcement Learning",
+      "Probabilistic Machine Learning",
+      "AI for Scientific Computing",
+      "Mathematical Analysis of Algorithms",
+      "Federated Learning and Optimization"
+    ]
+  },
+  {
+    title: "8. Data Science and Big Data Mathematics",
+    subtopics: [
+      "Data Analytics",
+      "Mathematical Foundations of Data Science",
+      "Dimensionality Reduction",
+      "Clustering Algorithms",
+      "Network Analysis",
+      "Graph Analytics",
+      "Topological Data Analysis",
+      "Data Mining",
+      "Statistical Learning",
+      "Information Theory",
+      "Compressed Sensing",
+      "High-Dimensional Data Analysis"
+    ]
+  },
+  {
+    title: "9. Mathematical Biology and Medicine",
+    subtopics: [
+      "Mathematical Biology",
+      "Population Dynamics",
+      "Epidemiological Models",
+      "Cancer Modelling",
+      "Tumour Growth Models",
+      "Neuroscience Modelling",
+      "Genetic and Evolutionary Mathematics",
+      "Bioinformatics",
+      "Systems Biology",
+      "Pharmacokinetic Modelling",
+      "Mathematical Modelling of Infectious Diseases",
+      "Medical Image Analysis"
+    ]
+  },
+  {
+    title: "10. Mathematical Physics",
+    subtopics: [
+      "Classical Mechanics",
+      "Quantum Mechanics",
+      "Quantum Field Theory",
+      "Relativity",
+      "Mathematical Cosmology",
+      "Quantum Gravity",
+      "Statistical Mechanics",
+      "Fluid Mechanics",
+      "Electromagnetic Theory",
+      "Mathematical Modelling of Physical Systems",
+      "Nonlinear Waves",
+      "Soliton Theory"
+    ]
+  },
+  {
+    title: "11. Financial and Actuarial Mathematics",
+    subtopics: [
+      "Mathematical Finance",
+      "Financial Derivatives",
+      "Option Pricing",
+      "Risk Management",
+      "Portfolio Optimization",
+      "Stochastic Finance",
+      "Financial Time Series",
+      "Actuarial Science",
+      "Insurance Mathematics",
+      "Credit Risk Modelling",
+      "Cryptocurrency and Blockchain Mathematics"
+    ]
+  },
+  {
+    title: "12. Cryptography and Information Security",
+    subtopics: [
+      "Mathematical Cryptography",
+      "Number-Theoretic Cryptography",
+      "Elliptic Curve Cryptography",
+      "Post-Quantum Cryptography",
+      "Coding Theory",
+      "Information Theory",
+      "Error-Correcting Codes",
+      "Secret Sharing",
+      "Secure Computation",
+      "Blockchain Mathematics"
+    ]
+  },
+  {
+    title: "13. Discrete Mathematics and Computer Science",
+    subtopics: [
+      "Graph Theory",
+      "Combinatorics",
+      "Coding Theory",
+      "Automata Theory",
+      "Theory of Computation",
+      "Algorithms",
+      "Complexity Theory",
+      "Discrete Optimization",
+      "Network Theory",
+      "Computational Geometry"
+    ]
+  },
+  {
+    title: "14. Mathematical Engineering",
+    subtopics: [
+      "Control Theory",
+      "Robotics Mathematics",
+      "Signal Processing",
+      "Image Processing",
+      "Communication Systems",
+      "Systems Engineering",
+      "Structural Mechanics",
+      "Fluid Dynamics",
+      "Mathematical Modelling of Smart Systems",
+      "Industrial Mathematics"
+    ]
+  },
+  {
+    title: "15. Environmental and Sustainability Mathematics",
+    subtopics: [
+      "Climate Change Modelling",
+      "Environmental Systems Analysis",
+      "Renewable Energy Modelling",
+      "Sustainable Resource Optimization",
+      "Water Resource Modelling",
+      "Air Pollution Modelling",
+      "Ecological Dynamics",
+      "Disaster Risk Modelling",
+      "Sustainable Transportation Models",
+      "Mathematics for Sustainable Development Goals"
+    ]
+  },
+  {
+    title: "16. Emerging and Interdisciplinary Research Areas",
+    subtopics: [
+      "Quantum Computing Mathematics",
+      "Quantum Information Theory",
+      "Network Science",
+      "Complex Systems",
+      "Mathematical Neuroscience",
+      "Digital Twins",
+      "Mathematics of the Metaverse",
+      "Blockchain and Distributed Systems",
+      "Mathematical Epidemiology",
+      "Computational Social Science",
+      "Sports Analytics",
+      "Mathematics in Economics and Policy",
+      "Mathematical Foundations of Artificial General Intelligence"
+    ]
+  }
+];
+
+function TrackCard({ track }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <Card className="bg-white text-secondary rounded-xl shadow-md border border-gray-100 flex flex-col transition hover:shadow-lg">
+      <CardContent className="p-6 flex flex-col h-full">
+        <div 
+          onClick={() => setIsOpen(!isOpen)}
+          className="flex justify-between items-center gap-4 cursor-pointer select-none group border-b border-gray-100 pb-3"
+        >
+          <h3 className="text-xl font-bold text-primary group-hover:text-primary/80 transition-colors">
+            {track.title}
+          </h3>
+          <div className="p-1 group-hover:bg-gray-100 rounded-full transition-colors">
+            {isOpen ? (
+              <ChevronUp className="w-5 h-5 text-gray-500" />
+            ) : (
+              <ChevronDown className="w-5 h-5 text-gray-500" />
+            )}
+          </div>
+        </div>
+        
+        {isOpen && (
+          <ul className="list-disc pl-5 space-y-1.5 text-gray-700 text-sm mt-4 animate-in fade-in slide-in-from-top-1 duration-200">
+            {track.subtopics.map((sub, i) => (
+              <li key={i}>{sub}</li>
+            ))}
+          </ul>
+        )}
+      </CardContent>
+    </Card>
+  );
+}
 
 export default function Tracks() {
   return (
     <section className="bg-[#f5f7fa] py-16">
       <div className="container mx-auto px-6 md:px-10">
+        {/* Themes Section */}
         <SectionHeader title="Themes" />
-        <Accordion type="multiple" className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 mt-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-12 mb-20">
           {TRACKS.map((track) => (
-            <AccordionItem key={track.name} value={track.name}>
-              <Card className="bg-secondary text-white rounded-xl shadow-lg transition hover:scale-[1.03] border-none">
-                <AccordionTrigger className="px-7 py-6 text-lg font-semibold text-left rounded-t-xl border-none focus:ring-2 focus:ring-secondary">
-                  {track.name}
-                </AccordionTrigger>
-                {track.subtopics?.length > 0 && (
-                  <AccordionContent>
-                    <CardContent className="pl-7 pb-5">
-                      <ul className="list-disc text-base space-y-2">
-                        {track.subtopics.map((sub, i) => (
-                          <li key={i} className="ml-4 text-white">{sub}</li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </AccordionContent>
-                )}
-              </Card>
-            </AccordionItem>
+            <Card key={track.name} className="bg-secondary text-white rounded-xl shadow-lg transition hover:scale-[1.03] border-none">
+              <CardContent className="px-6 py-8 text-lg font-semibold text-center flex items-center justify-center min-h-[120px]">
+                {track.name}
+              </CardContent>
+            </Card>
           ))}
-        </Accordion>
+        </div>
+
+        {/* Divider */}
+        <div className="border-t border-gray-300/40 my-16" />
+
+        {/* Tracks Section */}
+        <SectionHeader title="Tracks" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+          {CONFERENCE_TRACKS.map((track) => (
+            <TrackCard key={track.title} track={track} />
+          ))}
+        </div>
       </div>
     </section>
   );
