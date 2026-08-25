@@ -4,6 +4,11 @@ import CommitteeMemberGrid from "../../../components/common/CommitteeMemberGrid"
 
 const internationalAdvisoryBoard = [
   {
+        image: "/images/maxim-yu-khlopov.jpeg",
+        name: "Prof. Maxim Yu. Khlopov",
+        role: "Director of Virtual Institute of Astroparticle Physics, Paris, France",
+    },
+  {
     image: "/images/speakers/rahul-shukla.jpeg",
     name: "Dr Rahul Shukla",
     role: "Walter Sisulu University, Mathatha, South Africa",
@@ -32,11 +37,6 @@ const internationalAdvisoryBoard = [
     image: "/images/user.jpg",
     name: "Dr. Andreas Gimsa",
     role: "Dresden University of Technology, Dresden, Germany",
-  },
-  {
-    image: "/images/speakers/hemant-nashine.jpeg",
-    name: "Dr Hemant Kumar Nashine",
-    role: "University of Johannesburg, South Africa",
   },
   {
     image: "/images/speakers/liliana.jpg",

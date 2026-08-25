@@ -62,9 +62,9 @@ const honoraryChair = [
 
 const internationalCooperation = [
     {
-        image: "/images/user.jpg",
-        name: "Prof. Maxim Khlopov",
-        role: "",
+        image: "/images/maxim-yu-khlopov.jpeg",
+        name: "Prof. Maxim Yu. Khlopov",
+        role: "Prof and Director",
         affiliation: "Paris, France, Moscow and Rostov/Don, Russia",
     },
     {
@@ -144,14 +144,27 @@ const conveners = [
 
 const organizingSecretaries = [
     {
-        image: "/images/akilahmad.jpeg",
-        name: "Dr. Akilahmad Sheikh",
+        image: "/images/b-thakaran.jpeg",
+        name: "Mr. Bhagwat Thakran",
+        role: "Organising Secretary",
+        affiliation: ""
+    },
+    {
+        image: "/images/archana-deshpande.jpeg",
+        name: "Ms. Archana Deshpande",
         role: "Organising Secretary",
         affiliation: ""
     }
 ];
 
 const organizingCommittee = [
+
+    {
+        image: "/images/avadhesh-gupta.jpeg",
+        name: "Prof. (Dr.) Avadhesh Kumar Gupta",
+        role: "Organising Committee",
+        affiliation: "Greater Noida"
+    },
     {
         image: "/images/b-thakaran.jpeg",
         name: "Mr. Bhagwat Thakran",
@@ -228,6 +241,12 @@ const publicationCommittee = [
         affiliation: ""
     },
     {
+        image: "/images/elebesova-gulzat.jpeg",
+        name: "Dr Elebesova Gulzat",
+        role: "Kyrgyzstan",
+        affiliation: ""
+    },
+    {
         image: "/images/aakansha-vyas.jpeg",
         name: "Dr. Aakansha Vyas",
         role: "India",
@@ -238,13 +257,8 @@ const publicationCommittee = [
         name: "Dr Smita Pidurkar",
         role: "India",
         affiliation: ""
-    },
-    {
-        image: "/images/elebesova-gulzat.jpeg",
-        name: "Dr Elebesova Gulzat",
-        role: "Kyrgyzstan",
-        affiliation: ""
     }
+    
 ];
 
 export default function ConferenceChairPage() {
