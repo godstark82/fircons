@@ -64,8 +64,8 @@ const internationalCooperation = [
     {
         image: "/images/maxim-yu-khlopov.jpeg",
         name: "Prof. Maxim Yu. Khlopov",
-        role: "Director of Virtual Institre of Astroparticle Physics",
-        affiliation: "Paris, France",
+        role: "Director of Virtual Institute of Astroparticle physics, Paris, France and Honorary Eminent Scientist in Centre of Excellence for Astrophysics and Cosmology",
+        affiliation: "G H Raisoni College of Engineering, Nagpur, India",
     },
     {
         image: "/images/user.jpg",
@@ -138,6 +138,12 @@ const conveners = [
 
 const organizingSecretaries = [
     {
+        image: "/images/akilahmad.jpeg",
+        name: "Dr. Akilahmad Sheikh",
+        role: "Organising Secretary",
+        affiliation: ""
+    },
+    {
         image: "/images/b-thakaran.jpeg",
         name: "Mr. Bhagwat Thakran",
         role: "Organising Secretary",
@@ -158,12 +164,6 @@ const organizingCommittee = [
         name: "Prof. (Dr.) Avadhesh Kumar Gupta",
         role: "Organising Committee",
         affiliation: "Greater Noida"
-    },
-    {
-        image: "/images/b-thakaran.jpeg",
-        name: "Mr. Bhagwat Thakran",
-        role: "Organising Committee",
-        affiliation: ""
     },
     {
         image: "/images/pranali-kamdi.jpeg  ",
