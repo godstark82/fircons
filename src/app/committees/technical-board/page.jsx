@@ -44,6 +44,10 @@ const internationalAdvisoryBoard = [
     role: "Czestochowa University of Technology, Poland",
   },
   {
+    name: "Dr Hemant Kumar Nashine",
+    role: "University of Johannesburg, South Africa",
+  },
+  {
     name: "Dr Paula Bajdor",
     role: "Czestochowa University of Technology, Czestochowa, Poland",
   },
@@ -85,10 +89,6 @@ const nationalCooperation = [
   {
     name: "Dr Jainendra Kumar Singh",
     role: "Netaji Subhas University of Technology, New Delhi",
-  },
-  {
-    name: "Dr Hemant Kumar Nashine",
-    role: "University of Johannesburg, South Africa",
   },
   {
     name: "Dr Saibal Ray",
