@@ -64,8 +64,8 @@ const internationalCooperation = [
     {
         image: "/images/maxim-yu-khlopov.jpeg",
         name: "Prof. Maxim Yu. Khlopov",
-        role: "Prof and Director",
-        affiliation: "Paris, France, Moscow and Rostov/Don, Russia",
+        role: "Director of Virtual Institre of Astroparticle Physics",
+        affiliation: "Paris, France",
     },
     {
         image: "/images/user.jpg",
@@ -111,7 +111,7 @@ const conveners = [
     },
     {
         image: "/images/rajeev-kumar.jpeg",
-        name: "Dr. Rajev Kumar",
+        name: "Dr. Rajeev Kumar",
         role: "Co-Convenor",
         affiliation: "IILM University, Greater Noida, India",
     },
@@ -129,7 +129,7 @@ const conveners = [
     },
     {
         image: "/images/elebesova-gulzat.jpeg",
-        name: "Dr ELEBESOVA GULZAT",
+        name: "Dr. Elebesova Gulzat",
         role: "Convener",
         affiliation: "Kirghiz economic university by name is Risqulbekova, Kyrgyzstan"
     },
