@@ -67,12 +67,6 @@ const internationalCooperation = [
         role: "Director of Virtual Institute of Astroparticle physics, Paris, France and Honorary Eminent Scientist in Centre of Excellence for Astrophysics and Cosmology",
         affiliation: "G H Raisoni College of Engineering, Nagpur, India",
     },
-    {
-        image: "/images/user.jpg",
-        name: "Prof. Mahmood Khalid Jasim",
-        role: "Professor in Mathematics",
-        affiliation: "DMPS College of Arts and Sciences, Nizwa, Sultanate of Oman",
-    }
 ];
 
 const organizingChair = [
