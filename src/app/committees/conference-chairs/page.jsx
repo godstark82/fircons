@@ -69,12 +69,6 @@ const internationalCooperation = [
     },
     {
         image: "/images/user.jpg",
-        name: "Prof. Rajendra Pant",
-        role: "Professor & Deputy HoD",
-        affiliation: "Department of Mathematics, University of Johannesburg",
-    },
-    {
-        image: "/images/user.jpg",
         name: "Prof. Mahmood Khalid Jasim",
         role: "Professor in Mathematics",
         affiliation: "DMPS College of Arts and Sciences, Nizwa, Sultanate of Oman",

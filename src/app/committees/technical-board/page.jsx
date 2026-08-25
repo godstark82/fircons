@@ -30,6 +30,11 @@ const internationalAdvisoryBoard = [
   },
   {
     image: "/images/user.jpg",
+    name: "Dr Devendra Kumar",
+    role: "University of Technology and Applied Sciences-Shinas, Oman",
+  },
+  {
+    image: "/images/user.jpg",
     name: "Dr Ertan Gudekli",
     role: "Faculty of Science, Istanbul University, Istanbul, Turkey",
   },
@@ -125,16 +130,6 @@ const nationalCooperation = [
     image: "/images/user.jpg",
     name: "Dr Kalpana Sharma",
     role: "Manipal University Jaipur",
-  },
-  {
-    image: "/images/user.jpg",
-    name: "Dr Devendra Kumar",
-    role: "University of Technology and Applied Sciences-Shinas, Oman",
-  },
-  {
-    image: "/images/speakers/prof-leszek-ziora.jpeg",
-    name: "Dr Leszek Ziora",
-    role: "Czestochowa University of Technology, Poland",
   },
   {
     image: "/images/speakers/dr-narendra.jpeg",
