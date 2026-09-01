@@ -135,6 +135,8 @@ export default function UserSubmissionsPage() {
 
   const hasPaper =
     !!registration?.presentingPaper && !!registration?.paperTitle
+  const isRejected = hasPaper && registration?.paperStatus === 'rejected'
+  const canSubmitPaper = (!hasPaper || isRejected) && !showSubmissionForm
 
   return (
     <div className="space-y-6">
@@ -143,15 +145,22 @@ export default function UserSubmissionsPage() {
           <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">My Submissions</h2>
           <p className="mt-1 text-sm text-gray-600">Manage and view your paper submissions</p>
         </div>
-        {!hasPaper && !showSubmissionForm && (
+        {canSubmitPaper && (
           <Button onClick={() => setShowSubmissionForm(true)} className="shrink-0">
             <Plus className="mr-2 h-4 w-4" />
-            Submit Paper
+            {isRejected ? 'Submit New Paper' : 'Submit Paper'}
           </Button>
         )}
       </div>
 
-      {hasPaper ? (
+      {showSubmissionForm && registration ? (
+        <PaperSubmissionForm
+          userId={user?.uid}
+          registrationId={registration.id}
+          onSuccess={handleSubmissionSuccess}
+          onCancel={() => setShowSubmissionForm(false)}
+        />
+      ) : hasPaper ? (
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
@@ -221,6 +230,11 @@ export default function UserSubmissionsPage() {
                   {registration.paperStatus === 'pending' && (
                     <p className="text-xs text-muted-foreground">
                       You will be notified by email once your paper has been reviewed.
+                    </p>
+                  )}
+                  {isRejected && (
+                    <p className="text-xs text-muted-foreground">
+                      Your paper was rejected. You can submit a new paper using the button above.
                     </p>
                   )}
                 </div>
@@ -340,13 +354,6 @@ export default function UserSubmissionsPage() {
             </div>
           </CardContent>
         </Card>
-      ) : registration ? (
-        <PaperSubmissionForm
-          userId={user?.uid}
-          registrationId={registration.id}
-          onSuccess={handleSubmissionSuccess}
-          onCancel={() => setShowSubmissionForm(false)}
-        />
       ) : null}
     </div>
   )

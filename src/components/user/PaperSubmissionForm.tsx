@@ -121,9 +121,7 @@ export default function PaperSubmissionForm({ userId, registrationId, onSuccess,
         uploadedFileName: file.name,
         storageFileName: fileName,
         paperUploadedAt: serverTimestamp(),
-        paperStatus: 'pending', // Default status: pending, accepted, rejected
-        paymentProofUrl: null,
-        paymentProofUploadedAt: null,
+        paperStatus: 'pending',
       })
 
       setStatus({ type: 'success', message: 'Paper submitted successfully!' })
