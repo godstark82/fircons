@@ -8,22 +8,22 @@ const importantDates = [
     },
     {
         event: "Abstract Notification",
-        date: "10 May, 2026",
+        date: "20 September, 2026",
         rowClass: "bg-gray-50"
     },
     {
         event: "Acceptance Notification",
-        date: "10 June, 2026",
-        rowClass: "bg-gray-50"
-    },
-    {
-        event: "Registration Deadline",
         date: "15 September, 2026",
         rowClass: "bg-gray-50"
     },
     {
+        event: "Registration Deadline",
+        date: "20 September, 2026",
+        rowClass: "bg-gray-50"
+    },
+    {
         event: "Submission of Full Paper Starts",
-        date: "20 May, 2026",
+        date: "20 September, 2026",
         rowClass: "bg-gray-50"
     }
 ];
